@@ -1,0 +1,22 @@
+.my-list {
+    margin: 0 auto;
+    padding: 8px 24px; 
+    width: 500px;
+    font-size: 30px;
+    border: 1px solid white;
+    background: white;
+    box-shadow: 0 0 10px 2px hsl(0, 0%, 20%);
+}
+.my-list ol {
+    margin: 12px;
+}
+.my-list p {
+    text-align: center;
+    }
+.my-list img {
+    width: 200x;
+    height: 100px;
+    margin: 0 auto;
+    display: block;
+    margin: 0 auto 20px;
+}
