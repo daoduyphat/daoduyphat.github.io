@@ -1,0 +1,30 @@
+.mycv {
+    margin: 0 auto;
+    padding: 16px 32px; 
+    width: 600px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    font-family: 'Times New Roman';
+    color: #333;
+}
+
+.mycv ol {
+    color: #007BFF;
+}
+
+.mycv p {
+    color: #555;
+}
+
+.mycv img {
+    width: 100px;
+    margin: 0 auto 20px;
+    display: block;
+    border-radius: 50%;
+    border: 2px solid #007BFF;
+}
+
+.mycv h1, .mycv h2, .mycv h3, .mycv h4, .mycv h5, .mycv h6 {
+    color: #007BFF;
+}
