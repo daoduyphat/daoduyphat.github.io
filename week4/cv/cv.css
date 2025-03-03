@@ -7,10 +7,11 @@
     background: #f9f9f9;
     font-family: 'Times New Roman';
     color: #333;
+    line-height: 20px;
 }
 
 .mycv ol {
-    color: #007BFF;
+    color: blue;
 }
 
 .mycv p {
@@ -18,13 +19,18 @@
 }
 
 .mycv img {
-    width: 100px;
-    margin: 0 auto 20px;
+    width: 150px;
+    margin: 0 auto 5px;
     display: block;
-    border-radius: 50%;
-    border: 2px solid #007BFF;
+    border: 2px solid black;
 }
 
 .mycv h1, .mycv h2, .mycv h3, .mycv h4, .mycv h5, .mycv h6 {
-    color: #007BFF;
+    color: blue;
+}
+
+.mycv h1 {
+    font-size: 50px;
+    color: purple;
+    text-align: center;
 }
