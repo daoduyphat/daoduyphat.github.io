@@ -36,8 +36,8 @@
 }
 
 .mycv audio {
-    width: 200px; /* Adjust width to make the audio player smaller */
-    height: 30px; /* Adjust the height as needed */
-    display: block; /* Make the audio player a block element */
-    margin: 10px 0; /* Add some margin for spacing */
+    width: 200px;
+    height: 30px;
+    display: block;
+    margin: 10px 0;
 }
