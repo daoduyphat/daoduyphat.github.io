@@ -25,8 +25,8 @@ body {
 }
 
 .profile-img img {
-    width: 120px; /* Đặt chiều rộng cho ảnh profile */
-    height: 120px; /* Đặt chiều cao cho ảnh profile */
+    width: 150px; /* Đặt chiều rộng cho ảnh profile */
+    height: 150px; /* Đặt chiều cao cho ảnh profile */
     border-radius: 50%; /* Làm tròn ảnh profile */
     object-fit: cover; /* Đảm bảo ảnh không bị méo */
     border: 3px solid white; /* Thêm viền trắng cho ảnh profile */
