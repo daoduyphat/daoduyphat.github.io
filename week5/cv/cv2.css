@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif; /* Đặt font chữ cho toàn bộ trang */
-    margin: 0; /* Xóa khoảng cách mặc định của body */
-    padding: 0; /* Xóa khoảng cách mặc định của body */
-    background-color: #f4f4f4; /* Đặt màu nền cho trang */
+    font-family: Arial, sans-serif;
+    margin: 0; 
+    padding: 0; 
+    background-color: #f4f4f4; 
     display: flex; /* Sử dụng flexbox để căn giữa nội dung */
     justify-content: center; /* Căn giữa nội dung theo chiều ngang */
 }
@@ -17,19 +17,19 @@ body {
 }
 
 .left-column {
-    width: 35%; /* Đặt chiều rộng cho cột bên trái */
-    background: pink; /* Đặt màu nền đen cho cột bên trái */
-    color: white; /* Đặt màu chữ trắng cho cột bên trái */
-    padding: 20px; /* Đặt khoảng cách bên trong cho cột bên trái */
-    text-align: left; /* Thay đổi giá trị từ center thành left */
+    width: 35%; 
+    background: pink; 
+    color: white; 
+    padding: 20px; 
+    text-align: left; 
 }
 
 .profile-img img {
-    width: 150px; /* Đặt chiều rộng cho ảnh profile */
-    height: 150px; /* Đặt chiều cao cho ảnh profile */
+    width: 150px; 
+    height: 150px; 
     border-radius: 50%; /* Làm tròn ảnh profile */
     object-fit: cover; /* Đảm bảo ảnh không bị méo */
-    border: 3px solid white; /* Thêm viền trắng cho ảnh profile */
+    border: 3px solid white;
 }
 
 .section {
@@ -37,10 +37,10 @@ body {
 }
 
 h2 {
-    font-size: 18px; /* Đặt kích thước chữ cho tiêu đề */
+    font-size: 18px; 
     border-bottom: 2px solid white; /* Thêm đường viền dưới cho tiêu đề */
     padding-bottom: 5px; /* Đặt khoảng cách dưới cho tiêu đề */
-    display: inline-block; /* Hiển thị tiêu đề dưới dạng inline-block */
+    display: inline-block; 
 }
 
 
@@ -49,14 +49,10 @@ ul li {
     padding: 5px 0; /* Đặt khoảng cách trên và dưới cho các mục danh sách */
 }
 
-.right-column {
-    width: 65%; /* Đặt chiều rộng cho cột bên phải */
-    padding: 20px; /* Đặt khoảng cách bên trong cho cột bên phải */
-}
 
 .title {
     text-align: center; /* Căn giữa tiêu đề */
-    font-size: 22px; /* Đặt kích thước chữ cho tiêu đề */
+    font-size: 22px;
     font-weight: bold; /* Đặt độ đậm cho chữ tiêu đề */
     margin-bottom: 20px; /* Đặt khoảng cách dưới cho tiêu đề */
 }
@@ -72,35 +68,35 @@ ul li {
 }
 
 .progress {
-    background: #ddd; /* Đặt màu nền cho thanh tiến trình */
+    background: #ddd; 
     border-radius: 5px; /* Làm tròn các góc của thanh tiến trình */
-    height: 25px; /* Đặt chiều cao cho thanh tiến trình */
-    width: 100%; /* Đặt chiều rộng cho thanh tiến trình */
+    height: 25px; 
+    width: 100%; 
     position: relative; /* Đặt vị trí tương đối cho thanh tiến trình */
 }
 
 .progress-bar {
-    background: black; /* Đặt màu nền cho thanh tiến trình con */
-    color: white; /* Đặt màu chữ cho thanh tiến trình con */
-    text-align: center; /* Căn giữa chữ trong thanh tiến trình con */
-    height: 100%; /* Đặt chiều cao cho thanh tiến trình con */
-    line-height: 25px; /* Căn giữa chữ theo chiều dọc */
-    border-radius: 5px; /* Làm tròn các góc của thanh tiến trình con */
+    background: black; 
+    color: white; 
+    text-align: center; 
+    height: 100%; 
+    line-height: 25px;
+    border-radius: 5px; 
 }
 .profile-img img {
-    width: 200px; /* Đặt chiều rộng cho ảnh profile */
-    height: 200px; /* Đặt chiều cao cho ảnh profile */
-    border-radius: 50%; /* Làm tròn ảnh profile */
-    object-fit: cover; /* Đảm bảo ảnh không bị méo */
-    border: 5px solid white; /* Thêm viền màu cam cho ảnh profile */
+    width: 200px; 
+    height: 200px; 
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Thêm bóng đổ cho ảnh profile */
 }
 .right-column {
-    width: 65%; /* Đặt chiều rộng cho cột bên phải */
+    width: 65%; 
     padding: 20px; /* Đặt khoảng cách bên trong cho cột bên phải */
-    line-height: 1.2; /* Điều chỉnh khoảng cách giữa các dòng */
+    line-height: 1.2; 
 }
 audio {
     width: 300px; /* Điều chỉnh độ rộng */
-    height: 40px; /* Điều chỉnh chiều cao (nếu trình duyệt hỗ trợ) */
+    height: 40px; /* Điều chỉnh chiều cao  */
 }
