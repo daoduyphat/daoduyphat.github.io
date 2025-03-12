@@ -18,7 +18,7 @@ body {
 
 .left-column {
     width: 35%; /* Đặt chiều rộng cho cột bên trái */
-    background: black; /* Đặt màu nền đen cho cột bên trái */
+    background: pink; /* Đặt màu nền đen cho cột bên trái */
     color: white; /* Đặt màu chữ trắng cho cột bên trái */
     padding: 20px; /* Đặt khoảng cách bên trong cho cột bên trái */
     text-align: left; /* Thay đổi giá trị từ center thành left */
@@ -92,11 +92,15 @@ ul li {
     height: 200px; /* Đặt chiều cao cho ảnh profile */
     border-radius: 50%; /* Làm tròn ảnh profile */
     object-fit: cover; /* Đảm bảo ảnh không bị méo */
-    border: 5px solid #ff6347; /* Thêm viền màu cam cho ảnh profile */
+    border: 5px solid white; /* Thêm viền màu cam cho ảnh profile */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Thêm bóng đổ cho ảnh profile */
 }
 .right-column {
     width: 65%; /* Đặt chiều rộng cho cột bên phải */
     padding: 20px; /* Đặt khoảng cách bên trong cho cột bên phải */
     line-height: 1.2; /* Điều chỉnh khoảng cách giữa các dòng */
+}
+audio {
+    width: 300px; /* Điều chỉnh độ rộng */
+    height: 40px; /* Điều chỉnh chiều cao (nếu trình duyệt hỗ trợ) */
 }
