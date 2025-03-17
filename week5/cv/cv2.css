@@ -61,28 +61,7 @@ ul li {
     display: flex; /* Sử dụng flexbox để sắp xếp các phần tử con */
     flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
     gap: 10px; /* Đặt khoảng cách giữa các phần tử */
-}
-
-.skill {
-    margin-bottom: 10px; /* Đặt khoảng cách dưới cho mỗi kỹ năng */
-}
-
-.progress {
-    background: #ddd; 
-    border-radius: 5px; /* Làm tròn các góc của thanh tiến trình */
-    height: 25px; 
-    width: 100%; 
-    position: relative; /* Đặt vị trí tương đối cho thanh tiến trình */
-}
-
-.progress-bar {
-    background: black; 
-    color: white; 
-    text-align: center; 
-    height: 100%; 
-    line-height: 25px;
-    border-radius: 5px; 
-}
+} 
 .profile-img img {
     width: 200px; 
     height: 200px; 
