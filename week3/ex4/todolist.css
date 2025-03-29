@@ -14,9 +14,8 @@
     text-align: center;
     }
 .my-list img {
-    width: 200x;
+    width: 200px;
     height: 100px;
-    margin: 0 auto;
     display: block;
     margin: 0 auto 20px;
 }
