@@ -9,21 +9,29 @@
     <form action="#">
         <input type="number" id="number1">
         <br>
-        <button onclick="checkNumber()">Check</button>
+        <button onclick="checkClick()">Check</button>
+        <button onclick="restClick()" style="display: none;" id="reset_button">Reset</button>
         <p id="result"></p>
     </form>
     <script>
-        function checkNumber() {
-            var x = parseInt(document.getElementById("number1").value);
+        function checkClick() {
+            var x = parseInt(document.getElementById("number1").value)
             if (x % 2 == 0) {
-                //Method 1: create a new element and append it to
                 var result = document.getElementById("result")
-                result.innerHTML = x + " is Even";
-                //Method 2: use append
-                // document.getElementById("form_main").innerHTML += x + " is Even"
+                result.innerHTML = x + " is Even"
             } else {
-                // document.write(x + " is Odd")
+                var result = document.getElementById("result")
+                result.innerHTML = x + " is Odd"
             }
+            document.getElementById("reset_button").style.display = "block"
+            document.getElementById("check_button").style.display = "none"
+        }
+        function resetClick() {
+            document.getElementById("number1").value = ""
+            document.getElementById("result").innerHTML = ""
+            document.getElementById("number1").focus();
+            document.getElementById("reset_button").style.display = "none"
+            document.getElementById("check_button").style.display = "block"
         }
     </script>
 </body>
