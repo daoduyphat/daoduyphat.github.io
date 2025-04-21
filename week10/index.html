@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#">
+        <input type="number" id="number1">
+        <br>
+        <button onclick="checkNumber()">Check</button>
+        <p id="result"></p>
+    </form>
+    <script>
+        function checkNumber() {
+            var x = parseInt(document.getElementById("number1").value);
+            if (x % 2 == 0) {
+                //Method 1: create a new element and append it to
+                var result = document.getElementById("result")
+                result.innerHTML = x + " is Even";
+                //Method 2: use append
+                // document.getElementById("form_main").innerHTML += x + " is Even"
+            } else {
+                // document.write(x + " is Odd")
+            }
+        }
+    </script>
+</body>
+</html>
