@@ -6,33 +6,33 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="#">
+    <form action="#" id="form_main">
         <input type="number" id="number1">
         <br>
-        <button onclick="checkClick()">Check</button>
-        <button onclick="restClick()" style="display: none;" id="reset_button">Reset</button>
+        <button onclick="checkNumber();" style="display:none;" id="check_button">Check</button>
+        <button onclick="resetNew();" style="display: none;" id="reset_button">Reset</button>
         <p id="result"></p>
     </form>
-    <script>
-        function checkClick() {
-            var x = parseInt(document.getElementById("number1").value)
-            if (x % 2 == 0) {
-                var result = document.getElementById("result")
-                result.innerHTML = x + " is Even"
-            } else {
-                var result = document.getElementById("result")
-                result.innerHTML = x + " is Odd"
-            }
-            document.getElementById("reset_button").style.display = "block"
-            document.getElementById("check_button").style.display = "none"
-        }
-        function resetClick() {
-            document.getElementById("number1").value = ""
-            document.getElementById("result").innerHTML = ""
-            document.getElementById("number1").focus();
-            document.getElementById("reset_button").style.display = "none"
-            document.getElementById("check_button").style.display = "block"
-        }
+    <script language="javascript">
+        function checkNumber() {
+      var x = parseInt(document.getElementById("number1").value);
+      if (x % 2 === 0) {
+        var result = document.getElementById("result");
+        result.innerHTML = x + " is Even"; 
+      } else {
+        var resultOdd = document.getElementById("result");
+        resultOdd.innerHTML = x + " is Odd";
+      }
+      document.getElementById("reset_button").style.display="block"; 
+      document.getElementById("check_button").style.display="none"; 
+    }
+    function resetNew() {
+      document.getElementById("number1").value="";
+      document.getElementById("result").innerHTML="";
+      document.getElementById("number1").focus();
+      document.getElementById("reset_buttom").style.display="none";
+      document.getElementById("check_button").style.display="none";
+    }
     </script>
 </body>
 </html>
