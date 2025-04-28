@@ -1,54 +1,76 @@
+/* Áp dụng font chữ "Comic Sans MS" với kích thước 20px cho tất cả các phần tử */
 * {
     font: 20px "Comic Sans MS";
 }
+
+/* Định nghĩa kiểu cho thẻ tùy chỉnh MyCustomizeTag */
 MyCustomizeTag {
-    display: block;
-    text-align: center;
-    text-transform: capitalize;
-    text-decoration: underline;
-    width: 500px;
+    display: block; /* Hiển thị như một khối */
+    text-align: center; /* Căn giữa nội dung */
+    text-transform: capitalize; /* Viết hoa chữ cái đầu tiên của mỗi từ */
+    text-decoration: underline; /* Gạch chân văn bản */
+    width: 500px; /* Đặt chiều rộng là 500px */
 }
+
+/* Khi người dùng nhấn vào thẻ div, đổi màu nền thành đỏ */
 div:active {
     background-color: #f00;
 }
+
+/* Định nghĩa kiểu mặc định cho thẻ div */
 div {
-    background-color: yellow;
-    margin: 0px 0px 5px 5px;
-    width: 300px;
-}
-.GroupFormat {
-    font-weight: bold;
-    color: #f00;
-    width: 400px;
-}
-#TheHighestPriority {
-    background-color: #000;
-    font-weight: none;
-    font: italic 30px "Times New Roman";
-    color: #fff;
+    background-color: yellow; /* Màu nền vàng */
+    margin: 0px 0px 5px 5px; /* Lề ngoài: trên 0px, phải 0px, dưới 5px, trái 5px */
+    width: 300px; /* Chiều rộng 300px */
 }
 
+/* Định nghĩa kiểu cho các phần tử có class GroupFormat */
+.GroupFormat {
+    font-weight: bold; /* Chữ đậm */
+    color: #f00; /* Màu chữ đỏ */
+    width: 400px; /* Chiều rộng 400px */
+}
+
+/* Định nghĩa kiểu cho phần tử có id TheHighestPriority */
+#TheHighestPriority {
+    background-color: #000; /* Màu nền đen */
+    font-weight: none; /* Không áp dụng độ đậm */
+    font: italic 30px "Times New Roman"; /* Chữ nghiêng, kích thước 30px, font "Times New Roman" */
+    color: #fff; /* Màu chữ trắng */
+}
+
+/* Khi người dùng di chuột qua thẻ a, đổi màu chữ thành đỏ */
 a:hover {
     color: #f00;
 }
+
+/* Thêm ký tự ">" trước mỗi phần tử li trong danh sách có class list */
 .list li::before {
-    content: ">";
-    color: #f00;
-    font-size: 1cm;
-    margin-right: 0.5cm;
+    content: ">"; /* Nội dung là ký tự ">" */
+    color: #f00; /* Màu đỏ */
+    font-size: 1cm; /* Kích thước 1cm */
+    margin-right: 0.5cm; /* Khoảng cách bên phải 0.5cm */
 }
+
+/* Thêm ký tự "<" sau mỗi phần tử li trong danh sách có class list */
 .list li::after {
-    content: "<";
-    color: #f00;
-    font-size: 1cm;
-    margin-left: 0.5cm;
+    content: "<"; /* Nội dung là ký tự "<" */
+    color: #f00; /* Màu đỏ */
+    font-size: 1cm; /* Kích thước 1cm */
+    margin-left: 0.5cm; /* Khoảng cách bên trái 0.5cm */
 }
+
+/* Định nghĩa màu chữ mặc định cho các phần tử li trong danh sách có class list */
 .list li {
-    color: blue;
+    color: blue; /* Màu chữ xanh dương */
 }
+
+/* Định nghĩa màu chữ cho các phần tử li lẻ (vị trí 1, 3, 5, ...) */
 .list li:nth-child(odd) {
-    color: pink;
+    color: pink; /* Màu chữ hồng */
 }
+
+/* Định nghĩa màu chữ cho các phần tử li chẵn (vị trí 2, 4, 6, ...) */
 .list li:nth-child(even) {
-    color: lightblue;
+    color: lightblue; /* Màu chữ xanh nhạt */
 }

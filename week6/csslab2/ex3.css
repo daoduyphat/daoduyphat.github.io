@@ -1,18 +1,31 @@
+/* Ẩn phần chi tiết sản phẩm khi không có sự kiện hover */
 .ProductDetails {display: none;}
+
+/* Định dạng hình ảnh sản phẩm: kích thước, bo góc, và hiệu ứng đổ bóng */
 .Product img {
-    width: 150px;
-    height: 150px;
-    border-radius: 20px;
-    box-shadow: 5px 5px 10px #aaa;
+    width: 150px; /* Chiều rộng hình ảnh */
+    height: 150px; /* Chiều cao hình ảnh */
+    border-radius: 20px; /* Bo tròn các góc của hình ảnh */
+    box-shadow: 5px 5px 10px #aaa; /* Hiệu ứng đổ bóng */
 }
+
+/* Định dạng tên sản phẩm: in đậm */
 .ProductName {font-weight: bold;}
+
+/* Định dạng giá sản phẩm: in nghiêng */
 .ProductPrice {font-style: italic;}
+
+/* Thêm dấu " - " trước giá sản phẩm */
 .ProductPrice::before {content: " - ";}
+
+/* Định dạng chung cho sản phẩm */
 .Product {
-    text-align: center;
-    width: 150px;
-    margin: 0px 20px;
-    float: left;
-    cursor: pointer;
+    text-align: center; /* Căn giữa nội dung */
+    width: 150px; /* Chiều rộng của khối sản phẩm */
+    margin: 0px 20px; /* Khoảng cách giữa các sản phẩm */
+    float: left; /* Canh sản phẩm sang trái để hiển thị theo hàng ngang */
+    cursor: pointer; /* Thay đổi con trỏ chuột thành dạng "pointer" khi hover */
 }
+
+/* Hiển thị phần chi tiết sản phẩm khi hover vào sản phẩm */
 .Product:hover .ProductDetails {display: block;}

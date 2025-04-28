@@ -1,8 +1,11 @@
+/* Đặt màu nền cho toàn bộ trang và loại bỏ margin, padding mặc định của body */
 body {
     background: #ccc;
     margin: 0;
     padding: 0;
 }
+
+/* Định dạng danh sách trong thẻ nav: bỏ dấu đầu dòng, đặt màu nền, loại bỏ margin, padding và căn giữa nội dung */
 nav ul {
     list-style: none;
     background-color: #444;
@@ -10,7 +13,8 @@ nav ul {
     padding: 0;
     text-align: center;
 }
-/* Chỉnh đề mục ở menu */
+
+/* Định dạng các mục trong menu: hiển thị ngang, cỡ chữ lớn, chiều cao dòng, khoảng cách padding và chiều cao */
 nav ul li {
     display: inline-block;
     font-size: 30px;
@@ -18,20 +22,29 @@ nav ul li {
     padding: 20px;
     height: 40px;
 }
+
+/* Định dạng liên kết trong menu: màu chữ trắng và bỏ gạch chân */
 nav a {
     color: #fff;
     text-decoration: none;
 }
-/* Di chuột vào chữ sẽ đổi màu */
+
+/* Hiệu ứng khi di chuột vào liên kết: đổi màu chữ thành màu xanh */
 nav a:hover {
-    color: blue
+    color: blue;
 }
+
+/* Căn giữa tiêu đề trong thẻ header */
 header h1 {
     text-align: center;
 }
+
+/* Định dạng đoạn văn trong thẻ header của article: in nghiêng */
 article header p {
     font-style: italic;
 }
+
+/* Thêm khoảng cách padding bên trái cho thẻ main */
 main {
     padding-left: 20px;
 }
