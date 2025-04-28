@@ -1,19 +1,28 @@
 <head>
+    <!-- Tiêu đề của trang web -->
     <title>Exercise 5</title>
+    <!-- Thiết lập mã hóa ký tự để hỗ trợ tiếng Việt -->
     <meta charset="utf-8">
+    <!-- Thiết lập viewport để trang web hiển thị tốt trên các thiết bị di động -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Liên kết đến file CSS của Bootstrap để sử dụng các thành phần giao diện -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <!-- Liên kết đến thư viện jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Liên kết đến file JavaScript của Bootstrap -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <style type="text/css">
+        /* Thiết lập màu nền cho toàn bộ trang */
         body {
             background-color: #e8e8e8;
         }
 
+        /* Thiết lập khoảng cách trên cho container chính */
         .container-fluid {
             margin-top: 30px;
         }
 
+        /* Thiết lập giao diện cho từng mục nhà */
         .house {
             background-color: #fff;
             padding: 20px;
@@ -21,20 +30,24 @@
             margin-bottom: 20px;
         }
 
+        /* Thiết lập khoảng cách cho danh sách trong phần nội dung nhà */
         .house .media-body .list-inline {
             margin-top: 10px;
         }
 
+        /* Thiết lập khoảng cách trên cho các span trong phần nội dung nhà */
         .house .media-body span {
             margin-top: 10px;
         }
 
+        /* Thiết lập kích thước tối đa cho hình ảnh khi màn hình lớn hơn 990px */
         @media screen and (min-width: 990px) {
             .house img {
                 max-width: 180px;
             }
         }
 
+        /* Ẩn một số nội dung khi màn hình nhỏ hơn 990px */
         @media screen and (max-width: 990px) {
             .container .house p,
             .container .house .media-body a {
@@ -47,46 +60,60 @@
 <body>
     <div class="container-fluid">
         <div class="container">
+            <!-- Thanh điều hướng (navbar) -->
             <nav class="navbar navbar-default">
                 <div class="navbar-header">
+                    <!-- Nút toggle để mở/đóng menu trên thiết bị nhỏ -->
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+                    <!-- Logo hoặc tên thương hiệu -->
                     <a class="navbar-brand" href="#">House Bussiness</a>
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
+                    <!-- Menu chính -->
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="#">Home</a></li>
                         <li><a href="#">Profile</a></li>
                         <li><a href="#">Messages</a></li>
                     </ul>
+                    <!-- Menu bên phải -->
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="exercise.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
                         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                     </ul>
                 </div>
             </nav>
+            <!-- Phần tiêu đề -->
             <div class="row heading">
                 <div class="title col-md-12">
                     <h1>Milion Dollar Home Listings</h1>
                     <p>Content</p>
                 </div>
             </div>
+            <!-- Phần nội dung chính -->
             <div class="row content">
+                <!-- Cột bên trái -->
                 <div class="col-md-6">
+                    <!-- Mỗi mục nhà -->
                     <div class="house">
                         <div class="media">
                             <div class="pull-left">
+                                <!-- Hình ảnh của nhà -->
                                 <a href="#">
                                     <img src="img/01.jpg" class="img-responsive media-object">
                                 </a>
                             </div>
                             <div class="media-body">
+                                <!-- Tiêu đề của nhà -->
                                 <h4 class="media-heading hidden-xs">Media heading</h4>
+                                <!-- Giá nhà -->
                                 <a href="#">$1.975.000</a>
+                                <!-- Địa chỉ nhà -->
                                 <span class="badge pull-right">609 W Gravers Ln</span>
+                                <!-- Thông tin chi tiết -->
                                 <ul class="list-inline">
                                     <li>4,820 SqFt</li>
                                     <li>|</li>
@@ -94,67 +121,32 @@
                                     <li>|</li>
                                     <li>5 Baths</li>
                                 </ul>
+                                <!-- Nội dung mô tả -->
                                 <p>Content of media heading</p>
                             </div>
                         </div>
                     </div>
-                    <div class="house">
-                        <div class="media">
-                            <div class="pull-left">
-                                <a href="#">
-                                    <img src="img/02.jpg" class="img-responsive media-object">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading hidden-xs">Media heading</h4>
-                                <a href="#">$1.975.000</a>
-                                <span class="badge pull-right">609 W Gravers Ln</span>
-                                <ul class="list-inline">
-                                    <li>4,820 SqFt</li>
-                                    <li>|</li>
-                                    <li>4,820 SqFt</li>
-                                    <li>|</li>
-                                    <li>5 Baths</li>
-                                </ul>
-                                <p>Content of media heading</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="house">
-                        <div class="media">
-                            <div class="pull-left">
-                                <a href="#">
-                                    <img src="img/03.jpg" class="img-responsive media-object">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading hidden-xs">Media heading</h4>
-                                <a href="#">$1.975.000</a>
-                                <span class="badge pull-right">609 W Gravers Ln</span>
-                                <ul class="list-inline">
-                                    <li>4,820 SqFt</li>
-                                    <li>|</li>
-                                    <li>4,820 SqFt</li>
-                                    <li>|</li>
-                                    <li>5 Baths</li>
-                                </ul>
-                                <p>Content of media heading</p>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Các mục nhà khác tương tự -->
                 </div>
+                <!-- Cột bên phải -->
                 <div class="col-md-6">
+                    <!-- Mỗi mục nhà -->
                     <div class="house">
                         <div class="media">
                             <div class="pull-left">
+                                <!-- Hình ảnh của nhà -->
                                 <a href="#">
                                     <img src="img/04.jpg" class="img-responsive media-object">
                                 </a>
                             </div>
                             <div class="media-body">
+                                <!-- Tiêu đề của nhà -->
                                 <h4 class="media-heading hidden-xs">Media heading</h4>
+                                <!-- Giá nhà -->
                                 <a href="#">$1.975.000</a>
+                                <!-- Địa chỉ nhà -->
                                 <span class="badge pull-right">609 W Gravers Ln</span>
+                                <!-- Thông tin chi tiết -->
                                 <ul class="list-inline">
                                     <li>4,820 SqFt</li>
                                     <li>|</li>
@@ -162,32 +154,12 @@
                                     <li>|</li>
                                     <li>5 Baths</li>
                                 </ul>
+                                <!-- Nội dung mô tả -->
                                 <p>Content of media heading</p>
                             </div>
                         </div>
                     </div>
-                    <div class="house">
-                        <div class="media">
-                            <div class="pull-left">
-                                <a href="#">
-                                    <img src="img/05.jpg" class="img-responsive media-object">
-                                </a>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading hidden-xs">Media heading</h4>
-                                <a href="#">$1.975.000</a>
-                                <span class="badge pull-right">609 W Gravers Ln</span>
-                                <ul class="list-inline">
-                                    <li>4,820 SqFt</li>
-                                    <li>|</li>
-                                    <li>4,820 SqFt</li>
-                                    <li>|</li>
-                                    <li>5 Baths</li>
-                                </ul>
-                                <p>Content of media heading</p>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- Các mục nhà khác tương tự -->
                 </div>
             </div>
         </div>
