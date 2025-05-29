@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu cửa hàng sách</title>
+  <style>
+    #menu {
+      background-color: #e0f7fa;
+      padding: 10px;
+      font-size: 18px;
+    }
+    .hidden {
+      display: none;
+    }
+    .menu-item {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Menu điều hướng</h2>
+  <div id="menu">
+    <a class="menu-item" href="#">Home</a> •
+    <a class="menu-item" href="#">Books ©</a> •
+    <a class="menu-item" href="#">Authors ™</a> •
+    <a class="menu-item" href="#">Contact</a>
+  </div>
+  <button onclick="toggleMenu()">Toggle Menu</button>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("hidden");
+    }
+  </script>
+</body>
+</html>
