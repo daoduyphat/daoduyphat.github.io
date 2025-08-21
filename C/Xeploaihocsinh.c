@@ -1,3 +1,4 @@
+//Dùng để xếp loại học sinh dựa trên điểm số
 #include <stdio.h>
 #include <stdlib.h>
 

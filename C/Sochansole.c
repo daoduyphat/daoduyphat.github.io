@@ -1,3 +1,4 @@
+//Dùng để kiểm tra xem một số là chẵn hay lẻ
 #include <stdio.h>
 #include <stdlib.h>
 

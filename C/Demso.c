@@ -1,3 +1,4 @@
+//In ra số từ 1 đến 5
 #include <stdio.h>  // Thư viện cho các hàm nhập xuất chuẩn
 #include <stdlib.h> // Thư viện cho các hàm hệ thống như system()
 

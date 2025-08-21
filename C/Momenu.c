@@ -1,3 +1,5 @@
+//Mở menu trong C
+// Đây là chương trình C đơn giản để hiển thị một menu và xử lý lựa chọn
 #include <stdio.h>
 #include <conio.h>
 void main(void)

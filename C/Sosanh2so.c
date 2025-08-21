@@ -1,3 +1,4 @@
+//Dùng để so sánh hai số nguyên
 #include <stdio.h>
 #include <stdlib.h>
 
