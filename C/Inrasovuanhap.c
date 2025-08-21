@@ -1,3 +1,4 @@
+//In ra số nguyên từ bàn phím
 #include <stdio.h>
 #include <stdlib.h>
 

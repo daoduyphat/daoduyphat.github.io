@@ -1,3 +1,5 @@
+// Chương trình này tính tổng các số từ 1 đến N, trong đó N được nhập từ bàn phím.
+// Nó sử dụng vòng lặp for để lặp qua các số từ 1 đến N và cộng dồn vào biến sum.
 #include <stdio.h>
 
 int main()
@@ -17,5 +19,3 @@ int main()
 
     return 0;
 }
-// Chương trình này tính tổng các số từ 1 đến N, trong đó N được nhập từ bàn phím.
-// Nó sử dụng vòng lặp for để lặp qua các số từ 1 đến N và cộng dồn vào biến sum.
