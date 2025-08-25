@@ -1,2 +1,0 @@
-
-    printf("\n\nRollno\tName
