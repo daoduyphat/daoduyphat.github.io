@@ -79,7 +79,6 @@ class WeightedBCEDiceLoss(nn.Module):
         self.bce_weight = bce_weight
 
     def forward(self, preds, targets):
-        # Nếu preds là list (deep supervision), tính trung bình loss
         if isinstance(preds, list):
             losses = [self._compute_loss(p, targets) for p in preds]
             return sum(losses) / len(losses)
@@ -107,7 +106,6 @@ def valid_model(model, val_loader, criterion, device):
             loss=criterion(preds,masks).item()
             val_loss+=loss
 
-            # lấy output cuối cùng nếu là list
             if isinstance(preds, list):
                 preds_eval = preds[-1]
             else:
