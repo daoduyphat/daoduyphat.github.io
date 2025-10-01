@@ -1,2 +1,0 @@
-- Folder Learn là folder học tập
-- ResUNet++ gồm outputs và models
