@@ -1,0 +1,11 @@
+/* Định nghĩa khoảng cách bên ngoài của bảng */
+table {
+    margin: 10px;
+}
+
+/* Định nghĩa viền cho bảng, tiêu đề cột (th) và ô (td) */
+table, th, td {
+    border: 1px solid black; /* Tạo viền đen dày 1px */
+    border-collapse: collapse; /* Gộp các viền lại thành một viền duy nhất */
+    padding: 2px; /* Tạo khoảng cách bên trong giữa nội dung và viền */
+}

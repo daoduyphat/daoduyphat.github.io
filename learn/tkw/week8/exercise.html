@@ -1,0 +1,59 @@
+<title>Exercise 1</title> <!-- Tiêu đề của trang web -->
+<meta charset="utf-8"> <!-- Thiết lập mã hóa ký tự là UTF-8 -->
+<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- Đảm bảo trang web hiển thị tốt trên các thiết bị khác nhau -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> <!-- Liên kết đến file CSS của Bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!-- Liên kết đến thư viện jQuery -->
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script> <!-- Liên kết đến file JavaScript của Bootstrap -->
+<style type="text/css">
+    body{
+        background-color: #525252; /* Đặt màu nền cho trang web */
+    }
+    .container{
+        margin-top: 60px; /* Tạo khoảng cách phía trên cho container */
+    }
+    .txt{
+        color:#FFF; /* Đặt màu chữ là trắng */
+        font-weight:bold; /* Đặt chữ in đậm */
+        font-size:18px; /* Đặt kích thước chữ là 18px */
+    }
+</style>
+<div class="container"> <!-- Container Bootstrap để căn giữa nội dung -->
+    <div class="row"> <!-- Hàng (row) Bootstrap -->
+        <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4"> <!-- Cột Bootstrap với độ rộng và căn giữa -->
+            <div class="panel panel-default"> <!-- Tạo một panel Bootstrap -->
+                <div class="panel panel-heading txt">User Registration</div> <!-- Tiêu đề của panel -->
+                <div class="panel-body"> <!-- Nội dung của panel -->
+                    <form action="#"> <!-- Bắt đầu form, action="#" để không gửi dữ liệu -->
+                        <div class="form-group"> <!-- Nhóm các trường nhập liệu -->
+                            <p class="col-md-12 col-sm-6">
+                                <label for="firstname" class="hidden-sm">First name</label> <!-- Nhãn cho trường nhập liệu "First name" -->
+                                <input type="text" id="firstname" class="form-control" placeholder="First name"/> <!-- Trường nhập liệu cho "First name" -->
+                            </p>
+                            <p class="col-md-12 col-sm-6">
+                                <label for="lastname" class="hidden-sm">Last name</label> <!-- Nhãn cho trường nhập liệu "Last name" -->
+                                <input type="text" id="lastname" class="form-control" placeholder="Last name"/> <!-- Trường nhập liệu cho "Last name" -->
+                            </p>
+                        </div>
+                        <div class="form-group"> <!-- Nhóm các trường nhập liệu -->
+                            <p class="col-md-12 col-sm-12">
+                                <label for="email" class="hidden-sm">Email address</label> <!-- Nhãn cho trường nhập liệu "Email address" -->
+                                <input type="text" id="email" class="form-control" placeholder="Email address"/> <!-- Trường nhập liệu cho "Email address" -->
+                            </p>
+                        </div>
+                        <div class="form-group"> <!-- Nhóm các trường nhập liệu -->
+                            <p class="col-md-12 col-sm-6">
+                                <label for="password" class="hidden-sm">Password</label> <!-- Nhãn cho trường nhập liệu "Password" -->
+                                <input type="text" id="password" class="form-control" placeholder="Input password"/> <!-- Trường nhập liệu cho "Password" -->
+                            </p>
+                            <p class="col-md-12 col-sm-6">
+                                <label for="confirm" class="hidden-sm">Confirmation</label> <!-- Nhãn cho trường nhập liệu "Confirmation" -->
+                                <input type="text" id="confirm" class="form-control" placeholder="Input confirm"/> <!-- Trường nhập liệu cho "Confirmation" -->
+                            </p>
+                        </div>
+                        <input type="submit" value="Register" class="btn btn-info btn-block"/> <!-- Nút gửi form với kiểu Bootstrap -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

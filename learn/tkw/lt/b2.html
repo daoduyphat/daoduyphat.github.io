@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tab Điều Hướng</title>
+  <style>
+    .tab {
+      display: inline-block;
+      padding: 10px;
+      background: lightgray;
+      border: 1px solid #000;
+      cursor: pointer;
+    }
+    .active {
+      background: orange;
+    }
+    .tab-content {
+      display: none;
+      border: 1px solid black;
+      padding: 10px;
+      background: #f9f9f9;
+    }
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div id="tabs">
+    <div class="tab active" onclick="switchTab(0)">Giới thiệu ©</div>
+    <div class="tab" onclick="switchTab(1)">Dịch vụ ™</div>
+    <div class="tab" onclick="switchTab(2)">Liên hệ</div>
+  </div>
+
+  <div id="contents">
+    <div class="tab-content show">
+      <p>Chào mừng bạn đến với trang web!</p>
+      <ul><li>- Thông tin sinh viên</li></ul>
+    </div>
+    <div class="tab-content">
+      <p>Chúng tôi cung cấp các dịch vụ web chất lượng cao.</p>
+      <ul><li>- Thiết kế web</li></ul>
+    </div>
+    <div class="tab-content">
+      <p>Liên hệ với chúng tôi qua email hoặc số điện thoại.</p>
+      <ul><li>- Số điện thoại</li></ul>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(index) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.tab-content');
+      tabs.forEach((tab, i) => {
+        tab.classList.toggle('active', i === index);
+        contents[i].classList.toggle('show', i === index);
+      });
+    }
+  </script>
+</body>
+</html>
