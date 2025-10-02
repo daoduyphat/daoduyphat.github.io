@@ -19,12 +19,15 @@ document.querySelector(".btn-search").addEventListener("click", () => {
     }
 
 // --- lọc loại hình theo class ---
+    // Lọc loại hình theo dữ liệu từ data.json (propertyData)
     if (loaiHinh !== "Tất cả") {
-      if (loaiHinh === "Nhà trọ" && !card.classList.contains("property-card-ntro")) {
-        show = false;
-      }
-      if (loaiHinh === "Ký túc xá" && !card.classList.contains("property-card-ktx")) {
-        show = false;
+      const cardId = card.id;
+      const item = propertyData.find(p => p.id === cardId);
+      if (item) {
+      if (loaiHinh === "Nhà trọ" && item.loai !== "Nhà trọ") show = false;
+      if (loaiHinh === "Ký túc xá" && item.loai !== "Ký túc xá") show = false;
+      } else {
+      show = false;
       }
     }
 
@@ -147,10 +150,13 @@ document.querySelector(".btn-search").addEventListener("click", () => {
     let container = document.querySelector(".ct");
     visibleCards.forEach(card => container.appendChild(card));
   } else if (sapXepGia === "Mặc định") {
-    // render lại thứ tự ban đầu theo DOM
+    // render lại thứ tự ban đầu theo data.json
     let container = document.querySelector(".ct");
-    cards.forEach(card => {
-      if (card.style.display === "block") {
+    // Lấy danh sách id theo thứ tự data.json
+    let ids = propertyData.map(item => item.id);
+    ids.forEach(id => {
+      let card = cards.find(c => c.id === id && c.style.display === "block");
+      if (card) {
         container.appendChild(card);
       }
     });
@@ -266,17 +272,10 @@ document.querySelectorAll('a,button').forEach(el => {
 });
 function showLoginPopup(e) {
   e.preventDefault();
-  document.getElementById('login-popup-overlay').style.display = 'block';
   document.getElementById('login-popup').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
 }
-// Đóng popup khi click X hoặc ra ngoài
 document.querySelector('.login-close').onclick = closeLoginPopup;
-document.getElementById('login-popup-overlay').onclick = closeLoginPopup;
 function closeLoginPopup() {
-  document.getElementById('login-popup-overlay').style.display = 'none';
   document.getElementById('login-popup').style.display = 'none';
-  document.body.style.overflow = '';
 }
-
 
