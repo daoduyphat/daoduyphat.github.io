@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liên hệ</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/icons/leaf.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header" role="banner">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="Trang chủ Ẩm Thực Chay Hà Nội">
+        <img src="assets/icons/leaf.svg" alt="Logo Ẩm Thực Chay" class="logo-img" width="40" height="40">
+        <span>Ẩm Thực Chay Hà Nội</span>
+      </a>
+      <span class="site-purpose">Khám phá món chay ngon &amp; địa chỉ quán chay uy tín</span>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="recipes.html">Món Chay</a></li>
+        <li><a href="restaurants.html">Quán Chay</a></li>
+        <li><a href="contact.html" class="active">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="page-title">
+      <h1>Liên hệ với chúng tôi</h1>
+      <p>Gửi ý kiến, phản hồi hoặc hợp tác với website Ẩm Thực Chay Việt Nam.</p>
+    </section>
+    <section class="contact-section">
+      <form id="contactForm" class="contact-form" autocomplete="off">
+        <div class="form-group">
+          <label for="name">Họ và tên</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Nội dung</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">Gửi liên hệ</button>
+        </div>
+        <div id="contactStatus" role="status" aria-live="polite" style="margin-top:0.6rem"></div>
+      </form>
+      <div class="contact-info">
+        <h3>Thông tin liên hệ</h3>
+        <p style="margin-bottom:1rem;color:#444;max-width:500px;">Nếu bạn có góp ý, muốn chia sẻ công thức món chay, hoặc cần hỗ trợ về website, hãy liên hệ với tôi qua các kênh dưới đây. Rất mong nhận được sự đóng góp của bạn để website ngày càng hoàn thiện hơn!</p>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;">
+          <li>Email: <a href="mailto:daoduyphat066@gmail.com">daoduyphat066@gmail.com</a></li>
+          <li>Hotline: <a href="tel:0961166019">0961166019</a></li>
+        </ul>
+        <div class="social-links" style="margin-top:0.6rem;display:flex;gap:1rem;align-items:center;">
+          <a href="https://www.facebook.com/dphat20/" target="_blank" aria-label="Facebook cá nhân" class="social-link">
+            <img src="assets/icons/facebook.svg" alt="Facebook">
+            <span class="sr-only">Facebook</span>
+          </a>
+          <a href="https://www.instagram.com/dao.dphat/" target="_blank" aria-label="Instagram cá nhân" class="social-link">
+            <img src="assets/icons/instagram.svg" alt="Instagram">
+            <span class="sr-only">Instagram</span>
+          </a>
+          <a href="https://github.com/daoduyphat" target="_blank" aria-label="GitHub cá nhân" class="social-link">
+            <img src="assets/icons/github.svg" alt="GitHub">
+            <span class="sr-only">GitHub</span>
+          </a>
+        </div>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <button id="scrollToTopBtn" title="Lên đầu trang">&#8679;</button>
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <div>
+        <h3>Ẩm Thực Chay Hà Nội</h3>
+        <p>Website hướng dẫn nấu món chay chuẩn nhà hàng, chi tiết từng bước, hình ảnh minh họa và địa chỉ quán chay uy tín tại Hà Nội.</p>
+        <p style="font-size:1rem;color:#fff;opacity:0.8;">Thiết kế & phát triển bởi <strong>Dao Duy Phat</strong> &copy; 2025</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Ẩm Thực Chay Hà Nội &copy; 2025. All rights reserved.</span>
+    </div>
+  </footer>
+  <!-- Mõ chay mini (chỉ 1 block, script dùng js/mo.js) -->
+  <div id="moMiniWrap" style="position:fixed;right:2rem;bottom:2rem;z-index:9999;display:flex;align-items:center;gap:0.5rem;">
+    <div id="moLabel" style="background:#fffbe8;border-radius:16px;padding:8px 18px 8px 12px;box-shadow:0 2px 8px #C8A27D22;font-size:1.05rem;color:#C8A27D;font-family:'Inter',sans-serif;font-weight:600;position:relative;display:flex;align-items:center;">
+      <span style="margin-right:8px;">Gõ mõ để tích đức</span>
+      <svg width="32" height="32" viewBox="0 0 32 32" style="position:absolute;right:-18px;top:50%;transform:translateY(-50%)" fill="none"><path d="M0 16 Q24 8 28 16 Q24 24 0 16" stroke="#C8A27D" stroke-width="3" fill="none"/><polygon points="28,16 24,14 24,18" fill="#C8A27D"/></svg>
+    </div>
+    <div id="moMini" style="cursor:grab;width:64px;height:64px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#C8A27D 80%,#fff 100%);border-radius:50%;box-shadow:0 4px 16px #C8A27D44;transition:box-shadow 0.2s;position:relative;">
+      <img src="assets/icons/mo.svg" alt="Mõ chay" style="width:40px;height:40px;" draggable="false">
+      <div id="moHalo" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+      <div id="moPlus" style="position:absolute;top:-28px;left:50%;transform:translateX(-50%);font-size:1.3rem;font-weight:700;color:#FFD700;opacity:0;transition:opacity 0.3s;"></div>
+    </div>
+  </div>
+  <audio id="moSound" src="assets/sounds/gomo.mp3" preload="auto"></audio>
+  <script src="js/mo.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/animation.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trang chủ - Ẩm Thực Chay Hà Nội</title>
+  <meta name="description" content="Khám phá công thức món chay chuẩn nhà hàng và địa chỉ quán chay uy tín tại Hà Nội. Website hiện đại, tối ưu SEO, dễ sử dụng, thân thiện mọi thiết bị.">
+  <meta name="keywords" content="món chay, công thức chay, quán chay, ẩm thực chay, Hà Nội">
+  <meta name="author" content="Dao Duy Phat">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/icons/leaf.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header" role="banner">
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="Trang chủ Ẩm Thực Chay Hà Nội">
+        <img src="assets/icons/leaf.svg" alt="Logo Ẩm Thực Chay" class="logo-img" width="40" height="40">
+        <span>Ẩm Thực Chay Hà Nội</span>
+      </a>
+      <span class="site-purpose">Khám phá món chay ngon & địa chỉ quán chay uy tín</span>
+      <!-- Đã xóa hamburger menu, header sẽ luôn gọn đẹp trên mọi thiết bị -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="recipes.html">Món Chay</a></li>
+        <li><a href="restaurants.html">Quán Chay</a></li>
+        <li><a href="contact.html">Liên hệ</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main-content">
+    <section class="banner" aria-label="Banner">
+      <div class="banner-content">
+        <h1>Ẩm Thực Chay Hà Nội</h1>
+        <a href="recipes.html" class="btn btn-primary" aria-label="Xem công thức món chay">Khám phá món chay ngon</a>
+      </div>
+      <img src="assets/images/pho-chay.jpg" alt="Banner món chay Hà Nội" class="banner-img" loading="lazy">
+    </section>
+    <section class="featured-recipes" aria-labelledby="featured-recipes-heading">
+      <h2 id="featured-recipes-heading">Món chay nổi bật</h2>
+      <div id="featured-recipes-list" class="recipes-list" aria-live="polite">
+        <!-- Static fallback featured recipes (shown when JS is disabled or fetch fails) -->
+        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=1'">
+          <img src="assets/images/pho-chay.jpg" alt="Phở chay Hà Nội" loading="lazy">
+          <div class="tags"><span class="tag">nấm</span><span class="tag">đậu phụ</span><span class="tag">món nước</span></div>
+          <h3>Phở chay Hà Nội</h3>
+          <p>Phở chay thanh đạm, nước dùng rau củ ngọt tự nhiên, đậu phụ chiên giòn.</p>
+          <div class="time">⏱ Chuẩn bị 30 phút, nấu 45 phút</div>
+        </div>
+        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=2'">
+          <img src="assets/images/bun-rieu-chay.jpg" alt="Bún riêu chay" loading="lazy">
+          <div class="tags"><span class="tag">cà chua</span><span class="tag">đậu phụ</span><span class="tag">món nước</span></div>
+          <h3>Bún riêu chay</h3>
+          <p>Bún riêu chay đậm đà, màu sắc hấp dẫn từ cà chua, đậu phụ và nấm.</p>
+          <div class="time">⏱ Chuẩn bị 30 phút, nấu 40 phút</div>
+        </div>
+        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=3'">
+          <img src="assets/images/com-rang-chay.jpg" alt="Cơm rang thập cẩm chay" loading="lazy">
+          <div class="tags"><span class="tag">cơm</span><span class="tag">đậu phụ</span><span class="tag">món xào</span></div>
+          <h3>Cơm rang thập cẩm chay</h3>
+          <p>Cơm rang chay với rau củ, nấm, đậu phụ và hạt điều, màu sắc bắt mắt.</p>
+          <div class="time">⏱ Chuẩn bị 20 phút, nấu 20 phút</div>
+        </div>
+        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=4'">
+          <img src="assets/images/dau-phu-sot-ca-chua.jpg" alt="Đậu phụ sốt cà chua" loading="lazy">
+          <div class="tags"><span class="tag">đậu phụ</span><span class="tag">cà chua</span></div>
+          <h3>Đậu phụ sốt cà chua</h3>
+          <p>Đậu phụ mềm sốt cà chua, vị chua ngọt hài hòa, ăn cùng cơm rất ngon.</p>
+          <div class="time">⏱ Chuẩn bị 15 phút, nấu 20 phút</div>
+        </div>
+        <noscript>
+          <p style="width:100%;text-align:center">Đang hiển thị nội dung tĩnh vì JavaScript không khả dụng.</p>
+        </noscript>
+      </div>
+    </section>
+    <section class="featured-restaurants" aria-labelledby="featured-restaurants-heading">
+      <h2 id="featured-restaurants-heading">Quán chay nổi bật</h2>
+      <div id="featured-restaurants-list" class="restaurants-grid" aria-live="polite">
+        <!-- Static fallback featured restaurants -->
+        <div class="restaurant-card">
+          <img src="assets/images/anlac.jpg" alt="Nhà hàng Chay An Lạc" loading="lazy">
+          <h3>Nhà hàng Chay An Lạc</h3>
+          <div class="address">12B Lý Quốc Sư, Hoàn Kiếm, Hà Nội</div>
+          <div class="price">50.000 - 150.000đ</div>
+          <div class="desc">Không gian yên tĩnh, thực đơn đa dạng món chay truyền thống và hiện đại.</div>
+          <div class="hours">Giờ mở cửa: 07:00 - 21:00</div>
+        </div>
+        <div class="restaurant-card">
+          <img src="assets/images/tamsen.jpg" alt="Nhà hàng Chay Tâm Sen" loading="lazy">
+          <h3>Nhà hàng Chay Tâm Sen</h3>
+          <div class="address">45A Nguyễn Du, Hai Bà Trưng, Hà Nội</div>
+          <div class="price">60.000 - 200.000đ</div>
+          <div class="desc">Thực đơn phong phú, nổi bật với các món nấm và đậu phụ.</div>
+          <div class="hours">Giờ mở cửa: 08:00 - 22:00</div>
+        </div>
+        <div class="restaurant-card">
+          <img src="assets/images/thientam.jpg" alt="Nhà hàng Chay Thiện Tâm" loading="lazy">
+          <h3>Nhà hàng Chay Thiện Tâm</h3>
+          <div class="address">89 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội</div>
+          <div class="price">70.000 - 180.000đ</div>
+          <div class="desc">Không gian ấm cúng, phục vụ các món chay thuần Việt.</div>
+          <div class="hours">Giờ mở cửa: 09:00 - 21:30</div>
+        </div>
+        <div class="restaurant-card">
+          <img src="assets/images/senvang.jpg" alt="Nhà hàng Chay Sen Vàng" loading="lazy">
+          <h3>Nhà hàng Chay Sen Vàng</h3>
+          <div class="address">23B Quang Trung, Hoàn Kiếm, Hà Nội</div>
+          <div class="price">80.000 - 220.000đ</div>
+          <div class="desc">Đặc sản các món chay miền Bắc, phục vụ buffet cuối tuần.</div>
+          <div class="hours">Giờ mở cửa: 10:00 - 22:00</div>
+        </div>
+        <noscript>
+          <p style="width:100%;text-align:center">Đang hiển thị nội dung tĩnh vì JavaScript không khả dụng.</p>
+        </noscript>
+      </div>
+      </div>
+    </section>
+  </main>
+  <button id="scrollToTopBtn" title="Lên đầu trang" aria-label="Lên đầu trang">&#8679;</button>
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <div class="footer-about">
+        <h3>Ẩm Thực Chay Hà Nội</h3>
+        <p>Website hướng dẫn nấu món chay chuẩn nhà hàng, chi tiết từng bước, hình ảnh minh họa và địa chỉ quán chay uy tín tại Hà Nội.</p>
+      </div>
+      <div class="footer-credit">Designed & developed by <strong>Dao Duy Phat</strong> - AIT, VNUIS &copy; 2025</div>
+    </div>
+    <div class="footer-bottom">
+      <span>Ẩm Thực Chay Hà Nội &copy; 2025. All rights reserved.</span>
+    </div>
+  </footer>
+  <!-- Mõ chay mini (chỉ 1 block, script dùng js/mo.js) -->
+  <div id="moMiniWrap" style="position:fixed;right:2rem;bottom:2rem;z-index:9999;display:flex;align-items:center;gap:0.5rem;">
+    <div id="moLabel" style="background:#fffbe8;border-radius:16px;padding:8px 18px 8px 12px;box-shadow:0 2px 8px #C8A27D22;font-size:1.05rem;color:#C8A27D;font-family:'Inter',sans-serif;font-weight:600;position:relative;display:flex;align-items:center;">
+      <span style="margin-right:8px;">Gõ mõ để tích đức</span>
+      <svg width="32" height="32" viewBox="0 0 32 32" style="position:absolute;right:-18px;top:50%;transform:translateY(-50%)" fill="none"><path d="M0 16 Q24 8 28 16 Q24 24 0 16" stroke="#C8A27D" stroke-width="3" fill="none"/><polygon points="28,16 24,14 24,18" fill="#C8A27D"/></svg>
+    </div>
+    <div id="moMini" style="cursor:grab;width:64px;height:64px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#C8A27D 80%,#fff 100%);border-radius:50%;box-shadow:0 4px 16px #C8A27D44;transition:box-shadow 0.2s;position:relative;">
+      <img src="assets/icons/mo.svg" alt="Mõ chay" style="width:40px;height:40px;" draggable="false">
+      <div id="moHalo" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+      <div id="moPlus" style="position:absolute;top:-28px;left:50%;transform:translateX(-50%);font-size:1.3rem;font-weight:700;color:#FFD700;opacity:0;transition:opacity 0.3s;"></div>
+    </div>
+  </div>
+  <audio id="moSound" src="assets/sounds/gomo.mp3" preload="auto"></audio>
+  <script src="js/mo.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/animation.js"></script>
+</body>
+</html>

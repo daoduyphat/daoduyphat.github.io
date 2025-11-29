@@ -1,0 +1,111 @@
+[
+  {
+    "name": "Nhà hàng Chay An Lạc",
+    "address": "12B Lý Quốc Sư, Hoàn Kiếm, Hà Nội",
+    "district": "Hoàn Kiếm",
+    "opening_hours": "07:00 - 21:00",
+    "price_range": "50.000 - 150.000đ",
+    "description": "Không gian yên tĩnh, thực đơn đa dạng món chay truyền thống và hiện đại.",
+    "image": "assets/images/anlac.jpg"
+  },
+  {
+    "name": "Nhà hàng Chay Tâm Sen",
+    "address": "45A Nguyễn Du, Hai Bà Trưng, Hà Nội",
+    "district": "Hai Bà Trưng",
+    "opening_hours": "08:00 - 22:00",
+    "price_range": "60.000 - 200.000đ",
+    "description": "Thực đơn phong phú, nổi bật với các món nấm và đậu phụ.",
+    "image": "assets/images/tamsen.jpg"
+  },
+  {
+    "name": "Nhà hàng Chay Thiện Tâm",
+    "address": "89 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội",
+    "district": "Hoàn Kiếm",
+    "opening_hours": "09:00 - 21:30",
+    "price_range": "70.000 - 180.000đ",
+    "description": "Không gian ấm cúng, phục vụ các món chay thuần Việt.",
+    "image": "assets/images/thientam.jpg"
+  },
+  {
+    "name": "Nhà hàng Chay Sen Vàng",
+    "address": "23B Quang Trung, Hoàn Kiếm, Hà Nội",
+    "district": "Hoàn Kiếm",
+    "opening_hours": "10:00 - 22:00",
+    "price_range": "80.000 - 220.000đ",
+    "description": "Đặc sản các món chay miền Bắc, phục vụ buffet cuối tuần.",
+    "image": "assets/images/senvang.jpg"
+  },
+  {
+    "name": "Nhà hàng Chay Tịnh Tâm",
+    "address": "56B Phan Chu Trinh, Hoàn Kiếm, Hà Nội",
+    "district": "Hoàn Kiếm",
+    "opening_hours": "07:30 - 20:30",
+    "price_range": "40.000 - 120.000đ",
+    "description": "Thực đơn đa dạng, giá cả hợp lý, phục vụ nhanh chóng.",
+    "image": "assets/images/tinhtam.jpg"
+  },
+  {
+    "name": "Nhà hàng Chay Hương Thiền",
+    "address": "102B Đội Cấn, Ba Đình, Hà Nội",
+    "district": "Ba Đình",
+    "opening_hours": "08:00 - 21:00",
+    "price_range": "60.000 - 170.000đ",
+    "description": "Không gian thiền tịnh, món ăn thanh đạm, tốt cho sức khỏe.",
+    "image": "assets/images/huongthien.jpg"
+  },
+  {
+    "name": "Nhà hàng Chay Bồ Đề",
+    "address": "15B Nguyễn Chí Thanh, Đống Đa, Hà Nội",
+    "district": "Đống Đa",
+    "opening_hours": "09:00 - 22:00",
+    "price_range": "70.000 - 200.000đ",
+    "description": "Thực đơn đa dạng, nổi bật với các món lẩu chay.",
+    "image": "assets/images/bode.jpg"
+  },
+  {
+    "name": "Nhà hàng Chay Tâm Đức",
+    "address": "88B Láng Hạ, Đống Đa, Hà Nội",
+    "district": "Đống Đa",
+    "opening_hours": "10:00 - 21:00",
+    "price_range": "50.000 - 160.000đ",
+    "description": "Không gian rộng rãi, phục vụ các món chay truyền thống.",
+    "image": "assets/images/tamduc.jpg"
+  },
+  {
+    "name": "Nhà hàng Chay Hòa Bình",
+    "address": "22B Phố Huế, Hai Bà Trưng, Hà Nội",
+    "district": "Hai Bà Trưng",
+    "opening_hours": "08:00 - 20:00",
+    "price_range": "60.000 - 140.000đ",
+    "description": "Thực đơn phong phú, giá cả phải chăng, phục vụ tận tình.",
+    "image": "assets/images/hoabinh.jpg"
+  },
+  {
+    "name": "Nhà hàng Chay Tâm An",
+    "address": "33B Kim Mã, Ba Đình, Hà Nội",
+    "district": "Ba Đình",
+    "opening_hours": "09:00 - 21:00",
+    "price_range": "55.000 - 130.000đ",
+    "description": "Không gian nhẹ nhàng, món ăn ngon, phục vụ chuyên nghiệp.",
+    "image": "assets/images/taman.jpg"
+  }
+  ,
+  {
+    "name": "Quán chay Vô Vi 1",
+    "address": "Vô Vi 1, Hà Nội (đang cập nhật)",
+    "district": "Chưa cập nhật",
+    "opening_hours": "08:00 - 21:00",
+    "price_range": "50.000 - 150.000đ",
+    "description": "Quán chay Vô Vi - phong cách truyền thống, thực đơn đa dạng món chay thuần Việt. Thông tin chi tiết (địa chỉ/điện thoại) đang được cập nhật.",
+    "image": "assets/images/vovi1.jpg"
+  },
+  {
+    "name": "Quán chay Vô Vi 2",
+    "address": "Vô Vi 2, Hà Nội (đang cập nhật)",
+    "district": "Chưa cập nhật",
+    "opening_hours": "08:00 - 21:00",
+    "price_range": "50.000 - 160.000đ",
+    "description": "Quán chay Vô Vi 2 - phục vụ các món chay hiện đại và truyền thống. Thông tin chi tiết đang chờ cập nhật.",
+    "image": "assets/images/vovi2.jpg"
+  }
+]
