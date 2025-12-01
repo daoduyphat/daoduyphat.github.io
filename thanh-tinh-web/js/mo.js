@@ -12,19 +12,30 @@
     var moPlus = document.getElementById('moPlus');
     if (!(moMini && moMiniWrap && moSound && moHalo && moPlus)) return;
     // Drag - support cả mouse và touch
-    var isDragging = false, offsetX = 0, offsetY = 0;
+    var isDragging = false, hasMoved = false, offsetX = 0, offsetY = 0;
+    var touchStartTime = 0, touchStartX = 0, touchStartY = 0;
     function startDrag(clientX, clientY) {
       isDragging = true;
+      hasMoved = false;
+      touchStartTime = Date.now();
+      touchStartX = clientX;
+      touchStartY = clientY;
       offsetX = clientX - moMiniWrap.getBoundingClientRect().left;
       offsetY = clientY - moMiniWrap.getBoundingClientRect().top;
       moMini.style.cursor = 'grabbing';
     }
     function moveDrag(clientX, clientY) {
       if(isDragging) {
-        moMiniWrap.style.right = '';
-        moMiniWrap.style.bottom = '';
-        moMiniWrap.style.left = (clientX - offsetX) + 'px';
-        moMiniWrap.style.top = (clientY - offsetY) + 'px';
+        // Kiểm tra nếu di chuyển đủ xa (>5px) thì mới coi là drag
+        var dx = Math.abs(clientX - touchStartX);
+        var dy = Math.abs(clientY - touchStartY);
+        if(dx > 5 || dy > 5) {
+          hasMoved = true;
+          moMiniWrap.style.right = '';
+          moMiniWrap.style.bottom = '';
+          moMiniWrap.style.left = (clientX - offsetX) + 'px';
+          moMiniWrap.style.top = (clientY - offsetY) + 'px';
+        }
       }
     }
     function endDrag() {
@@ -44,21 +55,27 @@
     document.addEventListener('mouseup', endDrag);
     // Touch events
     moMini.addEventListener('touchstart', function(e) {
-      e.preventDefault();
       var touch = e.touches[0];
       startDrag(touch.clientX, touch.clientY);
     });
     document.addEventListener('touchmove', function(e) {
       if(isDragging && e.touches.length > 0) {
+        e.preventDefault(); // Prevent scroll khi drag
         var touch = e.touches[0];
         moveDrag(touch.clientX, touch.clientY);
       }
+    }, { passive: false });
+    document.addEventListener('touchend', function(e) {
+      // Nếu là tap nhanh (không drag), trigger click effect
+      var touchDuration = Date.now() - touchStartTime;
+      if(!hasMoved && touchDuration < 300) {
+        playMoEffect();
+      }
+      endDrag();
     });
-    document.addEventListener('touchend', endDrag);
-    // Click: play sound + hiệu ứng
+    // Click/Tap: play sound + hiệu ứng
     var lastClick = 0, clickCount = 0, clickTimeout;
-    moMini.addEventListener('click', function(e) {
-      if(isDragging) return;
+    function playMoEffect() {
       // Phát âm thanh: tạo Audio mới mỗi lần để đảm bảo có thể phát liên tiếp
       (function playOne() {
         try {
@@ -109,6 +126,11 @@
       moPlus.style.opacity = '1';
       clearTimeout(clickTimeout);
       clickTimeout = setTimeout(function(){moPlus.style.opacity='0';},700);
+    }
+    // Mouse click (for desktop)
+    moMini.addEventListener('click', function(e) {
+      if(hasMoved) return; // Bỏ qua nếu vừa drag
+      playMoEffect();
     });
     // Reset vị trí nếu không drag 10s
     var lastDrag = Date.now();
