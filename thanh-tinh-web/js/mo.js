@@ -11,28 +11,50 @@
     var moHalo = document.getElementById('moHalo');
     var moPlus = document.getElementById('moPlus');
     if (!(moMini && moMiniWrap && moSound && moHalo && moPlus)) return;
-    // Drag
+    // Drag - support cả mouse và touch
     var isDragging = false, offsetX = 0, offsetY = 0;
-    moMini.addEventListener('mousedown', function(e) {
+    function startDrag(clientX, clientY) {
       isDragging = true;
-      offsetX = e.clientX - moMiniWrap.getBoundingClientRect().left;
-      offsetY = e.clientY - moMiniWrap.getBoundingClientRect().top;
+      offsetX = clientX - moMiniWrap.getBoundingClientRect().left;
+      offsetY = clientY - moMiniWrap.getBoundingClientRect().top;
       moMini.style.cursor = 'grabbing';
-    });
-    document.addEventListener('mousemove', function(e) {
+    }
+    function moveDrag(clientX, clientY) {
       if(isDragging) {
         moMiniWrap.style.right = '';
         moMiniWrap.style.bottom = '';
-        moMiniWrap.style.left = (e.clientX - offsetX) + 'px';
-        moMiniWrap.style.top = (e.clientY - offsetY) + 'px';
+        moMiniWrap.style.left = (clientX - offsetX) + 'px';
+        moMiniWrap.style.top = (clientY - offsetY) + 'px';
       }
-    });
-    document.addEventListener('mouseup', function() {
+    }
+    function endDrag() {
       if(isDragging) {
         isDragging = false;
         moMini.style.cursor = 'grab';
       }
+    }
+    // Mouse events
+    moMini.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      startDrag(e.clientX, e.clientY);
     });
+    document.addEventListener('mousemove', function(e) {
+      moveDrag(e.clientX, e.clientY);
+    });
+    document.addEventListener('mouseup', endDrag);
+    // Touch events
+    moMini.addEventListener('touchstart', function(e) {
+      e.preventDefault();
+      var touch = e.touches[0];
+      startDrag(touch.clientX, touch.clientY);
+    });
+    document.addEventListener('touchmove', function(e) {
+      if(isDragging && e.touches.length > 0) {
+        var touch = e.touches[0];
+        moveDrag(touch.clientX, touch.clientY);
+      }
+    });
+    document.addEventListener('touchend', endDrag);
     // Click: play sound + hiệu ứng
     var lastClick = 0, clickCount = 0, clickTimeout;
     moMini.addEventListener('click', function(e) {

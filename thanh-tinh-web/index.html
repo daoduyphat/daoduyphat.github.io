@@ -53,9 +53,8 @@
       #rotateOverlay { display: flex !important; }
       body > *:not(#rotateOverlay) { display: none !important; }
     }
-    @media (max-height: 500px) and (max-width: 1024px) {
+    @media (orientation: landscape), (min-width: 1025px) {
       #rotateOverlay { display: none !important; }
-      body > *:not(#rotateOverlay) { display: block !important; }
     }
   </style>
   <header class="header" role="banner">
@@ -165,30 +164,6 @@
   <audio id="moSound" src="assets/sounds/gomo.mp3" preload="auto"></audio>
   <script src="js/mo.js"></script>
   <script src="js/script.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        var audio = document.getElementById('musicBg');
-        var disc = document.getElementById('musicDiscIcon');
-        var status = document.getElementById('musicDiscStatus');
-        if (audio && disc) {
-          if (!audio.paused) {
-            disc.style.animation = 'spinDisc 2s linear infinite';
-            if (status) status.textContent = 'Đang phát';
-          } else {
-            disc.style.animation = '';
-            if (status) status.textContent = 'Đã tắt';
-          }
-          audio.addEventListener('play', function() {
-            disc.style.animation = 'spinDisc 2s linear infinite';
-            if (status) status.textContent = 'Đang phát';
-          });
-          audio.addEventListener('pause', function() {
-            disc.style.animation = '';
-            if (status) status.textContent = 'Đã tắt';
-          });
-        }
-      });
-    </script>
   <script src="js/animation.js"></script>
 </body>
 </html>

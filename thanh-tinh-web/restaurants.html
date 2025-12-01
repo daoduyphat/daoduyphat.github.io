@@ -46,9 +46,8 @@
       #rotateOverlay { display: flex !important; }
       body > *:not(#rotateOverlay) { display: none !important; }
     }
-    @media (max-height: 500px) and (max-width: 1024px) {
+    @media (orientation: landscape), (min-width: 1025px) {
       #rotateOverlay { display: none !important; }
-      body > *:not(#rotateOverlay) { display: block !important; }
     }
   </style>
   <header class="header" role="banner">
