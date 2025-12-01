@@ -11,68 +11,7 @@
     var moHalo = document.getElementById('moHalo');
     var moPlus = document.getElementById('moPlus');
     if (!(moMini && moMiniWrap && moSound && moHalo && moPlus)) return;
-    // Drag - support cả mouse và touch
-    var isDragging = false, hasMoved = false, offsetX = 0, offsetY = 0;
-    var touchStartTime = 0, touchStartX = 0, touchStartY = 0;
-    function startDrag(clientX, clientY) {
-      isDragging = true;
-      hasMoved = false;
-      touchStartTime = Date.now();
-      touchStartX = clientX;
-      touchStartY = clientY;
-      offsetX = clientX - moMiniWrap.getBoundingClientRect().left;
-      offsetY = clientY - moMiniWrap.getBoundingClientRect().top;
-      moMini.style.cursor = 'grabbing';
-    }
-    function moveDrag(clientX, clientY) {
-      if(isDragging) {
-        // Kiểm tra nếu di chuyển đủ xa (>5px) thì mới coi là drag
-        var dx = Math.abs(clientX - touchStartX);
-        var dy = Math.abs(clientY - touchStartY);
-        if(dx > 5 || dy > 5) {
-          hasMoved = true;
-          moMiniWrap.style.right = '';
-          moMiniWrap.style.bottom = '';
-          moMiniWrap.style.left = (clientX - offsetX) + 'px';
-          moMiniWrap.style.top = (clientY - offsetY) + 'px';
-        }
-      }
-    }
-    function endDrag() {
-      if(isDragging) {
-        isDragging = false;
-        moMini.style.cursor = 'grab';
-      }
-    }
-    // Mouse events
-    moMini.addEventListener('mousedown', function(e) {
-      e.preventDefault();
-      startDrag(e.clientX, e.clientY);
-    });
-    document.addEventListener('mousemove', function(e) {
-      moveDrag(e.clientX, e.clientY);
-    });
-    document.addEventListener('mouseup', endDrag);
-    // Touch events
-    moMini.addEventListener('touchstart', function(e) {
-      var touch = e.touches[0];
-      startDrag(touch.clientX, touch.clientY);
-    });
-    document.addEventListener('touchmove', function(e) {
-      if(isDragging && e.touches.length > 0) {
-        e.preventDefault(); // Prevent scroll khi drag
-        var touch = e.touches[0];
-        moveDrag(touch.clientX, touch.clientY);
-      }
-    }, { passive: false });
-    document.addEventListener('touchend', function(e) {
-      // Nếu là tap nhanh (không drag), trigger click effect
-      var touchDuration = Date.now() - touchStartTime;
-      if(!hasMoved && touchDuration < 300) {
-        playMoEffect();
-      }
-      endDrag();
-    });
+    
     // Click/Tap: play sound + hiệu ứng
     var lastClick = 0, clickCount = 0, clickTimeout;
     function playMoEffect() {
@@ -127,6 +66,69 @@
       clearTimeout(clickTimeout);
       clickTimeout = setTimeout(function(){moPlus.style.opacity='0';},700);
     }
+    
+    // Drag - support cả mouse và touch
+    var isDragging = false, hasMoved = false, offsetX = 0, offsetY = 0;
+    var touchStartTime = 0, touchStartX = 0, touchStartY = 0;
+    function startDrag(clientX, clientY) {
+      isDragging = true;
+      hasMoved = false;
+      touchStartTime = Date.now();
+      touchStartX = clientX;
+      touchStartY = clientY;
+      offsetX = clientX - moMiniWrap.getBoundingClientRect().left;
+      offsetY = clientY - moMiniWrap.getBoundingClientRect().top;
+      moMini.style.cursor = 'grabbing';
+    }
+    function moveDrag(clientX, clientY) {
+      if(isDragging) {
+        // Kiểm tra nếu di chuyển đủ xa (>5px) thì mới coi là drag
+        var dx = Math.abs(clientX - touchStartX);
+        var dy = Math.abs(clientY - touchStartY);
+        if(dx > 5 || dy > 5) {
+          hasMoved = true;
+          moMiniWrap.style.right = '';
+          moMiniWrap.style.bottom = '';
+          moMiniWrap.style.left = (clientX - offsetX) + 'px';
+          moMiniWrap.style.top = (clientY - offsetY) + 'px';
+        }
+      }
+    }
+    function endDrag() {
+      if(isDragging) {
+        isDragging = false;
+        moMini.style.cursor = 'grab';
+      }
+    }
+    // Mouse events
+    moMini.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      startDrag(e.clientX, e.clientY);
+    });
+    document.addEventListener('mousemove', function(e) {
+      moveDrag(e.clientX, e.clientY);
+    });
+    document.addEventListener('mouseup', endDrag);
+    // Touch events
+    moMini.addEventListener('touchstart', function(e) {
+      e.preventDefault(); // Prevent default để tránh trigger click sau touchend
+      var touch = e.touches[0];
+      startDrag(touch.clientX, touch.clientY);
+    }, { passive: false });
+    document.addEventListener('touchmove', function(e) {
+      if(isDragging && e.touches.length > 0) {
+        var touch = e.touches[0];
+        moveDrag(touch.clientX, touch.clientY);
+      }
+    });
+    document.addEventListener('touchend', function(e) {
+      // Nếu là tap nhanh (không drag), trigger click effect
+      var touchDuration = Date.now() - touchStartTime;
+      if(isDragging && !hasMoved && touchDuration < 300) {
+        playMoEffect();
+      }
+      endDrag();
+    });
     // Mouse click (for desktop)
     moMini.addEventListener('click', function(e) {
       if(hasMoved) return; // Bỏ qua nếu vừa drag
