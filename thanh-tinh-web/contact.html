@@ -4,9 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Liên hệ</title>
+  <meta name="author" content="Dao Duy Phat">
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="assets/icons/leaf.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @keyframes spinDisc {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    #musicDiscIcon.spinning {
+      animation: spinDisc 2s linear infinite !important;
+    }
+    #musicDiscStatus {
+      visibility: hidden;
+      opacity: 0 !important;
+    }
+    #musicDiscStatus.show {
+      visibility: visible;
+      opacity: 0.92 !important;
+    }
+  </style>
 </head>
 <body>
   <!-- Overlay yêu cầu xoay ngang -->
