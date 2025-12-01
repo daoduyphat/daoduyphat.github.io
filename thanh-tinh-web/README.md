@@ -1,57 +1,54 @@
+
 # Ẩm Thực Chay Hà Nội
 
-Website tĩnh hướng dẫn nấu món chay chuẩn nhà hàng và giới thiệu các quán chay uy tín tại Hà Nội.
+![Banner](assets/images/pho-chay.jpg)
 
-## Cấu trúc thư mục
+> Website hướng dẫn nấu món chay chuẩn nhà hàng, chi tiết từng bước, hình ảnh minh họa và địa chỉ quán chay uy tín tại Hà Nội.
 
+## 📋 Tính năng nổi bật
+- Danh sách món chay đa dạng, hình ảnh đẹp, công thức chi tiết
+- Danh sách quán chay uy tín tại Hà Nội, có bản đồ chỉ đường
+- Tìm kiếm, lọc món chay theo nguyên liệu, loại món
+- Trang chi tiết món chay, video hướng dẫn, checklist nguyên liệu
+- Nhạc nền tự động phát, icon đĩa xoay, âm thanh mõ mini
+
+## 🚀 Hướng dẫn sử dụng nhanh
+1. Clone repo về máy
+2. Chạy server tĩnh (VD: `python -m http.server 8000` hoặc dùng Live Server của VS Code)
+3. Truy cập `http://localhost:8000/index.html`
+
+## 📁 Cấu trúc thư mục
 ```
-├── index.html                # Trang chủ
-├── recipes.html              # Danh sách món chay
-├── recipe-detail.html        # Trang chi tiết món chay
-├── restaurants.html          # Danh sách quán chay
-├── temples.html              # Danh sách chùa
-├── contact.html              # Trang liên hệ
+├── index.html
+├── recipes.html
+├── recipe-detail.html
+├── restaurants.html
+├── contact.html
 ├── assets/
-│   ├── icons/                # Icon SVG, logo
-│   ├── images/               # Hình ảnh món chay, quán chay
-│   └── sounds/               # Âm thanh mõ chay
+│   ├── images/
+│   │   └── ... (ảnh món chay, quán chay)
+│   ├── icons/
+│   │   └── leaf.svg, disc.svg, mo.svg
+│   └── sounds/
+│       └── nhacnen.mp3, gomo.mp3
 ├── css/
-│   └── style.css             # File CSS chính
+│   └── style.css
 ├── js/
-│   ├── script.js             # Logic chính: load dữ liệu, render, event, modal
-│   ├── animation.js          # Hiệu ứng động khi cuộn trang
-│   └── mo.js                 # Logic mõ chay mini
+│   └── script.js, animation.js, mo.js
 ├── data/
-│   ├── recipes.json          # Dữ liệu món chay
-│   ├── restaurants.json      # Dữ liệu quán chay
-│   └── temples.json          # Dữ liệu chùa
+│   └── recipes.json, restaurants.json, temples.json
 ```
 
-## Chức năng chính
-- Xem công thức món chay chi tiết, hình ảnh, nguyên liệu, các bước, video hướng dẫn.
-- Tìm kiếm, lọc món chay theo tên, nguyên liệu, loại món.
-- Xem danh sách quán chay, lọc theo quận, tìm kiếm, xem bản đồ.
-- Xem danh sách chùa nổi bật tại Hà Nội.
-- Gõ mõ chay mini tích đức, có hiệu ứng và âm thanh.
-- Gửi liên hệ qua Formspree.
+## 🌱 Một số hình ảnh demo
+| Món chay | Quán chay |
+|:---:|:---:|
+| ![Phở chay](assets/images/pho-chay.jpg) | ![An Lạc](assets/images/anlac.jpg) |
+| ![Bún riêu chay](assets/images/bun-rieu-chay.jpg) | ![Tâm Sen](assets/images/tamsen.jpg) |
+| ![Cơm rang chay](assets/images/com-rang-chay.jpg) | ![Thiện Tâm](assets/images/thientam.jpg) |
 
-## Hướng dẫn chạy website
-1. **Yêu cầu:** Máy tính có Python hoặc bất kỳ phần mềm chạy web server tĩnh.
-2. **Chạy server:**
-   - Mở PowerShell tại thư mục dự án.
-   - Chạy lệnh:
-     ```powershell
-     python -m http.server 8000
-     ```
-   - Truy cập trình duyệt: `http://localhost:8000/index.html`
-3. **Lưu ý:**
-   - Nếu mở trực tiếp file HTML bằng `file://`, một số trình duyệt sẽ chặn truy vấn dữ liệu JSON. Luôn chạy qua server.
-   - Nếu gặp lỗi không tải được dữ liệu, kiểm tra debug banner trên trang hoặc mở DevTools (F12).
+## 💡 Đóng góp & liên hệ
+- Nếu có ý tưởng, góp ý hoặc muốn bổ sung món/quán mới, hãy tạo issue hoặc liên hệ qua [email](mailto:daoduyphat066@gmail.com)
 
-## Tác giả
-- Dao Duy Phat
-- Email: daoduyphat066@gmail.com
-- Trường Đại học Quốc tế - ĐHQGHN (AIT, VNUIS)
+---
 
-## License
-MIT
+> Thiết kế & phát triển bởi **Dao Duy Phat** © 2025

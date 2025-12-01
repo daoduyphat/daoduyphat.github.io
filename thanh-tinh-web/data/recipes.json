@@ -3,7 +3,7 @@
     "id": 1,
     "name": "Phở chay Hà Nội",
     "short_description": "Phở chay thanh đạm, nước dùng rau củ ngọt tự nhiên, đậu phụ chiên giòn, nấm hương thơm đặc trưng.",
-    "image": "assets/images/pho-chay.jpg",
+    "image": "assets/images/recipes/pho-chay.jpg",
     "time": "Chuẩn bị 30 phút, nấu 45 phút",
     "ingredients": [
       "500g bánh phở tươi",
@@ -17,14 +17,14 @@
       "Gia vị chay: muối, nước tương, tiêu, đường phèn"
     ],
     "steps": [
-      "Ngâm nấm hương khô trong nước ấm 20 phút, rửa sạch, cắt đôi nếu nấm to. Mẹo: ngâm với chút muối giúp nấm thơm hơn.",
-      "Cà rốt, củ cải trắng, hành tây, gừng rửa sạch, cắt miếng lớn để ninh nước dùng. Để nước dùng trong, không khuấy khi ninh.",
-      "Cho cà rốt, củ cải trắng, hành tây, gừng, nấm hương vào nồi, thêm 2 lít nước, ninh nhỏ lửa 40 phút. Nêm 1 thìa cà phê muối, 1 thìa nước tương, 1 thìa đường phèn, 1/2 thìa tiêu. Có thể thêm 1 thìa hạt nêm chay cho vị đậm đà.",
-      "Đậu phụ cắt miếng vừa ăn, thấm khô nước, chiên vàng đều các mặt, để ráo dầu. Mẹo: dùng dầu nóng già để đậu giòn lâu.",
-      "Bánh phở trụng qua nước sôi, để ráo. Không trụng quá lâu tránh bị nát.",
-      "Lọc nước dùng qua rây, bỏ xác rau củ, giữ lại nấm hương. Nêm lại vừa miệng.",
-      "Xếp bánh phở vào bát, thêm đậu phụ chiên, nấm hương, hành lá, rau mùi, chan nước dùng nóng lên trên.",
-      "Trang trí thêm rau thơm, tiêu xay, dùng kèm chanh, ớt tươi. Mẹo: thêm vài lát gừng tươi giúp món ăn thơm hơn."
+      "**Chuẩn bị nguyên liệu:** Ngâm nấm hương khô trong nước ấm 20-30 phút cho nở mềm, rửa sạch bỏ cuống cứng, cắt đôi nếu nấm to. *Mẹo:* ngâm với chút muối giúp nấm thơm hơn và mềm đều.",
+      "**Sơ chế rau củ:** Cà rốt, củ cải trắng gọt vỏ sạch, cắt khúc to 5-7cm. Hành tây bóc vỏ, cắt đôi. Gừng cạo vỏ, đập dập. *Lưu ý:* cắt to giúp rau củ không bị nát khi ninh lâu, nước dùng trong đẹp.",
+      "**Ninh nước dùng (bước quan trọng):** Cho cà rốt, củ cải, hành tây, gừng, nấm hương vào nồi với 2.5 lít nước lạnh. Ninh nhỏ lửa 45-60 phút, vớt bọt đều tay cho nước trong. Nêm 1 thìa cà phê muối, 1.5 thìa nước tương, 1 thìa đường phèn, 1/2 thìa tiêu, 1 thìa hạt nêm chay. *Bí quyết:* ninh lửa nhỏ giúp nước dùng ngọt thanh, không đục.",
+      "**Chiên đậu phụ:** Đậu phụ cắt miếng 2x2cm, thấm thật khô bằng giấy ăn. Đun nóng dầu trên lửa lớn, thả đậu vào chiên vàng giòn đều 6 mặt, vớt ra giấy thấm dầu. *Mẹo:* dầu phải nóng 170-180°C, chiên từng mẻ nhỏ để đậu giòn đều và giữ nhiệt độ dầu.",
+      "**Trụng bánh phở:** Đun sôi nồi nước lớn, cho bánh phở vào trụng 20-30 giây, khuấy nhẹ, vớt ra rổ để ráo. *Lưu ý:* nước phải sôi bùng, trụng nhanh để bánh không bị nát hay dính.",
+      "**Hoàn thiện nước dùng:** Lọc nước dùng qua rây mịn, loại bỏ hết xác rau củ, giữ lại nấm hương. Đun sôi lại, nêm nếm cho vừa miệng, cân bằng mặn ngọt. *Tip:* nếu muốn nước dùng đậm đà hơn, có thể thêm 1 viên nấm hương nén.",
+      "**Bày bát phở:** Xếp bánh phở vào bát nóng, thêm đậu phụ chiên, nấm hương, hành lá thái nhỏ, rau mùi. Chan nước dùng sôi lên trên, đảm bảo ngập hết bánh. *Lưu ý:* nước dùng phải sôi mới chín rau thơm và giữ nhiệt lâu.",
+      "**Trang trí và dùng kèm:** Rắc tiêu xay, hành lá lên trên. Dùng nóng với đĩa rau sống (húng quế, rau răm, giá đỗ), chanh, ớt tươi, tương ớt. *Mẹo chuyên nghiệp:* thêm vài lát gừng tươi băm nhỏ hoặc vài giọt dầu mè rang giúp món ăn thơm nức đặc trưng phở Hà Nội."
     ],
     "tags": ["nấm", "đậu phụ", "món nước"],
     "video_url": "https://youtu.be/EkfZd-aF-t8?si=dgs4Jl66vxSRuloQ"
@@ -33,7 +33,7 @@
     "id": 2,
     "name": "Bún riêu chay",
     "short_description": "Bún riêu chay đậm đà, màu sắc hấp dẫn từ cà chua, đậu phụ, nấm rơm, nước dùng ngọt thanh.",
-    "image": "assets/images/bun-rieu-chay.jpg",
+    "image": "assets/images/recipes/bun-rieu-chay.jpg",
     "time": "Chuẩn bị 30 phút, nấu 40 phút",
     "ingredients": [
       "500g bún tươi",
@@ -46,13 +46,14 @@
       "Gia vị chay: muối, nước tương, tiêu, đường phèn"
     ],
     "steps": [
-      "Cà chua rửa sạch, cắt múi cau. Nấm rơm rửa sạch, cắt đôi. Đậu phụ cắt miếng nhỏ, thấm khô, chiên vàng giòn.",
-      "Phi thơm 1 thìa dầu ăn với hành tây băm, cho cà chua vào xào mềm, thêm 1 thìa dầu điều tạo màu đỏ đẹp. Mẹo: xào cà chua lâu giúp nước dùng đậm vị.",
-      "Thêm nấm rơm, xào cùng cà chua, đổ vào 1.5 lít nước, ninh nhỏ lửa 20 phút. Nêm 1 thìa muối, 1 thìa nước tương, 1 thìa đường phèn, 1/2 thìa hạt nêm chay.",
-      "Thả đậu phụ chiên vào nồi, đun thêm 5 phút cho thấm vị. Nêm lại vừa ăn.",
-      "Bún trụng qua nước sôi, để ráo. Rau sống rửa sạch, ngâm nước muối loãng 5 phút, để ráo nước.",
-      "Xếp bún vào tô, thêm rau sống, chan nước dùng, thêm đậu phụ, nấm rơm, cà chua, rắc hành lá, tiêu xay.",
-      "Dùng kèm chanh, ớt, nước tương. Mẹo: thêm vài lát ớt tươi giúp món ăn dậy vị."
+      "**Sơ chế nguyên liệu:** Cà chua rửa sạch, cắt múi cau, bỏ phần cuống cứng. Nấm rơm rửa qua nước, để ráo, cắt đôi. Đậu phụ cắt miếng 2x2cm, thấm khô bằng giấy, chiên vàng giòn trong dầu nóng 170°C. *Mẹo:* chọn cà chua chín đỏ tự nhiên để màu nước dùng đẹp.",
+      "**Xào cà chua tạo nền:** Phi thơm 2 thìa dầu ăn với 1 thìa hành tây băm, cho cà chua vào xào mềm trên lửa vừa 5-7 phút, nghiền nhuyễn cà chua bằng muôi. Thêm 1.5 thìa dầu điều (hoặc dầu màu điều) xào đều cho ra màu đỏ cam đẹp mắt. *Bí quyết:* xào cà chua lâu, nghiền kỹ giúp nước dùng đậm đà, sánh mịn.",
+      "**Nấu nước dùng:** Thêm nấm rơm vào chảo cà chua, xào cùng 2-3 phút. Đổ 1.5 lít nước lọc vào, đun sôi rồi hạ nhỏ lửa ninh 20-25 phút. Nêm 1 thìa muối, 1.5 thìa nước tương, 1 thìa đường phèn, 1/2 thìa hạt nêm chay, 1/2 thìa bột canh (tùy chọn). *Lưu ý:* ninh lửa nhỏ giúp nước ngọt thanh, không bị sôi tràn.",
+      "**Thêm đậu phụ:** Thả đậu phụ chiên vào nồi nước dùng, đun nhỏ lửa thêm 5-7 phút cho thấm đều gia vị. Nêm nếm lại cho cân bằng vị chua ngọt mặn. *Tip:* có thể thêm 1 thìa giấm gạo hoặc nước cốt me cho vị chua tự nhiên hơn.",
+      "**Trụng bún:** Bún tươi trụng qua nước sôi 20-30 giây, khuấy nhẹ, vớt ra rổ để ráo nước. *Lưu ý:* nước phải sôi bùng, trụng nhanh tránh bún bị nát.",
+      "**Chuẩn bị rau sống:** Rau sống (rau muống, rau cải, húng quế, rau răm) rửa sạch từng lá, ngâm nước muối loãng 5-10 phút diệt khuẩn, vớt ra để ráo nước hoàn toàn.",
+      "**Bày bát bún riêu:** Xếp bún vào tô, thêm rau sống xung quanh, chan nước dùng nóng, thêm đậu phụ chiên, nấm rơm, vài miếng cà chua. Rắc hành lá thái nhỏ, tiêu xay lên trên. *Mẹo chuyên nghiệp:* thêm vài giọt dầu hành phi hoặc mỡ hành giúp món ăn thơm nức.",
+      "**Dùng kèm:** Ăn nóng với chanh, ớt tươi, nước tương, rau thơm. *Tip:* có thể thêm chút giá đỗ trụng hoặc rau muống luộc để món đầy đặn hơn."
     ],
     "tags": ["cà chua", "đậu phụ", "món nước"],
     "video_url": "https://youtu.be/wOsJSAkxo1U?si=JmJUN_hiFMNzqvau"
@@ -61,7 +62,7 @@
     "id": 3,
     "name": "Cơm rang thập cẩm chay",
     "short_description": "Cơm rang chay với rau củ, nấm, đậu phụ, hạt điều, màu sắc bắt mắt, vị đậm đà.",
-    "image": "assets/images/com-rang-chay.jpg",
+    "image": "assets/images/recipes/com-rang-chay.jpg",
     "time": "Chuẩn bị 20 phút, nấu 20 phút",
     "ingredients": [
       "2 bát cơm nguội",
@@ -75,12 +76,12 @@
       "Gia vị chay: muối, nước tương, tiêu"
     ],
     "steps": [
-      "Cà rốt, nấm hương, đậu phụ cắt hạt lựu. Đậu Hà Lan, ngô ngọt rửa sạch, để ráo. Mẹo: dùng cơm nguội để cơm rang không bị nát.",
-      "Phi thơm 1 thìa dầu ăn với hành lá, cho cà rốt, nấm, đậu Hà Lan, ngô ngọt vào xào chín tới. Nêm 1/2 thìa muối, 1/2 thìa nước tương.",
-      "Thêm đậu phụ vào xào cùng, đảo nhẹ tay để không bị nát. Có thể thêm 1/2 thìa hạt nêm chay cho vị đậm đà.",
-      "Cho cơm nguội vào, đảo đều tay trên lửa lớn để cơm tơi, không bị dính. Nêm lại vừa ăn, thêm 1/2 thìa tiêu.",
-      "Thêm hạt điều rang, đảo đều, tắt bếp. Rắc tiêu, rau mùi lên trên. Mẹo: đảo nhanh tay giúp cơm không bị khô.",
-      "Bày ra đĩa, trang trí thêm rau mùi, dùng nóng."
+      "**Chuẩn bị nguyên liệu:** Cà rốt gọt vỏ, rửa sạch, cắt hạt lựu (0.5cm). Nấm hương tươi rửa sạch, cắt hạt lựu. Đậu phụ cắt hạt lựu 1cm. Đậu Hà Lan, ngô ngọt rửa sạch, để ráo. *Mẹo quan trọng:* dùng cơm nguội để qua đêm, cơm hơi khô sẽ rang tơi không bị dính nhão.",
+      "**Xào rau củ nền:** Phi thơm 2 thìa dầu ăn với 1 thìa hành lá băm nhỏ trên lửa lớn. Cho cà rốt, nấm hương vào xào 2-3 phút cho thơm. Tiếp tục thêm đậu Hà Lan, ngô ngọt xào cùng 2 phút nữa cho chín tới. Nêm 1/2 thìa muối, 1 thìa nước tương. *Bí quyết:* xào trên lửa lớn giúp rau củ giữ độ giòn và màu sắc đẹp.",
+      "**Xào đậu phụ:** Thêm đậu phụ vào chảo, đảo nhẹ tay 1-2 phút. Nêm thêm 1/2 thìa hạt nêm chay cho vị đậm đà. *Lưu ý:* đảo nhẹ nhàng để đậu phụ không bị vỡ nát, giữ hình dạng đẹp.",
+      "**Rang cơm (bước quan trọng):** Cho cơm nguội vào chảo, dùng đũa hoặc muôi gắp tơi cơm ra từng hạt. Rang trên lửa lớn, đảo liên tục 3-5 phút cho cơm khô tơi, bắt lửa đều. Nêm lại vừa miệng, thêm 1/2 thìa tiêu, 1/2 thìa nước tương cho màu đẹp. *Mẹo chuyên nghiệp:* rang lửa lớn, đảo nhanh tay không ngừng để cơm tơi, thơm, không bị khê.",
+      "**Hoàn thiện:** Thêm hạt điều rang giòn vào, đảo đều tay, tắt bếp. Rắc tiêu xay, hành lá thái nhỏ, rau mùi lên trên. *Tip:* có thể thêm chút dầu mè rang hoặc mỡ hành phi để món ăn thơm nức hơn.",
+      "**Bày đĩa:** Múc cơm rang ra đĩa, trang trí thêm lát dưa leo, cà chua bi, rau mùi. Dùng nóng với nước tương hoặc tương ớt."
     ],
     "tags": ["cơm", "đậu phụ", "món xào"],
     "video_url": "https://youtu.be/QqQF-AUjmNI?si=mCJztCGbTPxqAbmr"
@@ -89,7 +90,7 @@
     "id": 4,
     "name": "Đậu phụ sốt cà chua",
     "short_description": "Đậu phụ mềm sốt cà chua chay, vị chua ngọt hài hòa, ăn cùng cơm rất ngon.",
-    "image": "assets/images/dau-phu-sot-ca-chua.jpg",
+    "image": "assets/images/recipes/dau-phu-sot-ca-chua.jpg",
     "time": "Chuẩn bị 15 phút, nấu 20 phút",
     "ingredients": [
       "300g đậu phụ",
@@ -99,11 +100,12 @@
       "Gia vị chay: muối, nước tương, tiêu, đường"
     ],
     "steps": [
-      "Đậu phụ cắt miếng vừa ăn, thấm khô nước, chiên vàng đều các mặt, để ráo dầu. Mẹo: dùng dầu nóng già để đậu giòn lâu.",
-      "Cà chua rửa sạch, cắt nhỏ, phi thơm 1 thìa dầu ăn với hành lá, cho cà chua vào xào đến khi mềm, thêm 50ml nước tạo sốt.",
-      "Nêm 1/2 thìa muối, 1 thìa nước tương, 1 thìa đường, 1/2 thìa hạt nêm chay, đun nhỏ lửa 5 phút cho sốt sánh lại.",
-      "Cho đậu phụ vào sốt cà chua, đảo nhẹ tay để thấm đều sốt, đun thêm 3 phút. Nêm lại vừa ăn.",
-      "Rắc hành lá, rau mùi, tiêu xay lên trên, bày ra đĩa, dùng nóng với cơm trắng. Mẹo: thêm chút rau mùi giúp món ăn thơm hơn."
+      "**Chiên đậu phụ giòn:** Đậu phụ cắt miếng 3x4cm dày 1.5cm, thấm thật khô bằng giấy ăn hoặc khăn sạch. Đun nóng dầu 170-180°C (thả đũa vào dầu bốc bọt nhỏ đều là đủ nhiệt), thả đậu vào chiên vàng giòn đều 6 mặt 5-7 phút, vớt ra giấy thấm dầu. *Mẹo chuyên nghiệp:* chiên từng mẻ nhỏ, dầu phải nóng và ngập đậu mới giòn lâu.",
+      "**Làm sốt cà chua (bước quan trọng):** Cà chua rửa sạch, cắt nhỏ vừa. Phi thơm 1.5 thìa dầu ăn với 1 thìa hành lá băm nhỏ. Cho cà chua vào xào mềm nhừ trên lửa vừa 5-7 phút, nghiền nhuyễn bằng muôi. Thêm 100ml nước lọc, đun sôi nhỏ lửa 5 phút tạo sốt sánh. *Bí quyết:* xào cà chua lâu, nghiền kỹ giúp sốt mịn đậm đà.",
+      "**Nêm nếm sốt:** Nêm 1/2 thìa muối, 1.5 thìa nước tương, 1 thìa đường (tùy độ chua của cà chua), 1/2 thìa hạt nêm chay. Nấu tiếp 3-5 phút cho sốt sánh lại vừa phải. Nêm nếm lại cho cân bằng vị chua ngọt mặn. *Lưu ý:* sốt không quá loãng cũng không quá đặc, sánh vừa bám đều vào đậu.",
+      "**Kho đậu với sốt:** Cho đậu phụ chiên vào chảo sốt cà chua, đảo nhẹ nhàng từng miếng cho thấm đều sốt khắp mặt. Đun nhỏ lửa thêm 3-4 phút cho đậu ngấm vị. *Mẹo:* lắc nhẹ chảo thay vì khuấy để đậu không bị vỡ.",
+      "**Hoàn thiện và trang trí:** Rắc hành lá thái nhỏ, rau mùi, tiêu xay tươi lên trên. Bày ra đĩa nóng. *Tip chuyên nghiệp:* có thể thêm vài giọt dầu mè rang hoặc hạt mè rang lên trên cho thơm hơn.",
+      "**Dùng kèm:** Ăn nóng với cơm trắng nóng. Có thể dùng kèm dưa muối, nước tương. *Biến tấu:* thêm nấm hương, ớt chuông để món đa dạng hơn."
     ],
     "tags": ["đậu phụ", "cà chua", "món xào"],
     "video_url": "https://youtu.be/jHMANsB2hkc?si=psvuzfxpYmck2pJC"
@@ -112,7 +114,7 @@
     "id": 5,
     "name": "Gỏi cuốn chay",
     "short_description": "Gỏi cuốn chay thanh mát, nhiều rau củ, đậu phụ chiên, ăn kèm nước chấm đặc biệt.",
-    "image": "assets/images/goi-cuon-chay.jpg",
+    "image": "assets/images/recipes/goi-cuon-chay.jpg",
     "time": "Chuẩn bị 25 phút, nấu 10 phút",
     "ingredients": [
       "10 bánh tráng cuốn",
@@ -124,12 +126,12 @@
       "Nước chấm chay: tương, chanh, ớt, đường"
     ],
     "steps": [
-      "Cà rốt, dưa leo rửa sạch, cắt sợi nhỏ. Đậu phụ cắt miếng, thấm khô, chiên vàng, để ráo dầu.",
-      "Rau sống rửa sạch, ngâm nước muối loãng 5 phút, để ráo nước. Bún tươi trụng qua nước sôi, để nguội.",
-      "Nhúng bánh tráng qua nước ấm cho mềm, trải ra thớt sạch. Mẹo: không nhúng quá lâu tránh bánh bị rách.",
-      "Xếp rau sống, cà rốt, dưa leo, bún, đậu phụ lên bánh tráng, cuốn chặt tay. Có thể thêm rau thơm cho vị đặc biệt.",
-      "Pha nước chấm: 2 thìa tương, 1 thìa nước cốt chanh, 1 thìa đường, ớt băm, 1 thìa nước lọc, khuấy đều cho vừa vị. Nêm lại cho cân bằng chua ngọt cay.",
-      "Bày gỏi cuốn ra đĩa, dùng kèm nước chấm, trang trí thêm rau thơm. Mẹo: dùng khăn ẩm phủ lên giúp gỏi cuốn không bị khô."
+      "**Sơ chế rau củ và đậu:** Cà rốt, dưa leo rửa sạch dưới vòi nước. Cà rốt bào sợi mỏng 0.2cm hoặc cắt sợi nhỏ. Dưa leo cắt sợi dài. Đậu phụ cắt thanh dài 5cm dày 1cm, thấm khô hoàn toàn, chiên vàng giòn trong dầu nóng 170°C, vớt ra giấy thấm dầu. *Mẹo:* bào sợi mỏng đều tay giúp cuốn gọn đẹp.",
+      "**Chuẩn bị rau sống và bún:** Rau sống (xà lách, húng quế, rau răm, tía tô) rửa sạch từng lá, ngâm nước muối loãng 5-10 phút diệt khuẩn, vớt ra để ráo nước hoàn toàn. Bún tươi trụng qua nước sôi 20 giây, vớt ra rổ để nguội và ráo nước. *Lưu ý:* rau phải thật khô mới cuốn được gọn, không bị ướt nhão.",
+      "**Làm mềm bánh tráng:** Chuẩn bị 1 tô nước ấm 40-50°C. Nhúng nhanh bánh tráng qua nước ấm 2-3 giây mỗi mặt, vớt ra trải lên thớt hoặc mâm sạch, chờ 10-15 giây cho mềm đều. *Mẹo chuyên nghiệp:* không nhúng quá lâu, bánh chỉ cần ẩm mềm là đủ, không quá mềm sẽ dễ rách khi cuốn.",
+      "**Cuốn gỏi (bước quan trọng):** Xếp 2-3 lá rau sống lên phần dưới bánh tráng, thêm 1 nhúm bún, 1 ít cà rốt, dưa leo, 1-2 thanh đậu phụ chiên lên giữa. Gấp 2 bên bánh vào trong, cuốn chặt từ dưới lên trên tạo cuộn tròn đều. *Bí quyết:* cuốn chặt tay để gỏi không bị tơi ra, nhưng không quá chặt làm rách bánh.",
+      "**Pha nước chấm đặc biệt:** Trộn đều 2.5 thìa tương ớt chay, 1 thìa nước cốt chanh tươi, 1 thìa đường, 1 thìa ớt băm nhỏ, 2 thìa nước lọc, 1/2 thìa tỏi băm (tùy chọn), 1/2 thìa dầu mè rang. Khuấy tan hết đường, nêm nếm cho cân bằng chua ngọt cay mặn. *Tip:* có thể thêm 1 thìa đậu phộng rang giã nhỏ để nước chấm đậm đà hơn.",
+      "**Bày đĩa và dùng kèm:** Xếp gỏi cuốn lên đĩa, trang trí thêm lát cà chua, rau mùi, ớt sừng. Dùng ngay với nước chấm. *Mẹo bảo quản:* nếu không dùng ngay, dùng khăn ẩm hoặc màng bọc phủ lên tránh gỏi bị khô cứng."
     ],
     "tags": ["rau củ", "đậu phụ", "món khô"],
     "video_url": "https://youtu.be/d_bznxbRfMk?si=sqVe24l7ibKHyZBE"
@@ -138,7 +140,7 @@
     "id": 6,
     "name": "Canh nấm đậu phụ",
     "short_description": "Canh nấm đậu phụ thanh đạm, bổ dưỡng, vị ngọt tự nhiên từ nấm và rau củ.",
-    "image": "assets/images/canh_nam_dau_phu.jpg",
+    "image": "assets/images/recipes/canh_nam_dau_phu.jpg",
     "time": "Chuẩn bị 15 phút, nấu 20 phút",
     "ingredients": [
       "200g nấm các loại (nấm hương, nấm rơm, nấm kim châm)",
@@ -148,10 +150,12 @@
       "Gia vị chay: muối, nước tương, tiêu"
     ],
     "steps": [
-      "Nấm các loại rửa sạch, cắt miếng vừa ăn. Cà rốt gọt vỏ, cắt lát mỏng. Đậu phụ cắt miếng nhỏ. Mẹo: dùng nấm tươi giúp nước canh ngọt hơn.",
-      "Đun sôi 1 lít nước, cho cà rốt vào nấu 5 phút, tiếp đến cho nấm vào nấu thêm 10 phút. Nêm 1/2 thìa muối, 1 thìa nước tương, 1/2 thìa hạt nêm chay.",
-      "Thêm đậu phụ, đun thêm 3 phút cho thấm vị. Nêm lại vừa ăn, thêm 1/2 thìa tiêu.",
-      "Rắc hành lá, rau mùi, tiêu xay lên trên, dùng nóng. Mẹo: thêm chút rau mùi giúp canh thơm hơn."
+      "**Sơ chế nấm và rau củ:** Nấm các loại (nấm hương, nấm rơm, nấm kim châm) rửa sạch nhiều lần dưới vòi nước, cắt bỏ chân cứng, cắt miếng vừa ăn. Cà rốt gọt vỏ sạch, cắt lát tròn mỏng 0.3cm. Đậu phụ cắt miếng nhỏ 2x2cm. *Mẹo:* dùng nhiều loại nấm tươi giúp nước canh ngọt thanh tự nhiên, không cần nêm nhiều.",
+      "**Nấu nước canh nền:** Đun sôi 1.2 lít nước lọc trong nồi. Cho cà rốt vào nấu trước 5-7 phút cho mềm và ngọt nước. *Lưu ý:* nấu cà rốt trước giúp nước canh có độ ngọt tự nhiên làm nền vị.",
+      "**Nấu nấm:** Thêm tất cả các loại nấm vào nồi, đun sôi rồi hạ nhỏ lửa nấu thêm 10-12 phút cho nấm mềm và tiết chất ngọt ra nước. Nêm 1/2 thìa muối, 1 thìa nước tương, 1/2 thìa hạt nêm chay, 1/4 thìa tiêu. *Bí quyết:* nấu lửa nhỏ giúp nấm ngọt nước, không bị dai.",
+      "**Thêm đậu phụ:** Cho đậu phụ vào nồi, đun nhỏ lửa thêm 3-5 phút cho đậu thấm gia vị. Nêm nếm lại cho vừa miệng, cân bằng vị mặn ngọt. *Tip:* nếu thích đậu mềm hơn, có thể nấu lâu thêm 2-3 phút.",
+      "**Hoàn thiện:** Rắc hành lá thái nhỏ, rau mùi tươi, tiêu xay lên trên. Tắt bếp. *Mẹo chuyên nghiệp:* cho rau thơm vào khi tắt bếp giúp giữ hương thơm, không bị héo úa.",
+      "**Múc canh và dùng:** Múc canh ra bát nóng, trang trí thêm rau mùi. Dùng nóng với cơm trắng. *Biến tấu:* có thể thêm đông cô, nấm linh chi để tăng dinh dưỡng."
     ],
     "tags": ["nấm", "đậu phụ", "món nước"],
     "video_url": "https://youtu.be/kx3T-zMmeNE?si=D2_x7AkcZBUZxz3P"
@@ -160,7 +164,7 @@
     "id": 7,
     "name": "Bánh xèo chay",
     "short_description": "Bánh xèo chay giòn rụm, nhân rau củ, nấm, ăn kèm rau sống và nước chấm chay.",
-    "image": "assets/images/banh-xeo-chay.jpg",
+    "image": "assets/images/recipes/banh-xeo-chay.jpg",
     "time": "Chuẩn bị 35 phút, nấu 30 phút",
     "ingredients": [
       "200g bột bánh xèo",
@@ -172,19 +176,23 @@
       "Nước chấm chay: tương, chanh, ớt, đường"
     ],
     "steps": [
-      "Pha bột bánh xèo với nước cốt dừa, thêm 1/2 thìa muối, khuấy đều, để nghỉ 15 phút. Mẹo: dùng nước cốt dừa giúp vỏ bánh thơm béo.",
-      "Nấm, cà rốt rửa sạch, cắt sợi nhỏ. Xào nấm, cà rốt, giá đỗ với 1/2 thìa muối cho chín tới. Có thể thêm 1/2 thìa hạt nêm chay cho vị đậm đà.",
-      "Làm nóng chảo chống dính, quét lớp dầu mỏng, đổ bột bánh xèo vào, xoay đều cho mỏng, thêm nhân rau củ vào giữa, đậy nắp 2 phút cho bánh chín và giòn. Mẹo: dùng lửa vừa để bánh không bị cháy.",
-      "Gập đôi bánh, lấy ra đĩa, dùng kèm rau sống và nước chấm chay pha từ tương, chanh, ớt, đường. Trang trí thêm rau thơm cho đẹp mắt."
+      "**Pha bột bánh xèo (bước quan trọng):** Cho 200g bột bánh xèo vào tô lớn, từ từ rót 200ml nước cốt dừa vào khuấy đều theo một chiều, tránh vón cục. Thêm 150ml nước lọc, 1/2 thìa muối, 1/4 thìa nghệ bột (để màu vàng đẹp), 1/2 thìa đường. Khuấy tan hết, lọc qua rây mịn, để nghỉ 20-30 phút cho bột nở và quyện đều. *Mẹo chuyên nghiệp:* dùng nước cốt dừa tươi giúp vỏ bánh thơm béo, giòn lâu.",
+      "**Sơ chế nhân bánh:** Nấm các loại (nấm rơm, nấm hương, nấm bào ngư) rửa sạch, cắt sợi nhỏ. Cà rốt gọt vỏ, cắt sợi mỏng 0.2cm. Giá đỗ rửa sạch, vặt bỏ rễ, để ráo nước. *Lưu ý:* cắt sợi nhỏ đều tay giúp nhân chín nhanh và đẹp mắt.",
+      "**Xào nhân bánh:** Phi thơm 2 thìa dầu ăn với 1 thìa hành lá băm nhỏ trên lửa lớn. Cho nấm, cà rốt vào xào 3-4 phút cho thơm và mềm. Thêm giá đỗ xào cùng 1 phút. Nêm 1/2 thìa muối, 1 thìa nước tương, 1/2 thìa hạt nêm chay, 1/4 thìa tiêu. Nêm nếm lại cho vừa miệng. *Bí quyết:* xào lửa lớn giúp rau củ giòn, không bị nước.",
+      "**Đổ bánh xèo (kỹ thuật quan trọng):** Làm nóng chảo chống dính 24-26cm trên lửa lớn, quét mỏng 1 thìa dầu ăn. Múc 1 muôi canh bột, đổ vào chảo, nhanh tay xoay tròn chảo cho bột tràn đều thành lớp mỏng. Đậy nắp 1.5-2 phút cho bánh chín và giòn đáy. *Mẹo chuyên nghiệp:* chảo phải thật nóng, đổ bột nhanh và xoay liền tay ngay để bánh mỏng đều.",
+      "**Thêm nhân và gấp bánh:** Mở nắp, thêm 2-3 thìa nhân rau củ nấm vào một nửa mặt bánh. Tiếp tục đậy nắp 30-40 giây cho nhân nóng. Dùng đũa hoặc xẻng gấp đôi bánh lại, ấn nhẹ mép cho dính. Chiên thêm 30 giây mỗi mặt cho giòn vàng đều. *Tip:* không thêm quá nhiều nhân sẽ khó gấp và dễ rách.",
+      "**Chuẩn bị rau sống:** Rau sống (xà lách, húng quế, rau răm, tía tô, dưa leo) rửa sạch từng lá, ngâm nước muối loãng 5-10 phút, vớt ra để ráo nước hoàn toàn. Xếp rau lên đĩa tròn.",
+      "**Pha nước chấm đặc biệt:** Trộn đều 2 thìa tương ớt chay, 1.5 thìa nước cốt chanh, 1 thìa đường, 1 thìa ớt băm, 3 thìa nước lọc, 1/2 thìa tỏi băm (tùy chọn), 1 thìa đậu phộng rang giã nhỏ. Khuấy tan đều, nêm nếm cho cân bằng vị chua cay ngọt mặn. *Mẹo:* nước chấm này là linh hồn của món bánh xèo.",
+      "**Bày bánh và dùng:** Cắt bánh xèo thành 3-4 miếng tam giác, xếp lên đĩa. Trang trí thêm rau mùi, ớt sừng. Dùng nóng: gắp bánh, cuốn cùng rau sống, chấm nước mắm chay. *Tip chuyên nghiệp:* ăn bánh xèo phải nóng giòn mới ngon, để nguội sẽ mềm nhão mất vị."
     ],
     "tags": ["nấm", "rau củ", "món chiên"],
-    "video_url": ""
+    "video_url": "https://youtu.be/WwIMQAtf_dI?si=T5KkbsmWSkiSpr2I"
   },
   {
     "id": 8,
-    "name": "Chè đậu xanh chay",
-    "short_description": "Chè đậu xanh chay ngọt thanh, giải nhiệt, ăn kèm nước cốt dừa béo nhẹ.",
-    "image": "assets/images/che-dau-xanh-chay.jpg",
+    "name": "Chè đậu xanh",
+    "short_description": "Chè đậu xanh ngọt thanh, giải nhiệt, ăn kèm nước cốt dừa béo nhẹ.",
+    "image": "assets/images/recipes/che-dau-xanh.jpg",
     "time": "Chuẩn bị 15 phút, nấu 35 phút",
     "ingredients": [
       "200g đậu xanh đã cà vỏ",
@@ -193,18 +201,21 @@
       "1/4 thìa muối"
     ],
     "steps": [
-      "Ngâm đậu xanh 2 tiếng, rửa sạch, cho vào nồi với 1 lít nước, nấu lửa nhỏ đến khi đậu mềm. Mẹo: thêm chút muối khi nấu giúp đậu nhanh mềm.",
-      "Thêm 100g đường phèn, khuấy đều cho tan, nêm 1/4 thìa muối cho vị đậm đà. Nêm lại vừa ăn.",
-      "Múc chè ra bát, thêm nước cốt dừa lên trên, dùng nóng hoặc lạnh đều ngon. Trang trí thêm dừa nạo nếu thích."
+      "**Ngâm và rửa đậu xanh:** Đậu xanh đã cà vỏ vo sạch 2-3 lần, ngâm trong nước lạnh 2-3 tiếng cho nở mềm và giảm thời gian nấu. Vớt ra rổ, rửa lại thật sạch dưới vòi nước, để ráo. *Mẹo:* ngâm với chút muối giúp đậu nhanh mềm và giữ màu xanh đẹp.",
+      "**Nấu đậu xanh mềm (bước quan trọng):** Cho đậu xanh vào nồi với 1 lít nước lọc, thêm 1/4 thìa muối. Đun sôi rồi hạ nhỏ lửa, vớt bọt sạch, nấu 30-35 phút đến khi đậu mềm nhừ, nở hết hạt. Khuấy đều 2-3 lần trong quá trình nấu để đậu chín đều, không bị khê đáy nồi. *Bí quyết:* nấu lửa nhỏ, đậy nắp hờ giúp đậu mềm đều, không bị bể vỡ.",
+      "**Nêm ngọt:** Khi đậu đã mềm nhừ, thêm 100g đường phèn (hoặc đường cát trắng) vào nồi. Khuấy tan đều, nấu thêm 5-7 phút cho đường tan hết và thấm vào đậu. Nêm thêm 1/4 thìa muối cho vị đậm đà cân bằng ngọt. Nêm nếm lại cho vừa miệng. *Lưu ý:* lượng đường tùy khẩu vị, thích ngọt nhạt có thể giảm xuống 80g.",
+      "**Hoàn thiện:** Tắt bếp, để chè nguội bớt 10-15 phút cho đậu ngấm đường đều. Múc chè ra bát hoặc ly thủy tinh. *Tip:* chè đậu xanh để nguội tự nhiên sẽ ngon hơn để trong tủ lạnh ngay.",
+      "**Pha nước cốt dừa:** Trộn 100ml nước cốt dừa tươi với 1 thìa đường, 1 nhúm muối nhỏ (để tăng vị béo), khuấy đều. *Mẹo chuyên nghiệp:* thêm chút muối vào nước cốt dừa giúp vị béo ngậy nổi bật hơn.",
+      "**Dùng chè:** Rưới nước cốt dừa lên trên bát chè đậu xanh, trang trí thêm dừa nạo, hạt sen luộc hoặc trân châu (tùy thích). Dùng nóng hoặc lạnh đều ngon. *Biến tấu:* có thể thêm sữa tươi không đường hoặc sữa hạt để chè béo ngậy hơn."
     ],
     "tags": ["đậu xanh", "món tráng miệng"],
-    "video_url": ""
+    "video_url": "https://youtu.be/UYb9PG0TXIs?si=k7AWkrfS1yvYyspn"
   },
   {
     "id": 9,
-    "name": "Súp bí đỏ chay",
-    "short_description": "Súp bí đỏ chay mịn, thơm, giàu dinh dưỡng, thích hợp cho trẻ nhỏ và người ăn kiêng.",
-    "image": "assets/images/sup-bi-do-chay.jpg",
+    "name": "Súp bí đỏ",
+    "short_description": "Súp bí đỏ mịn, thơm, giàu dinh dưỡng, thích hợp cho trẻ nhỏ và người ăn kiêng.",
+    "image": "assets/images/recipes/sup-bi-do.jpg",
     "time": "Chuẩn bị 20 phút, nấu 30 phút",
     "ingredients": [
       "300g bí đỏ",
@@ -214,19 +225,20 @@
       "Muối, tiêu"
     ],
     "steps": [
-      "Bí đỏ, khoai tây, cà rốt gọt vỏ, cắt miếng nhỏ. Cho vào nồi với 1 lít nước, nấu mềm. Mẹo: thêm chút muối khi nấu giúp rau củ giữ màu đẹp.",
-      "Vớt rau củ ra, để nguội bớt, xay nhuyễn cùng 200ml sữa hạt cho mịn. Nêm 1/2 thìa muối, 1/2 thìa tiêu, 1/2 thìa hạt nêm chay.",
-      "Đổ lại vào nồi, đun nhỏ lửa 5 phút cho súp sánh lại. Nêm lại vừa ăn.",
-      "Múc súp ra bát, trang trí thêm rau mùi, dùng nóng. Mẹo: thêm chút tiêu xay giúp món ăn dậy vị."
+      "**Sơ chế rau củ:** Bí đỏ, khoai tây, cà rốt gọt vỏ sạch, rửa lại, cắt miếng nhỏ 2x2cm cho nhanh mềm đều. *Mẹo:* chọn bí đỏ chín, múi vàng cam đậm cho súp ngọt và màu đẹp.",
+      "**Luộc rau củ mềm:** Cho bí đỏ, khoai tây, cà rốt vào nồi với 1 lít nước lọc, thêm 1/4 thìa muối. Nấu lửa vừa 20-25 phút đến khi rau củ mềm nhũn, dễ nghiền. Vớt rau củ ra tô, giữ lại 300ml nước luộc. *Bí quyết:* thêm chút muối khi luộc giúp rau giữ màu sắc tự nhiên đẹp.",
+      "**Xay nhuyễn (bước quan trọng):** Để rau củ nguội bớt 5 phút, cho vào máy xay sinh tố cùng 200ml sữa hạt và 200ml nước luộc đã giữ lại. Xay mịn trong 1-2 phút đến khi hỗn hợp mịn màng không còn cục. *Lưu ý:* xay kỹ giúp súp mịn như kem, không bị vón cục.",
+      "**Nêm nếm và đun sôi:** Đổ hỗn hợp đã xay lại vào nồi, đun nhỏ lửa 5-7 phút, khuấy đều liên tục cho súp sánh lại vừa phải. Nêm 1/2 thìa muối, 1/2 thìa tiêu trắng, 1/2 thìa hạt nêm chay, 1 thìa đường. Nêm nếm lại cho cân bằng vị ngọt mặn. *Tip:* nếu súp quá đặc, thêm chút sữa hạt hoặc nước luộc.",
+      "**Hoàn thiện:** Múc súp ra bát nóng, trang trí thêm hạt điều rang giã nhỏ, rau mùi, hạt tiêu xay, vài giọt dầu oliu. Dùng nóng. *Mẹo chuyên nghiệp:* có thể thêm chút kem đậu nành hoặc bơ thực vật cho súp béo ngậy hơn."
     ],
     "tags": ["bí đỏ", "món nước"],
-    "video_url": ""
+    "video_url": "https://youtu.be/5RgmHQnDbzQ?si=S30d_AWeFwYsw-57"
   },
   {
     "id": 10,
     "name": "Đậu phụ chiên giòn",
     "short_description": "Đậu phụ chiên giòn vàng, lớp vỏ xù hấp dẫn, ăn kèm nước chấm chay cay nhẹ.",
-    "image": "assets/images/dau-phu-chien-gion.jpg",
+    "image": "assets/images/recipes/dau-phu-chien-gion.jpg",
     "time": "Chuẩn bị 15 phút, nấu 15 phút",
     "ingredients": [
       "300g đậu phụ",
@@ -235,20 +247,22 @@
       "Nước chấm chay: tương, ớt, chanh"
     ],
     "steps": [
-      "Đậu phụ cắt miếng vừa ăn, thấm khô nước bằng giấy. Mẹo: dùng đậu phụ trắng giúp món ăn giòn lâu.",
-      "Lăn từng miếng đậu qua bột chiên giòn, phủ đều các mặt. Có thể thêm chút tiêu vào bột để tăng hương vị.",
-      "Làm nóng dầu ăn, thả đậu phụ vào chiên vàng giòn, vớt ra để ráo dầu. Nên chiên ngập dầu để vỏ giòn đều.",
-      "Pha nước chấm: 2 thìa tương, 1 thìa ớt băm, 1 thìa nước cốt chanh, khuấy đều cho vừa vị. Nêm lại cho cân bằng chua cay mặn ngọt.",
-      "Bày đậu phụ ra đĩa, dùng nóng với nước chấm. Trang trí thêm rau thơm cho đẹp mắt."
+      "**Chuẩn bị đậu phụ:** Đậu phụ cắt miếng 3x4cm dày 2cm, thấm thật khô nước bằng giấy ăn hoặc khăn sạch. Để đậu ráo hoàn toàn 10-15 phút trước khi chiên. *Mẹo quan trọng:* chọn đậu phụ trắng non, thấm thật khô giúp lớp vỏ giòn lâu, không bị bở nhão.",
+      "**Làm bột chiên giòn:** Cho 100g bột chiên giòn vào tô, thêm 1/2 thìa tiêu xay, 1/2 thìa muối, 1/4 thìa bột nghệ (để màu vàng đẹp), trộn đều. Có thể thêm 1/2 thìa bột tỏi để tăng hương vị. *Tip:* trộn gia vị vào bột giúp đậu có vị ngay từ lớp vỏ.",
+      "**Tẩm bột đậu phụ:** Lăn từng miếng đậu qua bột chiên giòn, dùng tay ấn nhẹ cho bột bám đều khắp 6 mặt. Phủ lớp bột dày vừa phải, không quá mỏng cũng không quá dày. Để đậu đã tẩm bột nghỉ 3-5 phút cho bột ổn định. *Bí quyết:* để đậu nghỉ sau khi tẩm bột giúp lớp vỏ không bị bong ra khi chiên.",
+      "**Chiên đậu giòn (bước quan trọng):** Đun nóng dầu ăn sâu lòng chảo (khoảng 500ml) đến 170-180°C (thả đũa vào dầu bốc bọt nhỏ đều là đủ nhiệt). Thả từng miếng đậu vào dầu, chiên lửa vừa 5-7 phút cho vàng giòn đều 6 mặt. Không đảo quá nhiều, chỉ lật 1-2 lần. Vớt ra giấy thấm dầu. *Mẹo chuyên nghiệp:* chiên từng mẻ nhỏ 3-4 miếng để dầu giữ nhiệt ổn định, đậu giòn đều.",
+      "**Pha nước chấm đặc biệt:** Trộn đều 2 thìa tương ớt chay, 1 thìa nước cốt chanh tươi, 1 thìa đường, 1 thìa ớt băm nhỏ, 2 thìa nước lọc, 1/2 thìa tỏi băm (tùy chọn), 1/2 thìa dầu mè rang. Khuấy tan hết đường, nêm nếm cho cân bằng chua cay mặn ngọt. *Tip:* thêm 1 thìa đậu phộng rang giã nhỏ để nước chấm đậm đà hơn.",
+      "**Bày đĩa và dùng:** Xếp đậu phụ chiên lên đĩa, trang trí thêm rau mùi, ớt sừng, lát dưa leo. Rưới chút dầu mè rang lên trên cho bóng đẹp. Dùng nóng với nước chấm. *Mẹo chuyên nghiệp:* rắc thêm mè rang hoặc hành lá thái nhỏ lên trên cho thơm nức.",
+      "**Biến tấu:** Có thể chấm kèm tương đen, sa tế chay, hoặc muối tiêu chanh. *Lưu ý:* đậu phụ chiên giòn để nguội sẽ mềm, nên ăn ngay khi còn nóng."
     ],
     "tags": ["đậu phụ", "món chiên"],
-    "video_url": ""
+    "video_url": "https://youtu.be/gjsop3jNZ8U?si=ui7lgmD6Klgregfy"
   },
   {
     "id": 11,
     "name": "Nấm xào thập cẩm",
     "short_description": "Nấm xào thập cẩm chay, nhiều loại nấm, rau củ, vị ngọt tự nhiên, màu sắc bắt mắt.",
-    "image": "assets/images/nam-xao-thap-cam.jpg",
+    "image": "assets/images/recipes/nam-xao-thap-cam.jpg",
     "time": "Chuẩn bị 20 phút, nấu 15 phút",
     "ingredients": [
       "200g nấm các loại",
@@ -258,19 +272,23 @@
       "Gia vị chay: muối, nước tương, tiêu"
     ],
     "steps": [
-      "Nấm các loại rửa sạch, cắt miếng vừa ăn. Cà rốt gọt vỏ, cắt sợi nhỏ. Đậu Hà Lan, ngô ngọt rửa sạch. Mẹo: dùng nhiều loại nấm giúp món ăn đa dạng vị.",
-      "Phi thơm 1 thìa dầu ăn với hành lá, cho cà rốt, đậu Hà Lan, ngô ngọt vào xào chín tới. Nêm 1/2 thìa muối, 1/2 thìa nước tương.",
-      "Thêm nấm vào xào cùng, đảo đều tay, nêm thêm 1/2 thìa hạt nêm chay, 1/2 thìa tiêu. Nêm lại vừa ăn.",
-      "Tắt bếp, rắc tiêu, bày ra đĩa, trang trí thêm rau mùi. Mẹo: xào nhanh tay giúp rau củ giữ độ giòn."
+      "**Sơ chế nấm:** Nấm các loại (nấm hương tươi, nấm đùi gà, nấm bào ngư, nấm kim châm) rửa sạch nhiều lần dưới vòi nước, cắt bỏ chân cứng. Nấm hương cắt lát mỏng 0.3cm, nấm đùi gà xé sợi, nấm bào ngư cắt miếng to, nấm kim châm cắt bỏ chân để cụm nguyên. *Mẹo quan trọng:* dùng 3-4 loại nấm khác nhau giúp món ăn đa dạng vị, ngọt thanh tự nhiên.",
+      "**Sơ chế rau củ:** Cà rốt gọt vỏ sạch, cắt sợi mỏng 0.2cm hoặc lát tròn hoa mai. Đậu Hà Lan rửa sạch, bẻ bỏ cuống cứng. Ngô ngọt rửa qua nước. Hành lá thái khúc 3cm, tách riêng phần trắng và lá xanh. *Lưu ý:* cắt cà rốt mỏng đều tay giúp chín nhanh cùng nấm.",
+      "**Trụng sơ nấm (tùy chọn nhưng nên làm):** Đun sôi 1 nồi nước với 1/2 thìa muối, cho tất cả nấm vào trụng 30-40 giây, vớt ra rổ để ráo nước hoàn toàn. *Bí quyết chuyên nghiệp:* trụng nấm trước giúp loại bỏ mùi tanh, nấm không bị nước khi xào, món ăn đẹp và thơm hơn.",
+      "**Xào rau củ nền:** Phi thơm 2 thìa dầu ăn với phần hành lá trắng băm nhỏ và 1 thìa tỏi băm (tùy chọn) trên lửa lớn. Cho cà rốt vào xào 2 phút cho mềm và ngọt. Thêm đậu Hà Lan, ngô ngọt xào cùng 1-2 phút. Nêm 1/2 thìa muối, 1 thìa nước tương. *Tip:* xào lửa lớn giúp rau giòn, màu sắc đẹp.",
+      "**Xào nấm (bước quan trọng):** Đẩy rau sang một bên chảo, thêm 1 thìa dầu vào phần giữa. Cho tất cả nấm vào xào trên lửa lớn 3-4 phút, đảo đều tay cho nấm chín tới và thơm. Trộn rau củ và nấm lại với nhau, đảo đều 1 phút. *Mẹo chuyên nghiệp:* xào nấm lửa lớn, nhanh tay giúp giữ độ dai giòn, không bị nước nhão.",
+      "**Nêm nếm:** Nêm thêm 1/2 thìa hạt nêm chay, 1/2 thìa tiêu xay, 1/2 thìa nước tương, 1/2 thìa đường (để tăng độ ngọt tự nhiên). Đảo đều tay 1 phút cho gia vị thấm. Nêm nếm lại cho cân bằng vị mặn ngọt. *Lưu ý:* không nêm quá nhiều, để giữ vị ngọt thanh tự nhiên của nấm.",
+      "**Hoàn thiện:** Rắc phần hành lá xanh thái nhỏ, tiêu xay tươi lên trên. Đảo đều, tắt bếp. Bày ra đĩa, trang trí thêm rau mùi, ớt sừng. *Tip chuyên nghiệp:* thêm vài giọt dầu mè rang hoặc 1 nhúm mè rang trước khi tắt bếp để món thơm nức đặc trưng.",
+      "**Dùng kèm:** Ăn nóng với cơm trắng hoặc bún, mì. *Biến tấu:* có thể thêm súp lơ xanh, bông cải, ớt chuông để món đầy đặn và màu sắc hơn."
     ],
     "tags": ["nấm", "rau củ", "món xào"],
-    "video_url": ""
+    "video_url": "https://youtu.be/Ua9CWpqoK04?si=zeSdZIEPw5rk74ee"
   },
   {
     "id": 12,
-    "name": "Bánh chuối hấp chay",
-    "short_description": "Bánh chuối hấp chay mềm thơm, vị ngọt tự nhiên, ăn kèm nước cốt dừa béo nhẹ.",
-    "image": "assets/images/banh-chuoi-hap-chay.jpg",
+    "name": "Bánh chuối hấp",
+    "short_description": "Bánh chuối hấp mềm thơm, vị ngọt tự nhiên, ăn kèm nước cốt dừa béo nhẹ.",
+    "image": "assets/images/recipes/banh-chuoi-hap.jpg",
     "time": "Chuẩn bị 25 phút, nấu 40 phút",
     "ingredients": [
       "5 quả chuối chín",
@@ -280,11 +298,16 @@
       "1/4 thìa muối"
     ],
     "steps": [
-      "Chuối chín bóc vỏ, cắt lát mỏng, trộn với bột năng, đường, muối cho đều. Mẹo: dùng chuối tây chín giúp bánh thơm hơn.",
-      "Quét lớp dầu mỏng vào khuôn, đổ hỗn hợp chuối vào, dàn đều, hấp cách thủy 40 phút đến khi bánh trong và dẻo. Nên dùng lửa vừa để bánh không bị nát.",
-      "Để nguội, cắt miếng vừa ăn, rưới nước cốt dừa lên trên, dùng lạnh càng ngon. Trang trí thêm dừa nạo nếu thích."
+      "**Chọn và chuẩn bị chuối:** Chọn 5 quả chuối tây chín vàng đều, không có vết thâm hoặc quá chín nhũn. Bóc vỏ sạch, cắt lát tròn dày 0.5-0.7cm. Xếp chuối vào tô lớn. *Mẹo quan trọng:* dùng chuối tây chín vừa tới (vỏ vàng có chấm đen nhỏ) giúp bánh thơm ngọt tự nhiên, không bị nhão.",
+      "**Pha bột bánh:** Trong tô chuối, thêm 150g bột năng (hoặc bột bánh chuối), 100g đường cát trắng, 1/4 thìa muối, 50ml nước cốt dừa. Dùng tay hoặc muôi trộn đều nhẹ nhàng cho chuối phủ đều bột, đường tan hết. Để hỗn hợp nghỉ 10 phút cho bột ngấm ẩm và đường tan đều. *Bí quyết:* không trộn quá mạnh tay làm chuối bị nhão, trộn vừa đủ cho đều là được.",
+      "**Chuẩn bị khuôn hấp:** Chọn khuôn chữ nhật 20x15cm hoặc khay tròn đường kính 20cm có thành cao. Quét mỏng 1 lớp dầu ăn hoặc bơ thực vật lên đáy và thành khuôn để bánh không dính. Có thể lót giấy nến dưới đáy để dễ lấy bánh ra. *Lưu ý:* quét dầu đều tay giúp bánh không bị dính khuôn khi lấy ra.",
+      "**Đổ bột vào khuôn:** Đổ toàn bộ hỗn hợp chuối bột vào khuôn đã chuẩn bị. Dùng muôi hoặc đũa dàn đều bề mặt, vỗ nhẹ khuôn 2-3 lần xuống mặt bàn để khử bọt khí, bánh được đều mịn. *Tip:* xếp vài lát chuối đẹp lên mặt trước khi hấp để trang trí.",
+      "**Hấp bánh (bước quan trọng):** Đun sôi nồi nước hấp (nước ngập 1/3 nồi). Đặt khuôn bánh vào giá hấp, đậy nắp kín. Hấp lửa vừa 40-45 phút đến khi bánh trong, chín đều (dùng tăm tre chọc vào giữa bánh, rút ra không dính bột là chín). *Mẹo chuyên nghiệp:* hấp lửa vừa đều tay, không mở nắp quá sớm để bánh không bị xẹp hoặc không chín đều.",
+      "**Để nguội và cắt bánh:** Tắt bếp, lấy bánh ra, để nguội hoàn toàn 20-30 phút (hoặc cho vào tủ lạnh 1-2 tiếng). Bánh nguội sẽ dẻo chắc, dễ cắt. Dùng dao thái sắc, nhúng nước trước khi cắt mỗi nhát để bánh không dính dao. Cắt miếng chữ nhật 3x5cm hoặc miếng vuông 4x4cm. *Lưu ý:* không cắt khi bánh còn nóng sẽ bị nhão nát.",
+      "**Pha nước cốt dừa:** Trộn 100ml nước cốt dừa tươi với 1 thìa đường, 1 nhúm muối nhỏ (để tăng vị béo), 1/2 thìa bột năng pha loãng. Đun nhỏ lửa 3 phút cho sánh lại. *Mẹo:* thêm bột năng giúp nước cốt dừa sánh, bám đều vào bánh.",
+      "**Bày đĩa và dùng:** Xếp bánh chuối lên đĩa hoặc bát, rưới nước cốt dừa sánh lên trên. Trang trí thêm dừa nạo tươi, hạt mè rang đen. Dùng lạnh càng ngon. *Biến tấu:* có thể thêm 1-2 lá dứa băm nhỏ vào bột để bánh thơm hơn."
     ],
     "tags": ["chuối", "món tráng miệng"],
-    "video_url": ""
+    "video_url": "https://youtu.be/R-jVzu2yXWM?si=Fb3yRKWydaOJKUbw"
   }
 ]

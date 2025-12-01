@@ -26,123 +26,61 @@
       </ul>
     </nav>
   </header>
+  <!-- Icon đĩa xoay và audio nhạc nền -->
+  <div id="musicPlayerWrap" style="position:fixed;left:2rem;bottom:2rem;z-index:9999;display:flex;align-items:center;gap:0.5rem;">
+    <button id="musicDiscBtn" onclick="toggleMusic()" aria-pressed="false" aria-label="Bật/tắt nhạc nền" title="Bấm để bật/tắt nhạc nền" style="background:radial-gradient(circle,#fffbe8 60%,#C8A27D22 100%);border:none;outline:none;cursor:pointer;padding:0.5rem;border-radius:50%;box-shadow:0 2px 12px #C8A27D44;transition:box-shadow 0.2s;position:relative;">
+        <img id="musicDiscIcon" src="assets/icons/disc.svg" alt="Đĩa nhạc" style="width:56px;height:56px;transition:transform 0.5s;filter:drop-shadow(0 2px 8px #C8A27D88);">
+        <span id="musicDiscStatus" style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:1rem;font-weight:600;color:#C8A27D;background:#fffbe8;padding:2px 10px;border-radius:12px;box-shadow:0 2px 8px #C8A27D22;opacity:0.92;pointer-events:none;">Mở nhạc</span>
+      </button>
+    </div>
+    <audio id="musicBg" src="assets/sounds/nhacnen.mp3" preload="auto" loop></audio>
   <main id="main-content">
     <section class="page-title">
       <h1>Địa chỉ các quán chay uy tín tại Hà Nội</h1>
       <p>Khám phá các nhà hàng, quán chay nổi bật tại Hà Nội với thông tin chi tiết, hình ảnh và bản đồ chỉ đường.</p>
     </section>
+    <section class="search-filter">
+      <input type="text" id="searchInput" placeholder="Tìm quán chay theo tên hoặc địa chỉ..." aria-label="Tìm kiếm quán chay">
+      <div class="filter-group">
+        <label for="districtFilter">Lọc theo quận:</label>
+        <select id="districtFilter">
+          <option value="">Tất cả các quận</option>
+          <option value="Hoàn Kiếm">Hoàn Kiếm</option>
+          <option value="Ba Đình">Ba Đình</option>
+          <option value="Hai Bà Trưng">Hai Bà Trưng</option>
+          <option value="Đống Đa">Đống Đa</option>
+          <option value="Tây Hồ">Tây Hồ</option>
+          <option value="Cầu Giấy">Cầu Giấy</option>
+          <option value="Thanh Xuân">Thanh Xuân</option>
+          <option value="Hoàng Mai">Hoàng Mai</option>
+          <option value="Long Biên">Long Biên</option>
+          <option value="Nam Từ Liêm">Nam Từ Liêm</option>
+          <option value="Bắc Từ Liêm">Bắc Từ Liêm</option>
+          <option value="Hà Đông">Hà Đông</option>
+          <option value="Sơn Tây">Sơn Tây</option>
+          <option value="Ba Vì">Ba Vì</option>
+          <option value="Phúc Thọ">Phúc Thọ</option>
+          <option value="Đan Phượng">Đan Phượng</option>
+          <option value="Hoài Đức">Hoài Đức</option>
+          <option value="Quốc Oai">Quốc Oai</option>
+          <option value="Thạch Thất">Thạch Thất</option>
+          <option value="Chương Mỹ">Chương Mỹ</option>
+          <option value="Thanh Oai">Thanh Oai</option>
+          <option value="Thường Tín">Thường Tín</option>
+          <option value="Phú Xuyên">Phú Xuyên</option>
+          <option value="Ứng Hòa">Ứng Hòa</option>
+          <option value="Mỹ Đức">Mỹ Đức</option>
+          <option value="Gia Lâm">Gia Lâm</option>
+          <option value="Đông Anh">Đông Anh</option>
+          <option value="Sóc Sơn">Sóc Sơn</option>
+          <option value="Mê Linh">Mê Linh</option>
+        </select>
+      </div>
+    </section>
     <section aria-labelledby="restaurants-heading">
-      <h2 id="restaurants-heading">Địa chỉ các quán chay uy tín tại Hà Nội</h2>
-      <div id="restaurantsList" class="restaurants-list" aria-live="polite">
-        <!-- Static fallback restaurant cards -->
-        <div class="restaurant-card" onclick="this.classList.toggle('card-active')">
-          <img src="assets/images/anlac.jpg" alt="Nhà hàng Chay An Lạc" loading="lazy">
-          <h3>Nhà hàng Chay An Lạc</h3>
-          <div class="address">12B Lý Quốc Sư, Hoàn Kiếm, Hà Nội</div>
-          <div class="price">50.000 - 150.000đ</div>
-          <div class="desc">Không gian yên tĩnh, thực đơn đa dạng món chay truyền thống và hiện đại.</div>
-          <div class="hours">Giờ mở cửa: 07:00 - 21:00</div>
-          <a class="btn btn-secondary btn-map" data-address="12B Lý Quốc Sư, Hoàn Kiếm, Hà Nội" onclick="event.stopPropagation();">Xem bản đồ</a>
-        </div>
-        <div class="restaurant-card" onclick="this.classList.toggle('card-active')">
-          <img src="assets/images/tamsen.jpg" alt="Nhà hàng Chay Tâm Sen" loading="lazy">
-          <h3>Nhà hàng Chay Tâm Sen</h3>
-          <div class="address">45A Nguyễn Du, Hai Bà Trưng, Hà Nội</div>
-          <div class="price">60.000 - 200.000đ</div>
-          <div class="desc">Thực đơn phong phú, nổi bật với các món nấm và đậu phụ.</div>
-          <div class="hours">Giờ mở cửa: 08:00 - 22:00</div>
-          <a class="btn btn-secondary btn-map" data-address="45A Nguyễn Du, Hai Bà Trưng, Hà Nội" onclick="event.stopPropagation();">Xem bản đồ</a>
-        </div>
-        <div class="restaurant-card" onclick="this.classList.toggle('card-active')">
-          <img src="assets/images/thientam.jpg" alt="Nhà hàng Chay Thiện Tâm" loading="lazy">
-          <h3>Nhà hàng Chay Thiện Tâm</h3>
-          <div class="address">89 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội</div>
-          <div class="price">70.000 - 180.000đ</div>
-          <div class="desc">Không gian ấm cúng, phục vụ các món chay thuần Việt.</div>
-          <div class="hours">Giờ mở cửa: 09:00 - 21:30</div>
-          <a class="btn btn-secondary btn-map" data-address="89 Trần Hưng Đạo, Hoàn Kiếm, Hà Nội" onclick="event.stopPropagation();">Xem bản đồ</a>
-        </div>
-        <div class="restaurant-card" onclick="this.classList.toggle('card-active')">
-          <img src="assets/images/senvang.jpg" alt="Nhà hàng Chay Sen Vàng" loading="lazy">
-          <h3>Nhà hàng Chay Sen Vàng</h3>
-          <div class="address">23B Quang Trung, Hoàn Kiếm, Hà Nội</div>
-          <div class="price">80.000 - 220.000đ</div>
-          <div class="desc">Đặc sản các món chay miền Bắc, phục vụ buffet cuối tuần.</div>
-          <div class="hours">Giờ mở cửa: 10:00 - 22:00</div>
-          <a class="btn btn-secondary btn-map" data-address="23B Quang Trung, Hoàn Kiếm, Hà Nội" onclick="event.stopPropagation();">Xem bản đồ</a>
-        </div>
-        <div class="restaurant-card" onclick="this.classList.toggle('card-active')">
-          <img src="assets/images/tinhtam.jpg" alt="Nhà hàng Chay Tịnh Tâm" loading="lazy">
-          <h3>Nhà hàng Chay Tịnh Tâm</h3>
-          <div class="address">56B Phan Chu Trinh, Hoàn Kiếm, Hà Nội</div>
-          <div class="price">40.000 - 120.000đ</div>
-          <div class="desc">Thực đơn đa dạng, giá cả hợp lý, phục vụ nhanh chóng.</div>
-          <div class="hours">Giờ mở cửa: 07:30 - 20:30</div>
-          <a class="btn btn-secondary btn-map" data-address="56B Phan Chu Trinh, Hoàn Kiếm, Hà Nội" onclick="event.stopPropagation();">Xem bản đồ</a>
-        </div>
-        <div class="restaurant-card" onclick="this.classList.toggle('card-active')">
-          <img src="assets/images/huongthien.jpg" alt="Nhà hàng Chay Hương Thiền" loading="lazy">
-          <h3>Nhà hàng Chay Hương Thiền</h3>
-          <div class="address">102B Đội Cấn, Ba Đình, Hà Nội</div>
-          <div class="price">60.000 - 170.000đ</div>
-          <div class="desc">Không gian thiền tịnh, món ăn thanh đạm, tốt cho sức khỏe.</div>
-          <div class="hours">Giờ mở cửa: 08:00 - 21:00</div>
-          <a class="btn btn-secondary btn-map" data-address="102B Đội Cấn, Ba Đình, Hà Nội" onclick="event.stopPropagation();">Xem bản đồ</a>
-        </div>
-        <div class="restaurant-card" onclick="this.classList.toggle('card-active')">
-          <img src="assets/images/bode.jpg" alt="Nhà hàng Chay Bồ Đề" loading="lazy">
-          <h3>Nhà hàng Chay Bồ Đề</h3>
-          <div class="address">15B Nguyễn Chí Thanh, Đống Đa, Hà Nội</div>
-          <div class="price">70.000 - 200.000đ</div>
-          <div class="desc">Thực đơn đa dạng, nổi bật với các món lẩu chay.</div>
-          <div class="hours">Giờ mở cửa: 09:00 - 22:00</div>
-          <a class="btn btn-secondary btn-map" data-address="15B Nguyễn Chí Thanh, Đống Đa, Hà Nội" onclick="event.stopPropagation();">Xem bản đồ</a>
-        </div>
-        <div class="restaurant-card" onclick="this.classList.toggle('card-active')">
-          <img src="assets/images/tamduc.jpg" alt="Nhà hàng Chay Tâm Đức" loading="lazy">
-          <h3>Nhà hàng Chay Tâm Đức</h3>
-          <div class="address">88B Láng Hạ, Đống Đa, Hà Nội</div>
-          <div class="price">50.000 - 160.000đ</div>
-          <div class="desc">Không gian rộng rãi, phục vụ các món chay truyền thống.</div>
-          <div class="hours">Giờ mở cửa: 10:00 - 21:00</div>
-          <a class="btn btn-secondary btn-map" data-address="88B Láng Hạ, Đống Đa, Hà Nội" onclick="event.stopPropagation();">Xem bản đồ</a>
-        </div>
-        <div class="restaurant-card" onclick="this.classList.toggle('card-active')">
-          <img src="assets/images/hoabinh.jpg" alt="Nhà hàng Chay Hòa Bình" loading="lazy">
-          <h3>Nhà hàng Chay Hòa Bình</h3>
-          <div class="address">22B Phố Huế, Hai Bà Trưng, Hà Nội</div>
-          <div class="price">60.000 - 140.000đ</div>
-          <div class="desc">Thực đơn phong phú, giá cả phải chăng, phục vụ tận tình.</div>
-          <div class="hours">Giờ mở cửa: 08:00 - 20:00</div>
-          <a class="btn btn-secondary btn-map" data-address="22B Phố Huế, Hai Bà Trưng, Hà Nội" onclick="event.stopPropagation();">Xem bản đồ</a>
-        </div>
-        <div class="restaurant-card" onclick="this.classList.toggle('card-active')">
-          <img src="assets/images/taman.jpg" alt="Nhà hàng Chay Tâm An" loading="lazy">
-          <h3>Nhà hàng Chay Tâm An</h3>
-          <div class="address">33B Kim Mã, Ba Đình, Hà Nội</div>
-          <div class="price">55.000 - 130.000đ</div>
-          <div class="desc">Không gian nhẹ nhàng, món ăn ngon, phục vụ chuyên nghiệp.</div>
-          <div class="hours">Giờ mở cửa: 09:00 - 21:00</div>
-          <a class="btn btn-secondary btn-map" data-address="33B Kim Mã, Ba Đình, Hà Nội" onclick="event.stopPropagation();">Xem bản đồ</a>
-        </div>
-        <div class="restaurant-card" onclick="this.classList.toggle('card-active')">
-          <img src="assets/images/vovi1.jpg" alt="Quán chay Vô Vi 1" loading="lazy">
-          <h3>Quán chay Vô Vi 1</h3>
-          <div class="address">Vô Vi 1, Hà Nội (đang cập nhật)</div>
-          <div class="price">50.000 - 150.000đ</div>
-          <div class="desc">Quán chay Vô Vi - phong cách truyền thống, thực đơn đa dạng món chay thuần Việt.</div>
-          <div class="hours">Giờ mở cửa: 08:00 - 21:00</div>
-          <a class="btn btn-secondary btn-map" data-address="Vô Vi 1, Hà Nội (đang cập nhật)" onclick="event.stopPropagation();">Xem bản đồ</a>
-        </div>
-        <div class="restaurant-card" onclick="this.classList.toggle('card-active')">
-          <img src="assets/images/vovi2.jpg" alt="Quán chay Vô Vi 2" loading="lazy">
-          <h3>Quán chay Vô Vi 2</h3>
-          <div class="address">Vô Vi 2, Hà Nội (đang cập nhật)</div>
-          <div class="price">50.000 - 160.000đ</div>
-          <div class="desc">Quán chay Vô Vi 2 - phục vụ các món chay hiện đại và truyền thống.</div>
-          <div class="hours">Giờ mở cửa: 08:00 - 21:00</div>
-          <a class="btn btn-secondary btn-map" data-address="Vô Vi 2, Hà Nội (đang cập nhật)" onclick="event.stopPropagation();">Xem bản đồ</a>
-        </div>
+      <h2 id="restaurants-heading" style="display:none;">Danh sách quán chay</h2>
+      <div id="restaurantsList" class="restaurants-grid" aria-live="polite">
+        <!-- JS sẽ tự động render danh sách quán chay từ data/restaurants.json -->
       </div>
     </section>
   </main>

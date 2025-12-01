@@ -24,6 +24,15 @@
       </ul>
     </nav>
   </header>
+  <!-- Icon đĩa xoay và audio nhạc nền -->
+  <div id="musicPlayerWrap" style="position:fixed;left:2rem;bottom:2rem;z-index:9999;display:flex;align-items:center;gap:0.5rem;">
+    <button id="musicDiscBtn" onclick="toggleMusic()" aria-pressed="false" aria-label="Bật/tắt nhạc nền" title="Bấm để bật/tắt nhạc nền" style="background:radial-gradient(circle,#fffbe8 60%,#C8A27D22 100%);border:none;outline:none;cursor:pointer;padding:0.5rem;border-radius:50%;box-shadow:0 2px 12px #C8A27D44;transition:box-shadow 0.2s;position:relative;">
+        <img id="musicDiscIcon" src="assets/icons/disc.svg" alt="Đĩa nhạc" style="width:56px;height:56px;transition:transform 0.5s;filter:drop-shadow(0 2px 8px #C8A27D88);">
+        <span id="musicDiscStatus" style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:1rem;font-weight:600;color:#C8A27D;background:#fffbe8;padding:2px 10px;border-radius:12px;box-shadow:0 2px 8px #C8A27D22;opacity:0.92;pointer-events:none;">Mở nhạc</span>
+      </button>
+    </div>
+    <audio id="musicBg" src="assets/sounds/nhacnen.mp3" preload="auto" loop></audio>
+      
   <main id="main-content">
     <section class="page-title">
       <h1>Danh sách Món Chay</h1>
@@ -45,90 +54,90 @@
     </section>
     <section>
       <div id="recipesGrid" class="recipes-grid" aria-live="polite">
-        <!-- Static fallback recipe cards -->
-        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=1'">
+        <!-- Recipe cards sẽ được JS render từ data/recipes.json -->
+        <div class="recipe-card" data-id="1" onclick="location.href='recipe-detail.html?id=1'">
           <img src="assets/images/pho-chay.jpg" alt="Phở chay Hà Nội" loading="lazy">
           <div class="tags"><span class="tag">nấm</span><span class="tag">đậu phụ</span><span class="tag">món nước</span></div>
           <h3>Phở chay Hà Nội</h3>
           <p>Phở chay thanh đạm, nước dùng rau củ ngọt tự nhiên, đậu phụ chiên giòn.</p>
           <div class="time">⏱ Chuẩn bị 30 phút, nấu 45 phút</div>
         </div>
-        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=2'">
+        <div class="recipe-card" data-id="2" onclick="location.href='recipe-detail.html?id=2'">
           <img src="assets/images/bun-rieu-chay.jpg" alt="Bún riêu chay" loading="lazy">
           <div class="tags"><span class="tag">cà chua</span><span class="tag">đậu phụ</span><span class="tag">món nước</span></div>
           <h3>Bún riêu chay</h3>
           <p>Bún riêu chay đậm đà, màu sắc hấp dẫn từ cà chua, đậu phụ và nấm.</p>
           <div class="time">⏱ Chuẩn bị 30 phút, nấu 40 phút</div>
         </div>
-        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=3'">
+        <div class="recipe-card" data-id="3" onclick="location.href='recipe-detail.html?id=3'">
           <img src="assets/images/com-rang-chay.jpg" alt="Cơm rang thập cẩm chay" loading="lazy">
           <div class="tags"><span class="tag">cơm</span><span class="tag">đậu phụ</span><span class="tag">món xào</span></div>
           <h3>Cơm rang thập cẩm chay</h3>
           <p>Cơm rang chay với rau củ, nấm, đậu phụ và hạt điều, màu sắc bắt mắt.</p>
           <div class="time">⏱ Chuẩn bị 20 phút, nấu 20 phút</div>
         </div>
-        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=4'">
+        <div class="recipe-card" data-id="4" onclick="location.href='recipe-detail.html?id=4'">
           <img src="assets/images/dau-phu-sot-ca-chua.jpg" alt="Đậu phụ sốt cà chua" loading="lazy">
           <div class="tags"><span class="tag">đậu phụ</span><span class="tag">cà chua</span></div>
           <h3>Đậu phụ sốt cà chua</h3>
           <p>Đậu phụ mềm sốt cà chua, vị chua ngọt hài hòa, ăn cùng cơm rất ngon.</p>
           <div class="time">⏱ Chuẩn bị 15 phút, nấu 20 phút</div>
         </div>
-        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=5'">
+        <div class="recipe-card" data-id="5" onclick="location.href='recipe-detail.html?id=5'">
           <img src="assets/images/goi-cuon-chay.jpg" alt="Gỏi cuốn chay" loading="lazy">
-          <div class="tags"><span class="tag">rau củ</span><span class="tag">đậu phụ</span></div>
+          <div class="tags"><span class="tag">rau củ</span><span class="tag">đậu phụ</span><span class="tag">món khô</span></div>
           <h3>Gỏi cuốn chay</h3>
           <p>Gỏi cuốn chay thanh mát, nhiều rau củ, đậu phụ chiên, ăn kèm nước chấm đặc biệt.</p>
           <div class="time">⏱ Chuẩn bị 25 phút, nấu 10 phút</div>
         </div>
-        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=6'">
+        <div class="recipe-card" data-id="6" onclick="location.href='recipe-detail.html?id=6'">
           <img src="assets/images/canh-nam-dau-phu.jpg" alt="Canh nấm đậu phụ" loading="lazy">
-          <div class="tags"><span class="tag">nấm</span><span class="tag">đậu phụ</span></div>
+          <div class="tags"><span class="tag">nấm</span><span class="tag">đậu phụ</span><span class="tag">món nước</span></div>
           <h3>Canh nấm đậu phụ</h3>
           <p>Canh nấm đậu phụ thanh đạm, bổ dưỡng, vị ngọt tự nhiên từ nấm và rau củ.</p>
           <div class="time">⏱ Chuẩn bị 15 phút, nấu 20 phút</div>
         </div>
-        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=7'">
+        <div class="recipe-card" data-id="7" onclick="location.href='recipe-detail.html?id=7'">
           <img src="assets/images/banh-xeo-chay.jpg" alt="Bánh xèo chay" loading="lazy">
-          <div class="tags"><span class="tag">nấm</span><span class="tag">rau củ</span></div>
+          <div class="tags"><span class="tag">nấm</span><span class="tag">rau củ</span><span class="tag">món chiên</span></div>
           <h3>Bánh xèo chay</h3>
           <p>Bánh xèo chay giòn rụm, nhân rau củ, nấm, ăn kèm rau sống và nước chấm chay.</p>
           <div class="time">⏱ Chuẩn bị 35 phút, nấu 30 phút</div>
         </div>
-        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=8'">
-          <img src="assets/images/che-dau-xanh-chay.jpg" alt="Chè đậu xanh chay" loading="lazy">
+        <div class="recipe-card" data-id="8" onclick="location.href='recipe-detail.html?id=8'">
+          <img src="assets/images/che-dau-xanh.jpg" alt="Chè đậu xanh" loading="lazy">
           <div class="tags"><span class="tag">đậu xanh</span><span class="tag">món tráng miệng</span></div>
-          <h3>Chè đậu xanh chay</h3>
-          <p>Chè đậu xanh chay ngọt thanh, giải nhiệt, ăn kèm nước cốt dừa béo nhẹ.</p>
+          <h3>Chè đậu xanh</h3>
+          <p>Chè đậu xanh ngọt thanh, giải nhiệt, ăn kèm nước cốt dừa béo nhẹ.</p>
           <div class="time">⏱ Chuẩn bị 15 phút, nấu 35 phút</div>
         </div>
-        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=9'">
-          <img src="assets/images/sup-bi-do-chay.jpg" alt="Súp bí đỏ chay" loading="lazy">
+        <div class="recipe-card" data-id="9" onclick="location.href='recipe-detail.html?id=9'">
+          <img src="assets/images/sup-bi-do.jpg" alt="Súp bí đỏ" loading="lazy">
           <div class="tags"><span class="tag">bí đỏ</span><span class="tag">món nước</span></div>
-          <h3>Súp bí đỏ chay</h3>
-          <p>Súp bí đỏ chay mịn, thơm, giàu dinh dưỡng, thích hợp cho trẻ nhỏ và người ăn kiêng.</p>
-          <div class="time">⏱ Chuẩn bị 20 phút, nấu 30 phút</div>
+          <h3>Súp bí đỏ</h3>
+          <p>Súp bí đỏ mịn, thơm, giàu dinh dưỡng, thích hợp cho trẻ nhỏ và người ăn kiêng.</p>
+          <div class="time">⏱ Chuẩn bị 20 phút, nấu 25 phút</div>
         </div>
-        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=10'">
+        <div class="recipe-card" data-id="10" onclick="location.href='recipe-detail.html?id=10'">
           <img src="assets/images/dau-phu-chien-gion.jpg" alt="Đậu phụ chiên giòn" loading="lazy">
           <div class="tags"><span class="tag">đậu phụ</span><span class="tag">món chiên</span></div>
           <h3>Đậu phụ chiên giòn</h3>
           <p>Đậu phụ chiên giòn vàng, lớp vỏ xù hấp dẫn, ăn kèm nước chấm chay cay nhẹ.</p>
-          <div class="time">⏱ Chuẩn bị 15 phút, nấu 15 phút</div>
+          <div class="time">⏱ Chuẩn bị 10 phút, nấu 15 phút</div>
         </div>
-        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=11'">
-          <img src="assets/images/nam-xao-thap-cam.jpg" alt="Nấm xào thập cẩm" loading="lazy">
-          <div class="tags"><span class="tag">nấm</span><span class="tag">rau củ</span></div>
-          <h3>Nấm xào thập cẩm</h3>
-          <p>Nấm xào thập cẩm chay, nhiều loại nấm, rau củ, vị ngọt tự nhiên.</p>
-          <div class="time">⏱ Chuẩn bị 20 phút, nấu 15 phút</div>
+        <div class="recipe-card" data-id="11" onclick="location.href='recipe-detail.html?id=11'">
+          <img src="assets/images/nam-xao-thap-cam-chay.jpg" alt="Nấm xào thập cẩm chay" loading="lazy">
+          <div class="tags"><span class="tag">nấm</span><span class="tag">rau củ</span><span class="tag">món xào</span></div>
+          <h3>Nấm xào thập cẩm chay</h3>
+          <p>Nấm xào thập cẩm chay là sự kết hợp của nhiều loại nấm, rau củ, vị ngọt tự nhiên, màu sắc bắt mắt.</p>
+          <div class="time">⏱ Chuẩn bị 20 phút, nấu 20 phút</div>
         </div>
-        <div class="recipe-card" onclick="location.href='recipe-detail.html?id=12'">
-          <img src="assets/images/banh-chuoi-hap-chay.jpg" alt="Bánh chuối hấp chay" loading="lazy">
+        <div class="recipe-card" data-id="12" onclick="location.href='recipe-detail.html?id=12'">
+          <img src="assets/images/banh-chuoi-hap.jpg" alt="Bánh chuối hấp" loading="lazy">
           <div class="tags"><span class="tag">chuối</span><span class="tag">món tráng miệng</span></div>
-          <h3>Bánh chuối hấp chay</h3>
-          <p>Bánh chuối hấp chay mềm thơm, vị ngọt tự nhiên, ăn kèm nước cốt dừa béo nhẹ.</p>
-          <div class="time">⏱ Chuẩn bị 25 phút, nấu 40 phút</div>
+          <h3>Bánh chuối hấp</h3>
+          <p>Bánh chuối hấp mềm thơm, vị ngọt tự nhiên, ăn kèm nước cốt dừa béo nhẹ.</p>
+          <div class="time">⏱ Chuẩn bị 25 phút, nấu 30 phút</div>
         </div>
       </div>
     </section>
