@@ -1,5 +1,5 @@
 /* Hiệu ứng xoay cho icon đĩa nhạc */
-#musicDiscIcon[style*="animation: spinDisc"] {
+#musicDiscIcon.spinning {
   animation: spinDisc 2s linear infinite !important;
 }
 @keyframes spinDisc {
@@ -1420,5 +1420,52 @@ body {
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
+  }
+  
+  /* Music player và mõ responsive cho mobile */
+  #musicPlayerWrap {
+    left: 1rem !important;
+    bottom: 1rem !important;
+  }
+  
+  #musicDiscBtn {
+    padding: 0.3rem !important;
+  }
+  
+  #musicDiscIcon {
+    width: 48px !important;
+    height: 48px !important;
+  }
+  
+  #musicDiscStatus {
+    font-size: 0.85rem !important;
+    padding: 2px 8px !important;
+    top: -16px !important;
+    white-space: nowrap;
+  }
+  
+  #moMiniWrap {
+    right: 1rem !important;
+    bottom: 1rem !important;
+    gap: 0.3rem !important;
+  }
+  
+  #moLabel {
+    display: none !important;
+  }
+  
+  #moMini {
+    width: 52px !important;
+    height: 52px !important;
+  }
+  
+  #moMini img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  
+  #moPlus {
+    top: -24px !important;
+    font-size: 1.1rem !important;
   }
 }

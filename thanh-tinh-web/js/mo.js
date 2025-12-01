@@ -14,7 +14,22 @@
     
     // Click/Tap: play sound + hiệu ứng
     var lastClick = 0, clickCount = 0, clickTimeout;
+    var firstTap = true; // Unlock audio trên mobile
     function playMoEffect() {
+      // Mobile cần user interaction để phát nhạc lần đầu
+      if(firstTap) {
+        firstTap = false;
+        var musicBg = document.getElementById('musicBg');
+        if(musicBg && musicBg.paused && !musicBg.hasAttribute('data-user-paused')) {
+          musicBg.play().then(function() {
+            var disc = document.getElementById('musicDiscIcon');
+            var status = document.getElementById('musicDiscStatus');
+            if(disc) disc.style.animation = 'spinDisc 2s linear infinite';
+            if(status) status.textContent = 'Đang phát';
+          }).catch(function() {});
+        }
+      }
+      
       // Phát âm thanh: tạo Audio mới mỗi lần để đảm bảo có thể phát liên tiếp
       (function playOne() {
         try {
@@ -99,6 +114,10 @@
         isDragging = false;
         moMini.style.cursor = 'grab';
       }
+      // Reset hasMoved sau khi hoàn thành
+      setTimeout(function() {
+        hasMoved = false;
+      }, 100);
     }
     // Mouse events
     moMini.addEventListener('mousedown', function(e) {
@@ -108,13 +127,19 @@
     document.addEventListener('mousemove', function(e) {
       moveDrag(e.clientX, e.clientY);
     });
-    document.addEventListener('mouseup', endDrag);
-    // Touch events
+    document.addEventListener('mouseup', function(e) {
+      if(isDragging && !hasMoved) {
+        // Click không drag
+        playMoEffect();
+      }
+      endDrag();
+    });
+    
+    // Touch events - hoạt động Y HỆT mouse
     moMini.addEventListener('touchstart', function(e) {
-      e.preventDefault(); // Prevent default để tránh trigger click sau touchend
       var touch = e.touches[0];
       startDrag(touch.clientX, touch.clientY);
-    }, { passive: false });
+    });
     document.addEventListener('touchmove', function(e) {
       if(isDragging && e.touches.length > 0) {
         var touch = e.touches[0];
@@ -122,17 +147,11 @@
       }
     });
     document.addEventListener('touchend', function(e) {
-      // Nếu là tap nhanh (không drag), trigger click effect
-      var touchDuration = Date.now() - touchStartTime;
-      if(isDragging && !hasMoved && touchDuration < 300) {
+      if(isDragging && !hasMoved) {
+        // Tap không drag
         playMoEffect();
       }
       endDrag();
-    });
-    // Mouse click (for desktop)
-    moMini.addEventListener('click', function(e) {
-      if(hasMoved) return; // Bỏ qua nếu vừa drag
-      playMoEffect();
     });
     // Reset vị trí nếu không drag 10s
     var lastDrag = Date.now();

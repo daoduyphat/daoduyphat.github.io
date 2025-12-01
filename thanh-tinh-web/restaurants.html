@@ -10,6 +10,23 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" href="assets/icons/leaf.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    @keyframes spinDisc {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    #musicDiscIcon.spinning {
+      animation: spinDisc 2s linear infinite !important;
+    }
+    #musicDiscStatus {
+      visibility: hidden;
+      opacity: 0 !important;
+    }
+    #musicDiscStatus.show {
+      visibility: visible;
+      opacity: 0.92 !important;
+    }
+  </style>
 </head>
 <body>
   <!-- Overlay yêu cầu xoay ngang -->
@@ -68,7 +85,7 @@
   <div id="musicPlayerWrap" style="position:fixed;left:2rem;bottom:2rem;z-index:9999;display:flex;align-items:center;gap:0.5rem;">
     <button id="musicDiscBtn" onclick="toggleMusic()" aria-pressed="false" aria-label="Bật/tắt nhạc nền" title="Bấm để bật/tắt nhạc nền" style="background:radial-gradient(circle,#fffbe8 60%,#C8A27D22 100%);border:none;outline:none;cursor:pointer;padding:0.5rem;border-radius:50%;box-shadow:0 2px 12px #C8A27D44;transition:box-shadow 0.2s;position:relative;">
         <img id="musicDiscIcon" src="assets/icons/disc.svg" alt="Đĩa nhạc" style="width:56px;height:56px;transition:transform 0.5s;filter:drop-shadow(0 2px 8px #C8A27D88);">
-        <span id="musicDiscStatus" style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:1rem;font-weight:600;color:#C8A27D;background:#fffbe8;padding:2px 10px;border-radius:12px;box-shadow:0 2px 8px #C8A27D22;opacity:0.92;pointer-events:none;">Mở nhạc</span>
+        <span id="musicDiscStatus" style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:1rem;font-weight:600;color:#C8A27D;background:#fffbe8;padding:2px 10px;border-radius:12px;box-shadow:0 2px 8px #C8A27D22;opacity:0;pointer-events:none;transition:opacity 0.3s;">Đang phát</span>
       </button>
     </div>
     <audio id="musicBg" src="assets/sounds/nhacnen.mp3" preload="auto" loop></audio>
@@ -148,6 +165,27 @@
     </div>
   </div>
   <audio id="moSound" src="assets/sounds/gomo.mp3" preload="auto"></audio>
+  
+  <!-- Inline script để set UI ngay lập tức, tránh giật -->
+  <script>
+    (function() {
+      var musicPlaying = localStorage.getItem('musicPlaying');
+      var status = document.getElementById('musicDiscStatus');
+      var disc = document.getElementById('musicDiscIcon');
+      
+      if (status && disc) {
+        if (musicPlaying === 'true') {
+          status.textContent = 'Đang phát';
+          status.classList.add('show');
+          disc.classList.add('spinning');
+        } else {
+          status.textContent = 'Mở nhạc';
+          status.classList.add('show');
+        }
+      }
+    })();
+  </script>
+  
   <script src="js/mo.js"></script>
   <script src="js/script.js"></script>
   <script src="js/animation.js"></script>

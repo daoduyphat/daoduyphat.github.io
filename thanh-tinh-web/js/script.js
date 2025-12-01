@@ -1,43 +1,4 @@
-// Nút tắt/mở nhạc nền
-window.toggleMusic = function() {
-  var audio = document.getElementById('musicBg');
-  var disc = document.getElementById('musicDiscIcon');
-  var status = document.getElementById('musicDiscStatus');
-  if (!audio) return;
-  if (audio.paused) {
-    audio.play();
-    if (disc) disc.style.animation = 'spinDisc 2s linear infinite';
-    if (status) status.textContent = 'Đang phát';
-  } else {
-    audio.pause();
-    if (disc) disc.style.animation = '';
-    if (status) status.textContent = 'Mở nhạc';
-  }
-}
-
-// Giữ nhạc tiếp tục phát khi chuyển tab hoặc mất focus
-document.addEventListener('DOMContentLoaded', function() {
-  var audio = document.getElementById('musicBg');
-  if (audio) {
-    // Ngăn trình duyệt tự động dừng nhạc khi chuyển tab
-    audio.addEventListener('pause', function(e) {
-      // Chỉ cho phép pause khi người dùng bấm nút tắt nhạc
-      // Không tự động pause khi chuyển tab
-      if (!audio.hasAttribute('data-user-paused')) {
-        // Nếu không phải người dùng pause, thử phát lại
-        setTimeout(function() {
-          if (audio.paused && !audio.hasAttribute('data-user-paused')) {
-            audio.play().catch(function() {
-              // Bỏ qua lỗi nếu trình duyệt chặn autoplay
-            });
-          }
-        }, 100);
-      }
-    });
-  }
-});
-
-// Cập nhật hàm toggleMusic để đánh dấu khi người dùng pause
+// Nút tắt/mở nhạc nền với localStorage
 window.toggleMusic = function() {
   var audio = document.getElementById('musicBg');
   var disc = document.getElementById('musicDiscIcon');
@@ -46,15 +7,69 @@ window.toggleMusic = function() {
   if (audio.paused) {
     audio.removeAttribute('data-user-paused');
     audio.play();
-    if (disc) disc.style.animation = 'spinDisc 2s linear infinite';
-    if (status) status.textContent = 'Đang phát';
+    if (disc) disc.classList.add('spinning');
+    if (status) {
+      status.textContent = 'Đang phát';
+      status.classList.add('show');
+    }
+    localStorage.setItem('musicPlaying', 'true');
+    localStorage.setItem('musicCurrentTime', '0');
   } else {
     audio.setAttribute('data-user-paused', 'true');
     audio.pause();
-    if (disc) disc.style.animation = '';
-    if (status) status.textContent = 'Mở nhạc';
+    if (disc) disc.classList.remove('spinning');
+    if (status) {
+      status.textContent = 'Mở nhạc';
+      status.classList.add('show');
+    }
+    localStorage.setItem('musicPlaying', 'false');
   }
 }
+
+// Tự động phát nhạc khi vào trang nếu đang bật
+document.addEventListener('DOMContentLoaded', function() {
+  var audio = document.getElementById('musicBg');
+  
+  if (audio) {
+    // Kiểm tra trạng thái nhạc từ localStorage
+    var musicPlaying = localStorage.getItem('musicPlaying');
+    var musicTime = parseFloat(localStorage.getItem('musicCurrentTime') || '0');
+    
+    // UI đã được set bởi inline script, chỉ cần phát nhạc
+    if (musicPlaying === 'true') {
+      audio.currentTime = musicTime;
+      audio.play().catch(function(err) {
+        console.log('Autoplay bị chặn:', err);
+        // Nếu autoplay bị chặn, reset UI
+        var disc = document.getElementById('musicDiscIcon');
+        var status = document.getElementById('musicDiscStatus');
+        if (disc) disc.classList.remove('spinning');
+        if (status) {
+          status.textContent = 'Mở nhạc';
+          status.classList.add('show');
+        }
+      });
+    }
+    
+    // Lưu thời gian hiện tại của nhạc
+    audio.addEventListener('timeupdate', function() {
+      if (!audio.paused) {
+        localStorage.setItem('musicCurrentTime', audio.currentTime.toString());
+      }
+    });
+    
+    // Ngăn trình duyệt tự động dừng nhạc khi chuyển tab
+    audio.addEventListener('pause', function(e) {
+      if (!audio.hasAttribute('data-user-paused')) {
+        setTimeout(function() {
+          if (audio.paused && !audio.hasAttribute('data-user-paused')) {
+            audio.play().catch(function() {});
+          }
+        }, 100);
+      }
+    });
+  }
+});
 // Load restaurant detail page
 function loadRestaurantDetail() {
   const params = new URLSearchParams(window.location.search);
