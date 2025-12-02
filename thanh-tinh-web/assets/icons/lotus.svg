@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <!-- Lá sen dưới (thiết kế đơn giản hơn) -->
+  <ellipse cx="40" cy="90" rx="22" ry="12" fill="#4CAF50" opacity="0.9"/>
+  <ellipse cx="80" cy="90" rx="22" ry="12" fill="#388E3C" opacity="0.9"/>
+  <path d="M 40 90 Q 45 85 50 90" fill="none" stroke="#2E7D32" stroke-width="1.5" opacity="0.7"/>
+  <path d="M 80 90 Q 75 85 70 90" fill="none" stroke="#2E7D32" stroke-width="1.5" opacity="0.7"/>
+  
+  <!-- Cánh hoa sen ngoài (8 cánh - gradient đẹp) -->
+  <defs>
+    <radialGradient id="petalGrad1" cx="50%" cy="30%">
+      <stop offset="0%" stop-color="#FFE5F0"/>
+      <stop offset="100%" stop-color="#FF69B4"/>
+    </radialGradient>
+    <radialGradient id="petalGrad2" cx="50%" cy="30%">
+      <stop offset="0%" stop-color="#FFF0F8"/>
+      <stop offset="100%" stop-color="#FF91C9"/>
+    </radialGradient>
+    <radialGradient id="centerGrad" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#FFF9C4"/>
+      <stop offset="60%" stop-color="#FFD54F"/>
+      <stop offset="100%" stop-color="#FFA726"/>
+    </radialGradient>
+  </defs>
+  
+  <!-- Cánh ngoài cùng -->
+  <ellipse cx="60" cy="58" rx="14" ry="32" fill="url(#petalGrad1)" transform="rotate(0 60 58)"/>
+  <ellipse cx="60" cy="58" rx="14" ry="32" fill="url(#petalGrad2)" transform="rotate(45 60 58)"/>
+  <ellipse cx="60" cy="58" rx="14" ry="32" fill="url(#petalGrad1)" transform="rotate(90 60 58)"/>
+  <ellipse cx="60" cy="58" rx="14" ry="32" fill="url(#petalGrad2)" transform="rotate(135 60 58)"/>
+  <ellipse cx="60" cy="58" rx="14" ry="32" fill="url(#petalGrad1)" transform="rotate(180 60 58)"/>
+  <ellipse cx="60" cy="58" rx="14" ry="32" fill="url(#petalGrad2)" transform="rotate(225 60 58)"/>
+  <ellipse cx="60" cy="58" rx="14" ry="32" fill="url(#petalGrad1)" transform="rotate(270 60 58)"/>
+  <ellipse cx="60" cy="58" rx="14" ry="32" fill="url(#petalGrad2)" transform="rotate(315 60 58)"/>
+  
+  <!-- Cánh tầng giữa -->
+  <ellipse cx="60" cy="53" rx="11" ry="24" fill="#FFEAF5" transform="rotate(22.5 60 53)"/>
+  <ellipse cx="60" cy="53" rx="11" ry="24" fill="#FFD4E8" transform="rotate(67.5 60 53)"/>
+  <ellipse cx="60" cy="53" rx="11" ry="24" fill="#FFEAF5" transform="rotate(112.5 60 53)"/>
+  <ellipse cx="60" cy="53" rx="11" ry="24" fill="#FFD4E8" transform="rotate(157.5 60 53)"/>
+  <ellipse cx="60" cy="53" rx="11" ry="24" fill="#FFEAF5" transform="rotate(202.5 60 53)"/>
+  <ellipse cx="60" cy="53" rx="11" ry="24" fill="#FFD4E8" transform="rotate(247.5 60 53)"/>
+  <ellipse cx="60" cy="53" rx="11" ry="24" fill="#FFEAF5" transform="rotate(292.5 60 53)"/>
+  <ellipse cx="60" cy="53" rx="11" ry="24" fill="#FFD4E8" transform="rotate(337.5 60 53)"/>
+  
+  <!-- Cánh trong cùng -->
+  <ellipse cx="60" cy="48" rx="8" ry="18" fill="#FFF5FA" transform="rotate(0 60 48)"/>
+  <ellipse cx="60" cy="48" rx="8" ry="18" fill="#FFFFFF" transform="rotate(60 60 48)"/>
+  <ellipse cx="60" cy="48" rx="8" ry="18" fill="#FFF5FA" transform="rotate(120 60 48)"/>
+  <ellipse cx="60" cy="48" rx="8" ry="18" fill="#FFFFFF" transform="rotate(180 60 48)"/>
+  <ellipse cx="60" cy="48" rx="8" ry="18" fill="#FFF5FA" transform="rotate(240 60 48)"/>
+  <ellipse cx="60" cy="48" rx="8" ry="18" fill="#FFFFFF" transform="rotate(300 60 48)"/>
+  
+  <!-- Nhụy hoa (gradient đẹp) -->
+  <circle cx="60" cy="46" r="10" fill="url(#centerGrad)"/>
+  <circle cx="60" cy="46" r="7" fill="#FFE082" opacity="0.9"/>
+  
+  <!-- Hạt phấn (nhỏ và tinh tế) -->
+  <circle cx="56" cy="44" r="1.5" fill="#F57C00" opacity="0.85"/>
+  <circle cx="60" cy="42" r="1.5" fill="#F57C00" opacity="0.85"/>
+  <circle cx="64" cy="44" r="1.5" fill="#F57C00" opacity="0.85"/>
+  <circle cx="58" cy="47" r="1.3" fill="#F57C00" opacity="0.75"/>
+  <circle cx="62" cy="47" r="1.3" fill="#F57C00" opacity="0.75"/>
+  <circle cx="60" cy="49" r="1.3" fill="#F57C00" opacity="0.75"/>
+  <circle cx="57" cy="46" r="1" fill="#FB8C00" opacity="0.6"/>
+  <circle cx="63" cy="46" r="1" fill="#FB8C00" opacity="0.6"/>
+  
+  <!-- Hiệu ứng sáng nhẹ -->
+  <circle cx="60" cy="43" r="3" fill="#FFFFFF" opacity="0.3"/>
+</svg>

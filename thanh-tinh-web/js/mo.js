@@ -14,22 +14,7 @@
     
     // Click/Tap: play sound + hiệu ứng
     var lastClick = 0, clickCount = 0, clickTimeout;
-    var firstTap = true; // Unlock audio trên mobile
     function playMoEffect() {
-      // Mobile cần user interaction để phát nhạc lần đầu
-      if(firstTap) {
-        firstTap = false;
-        var musicBg = document.getElementById('musicBg');
-        if(musicBg && musicBg.paused && !musicBg.hasAttribute('data-user-paused')) {
-          musicBg.play().then(function() {
-            var disc = document.getElementById('musicDiscIcon');
-            var status = document.getElementById('musicDiscStatus');
-            if(disc) disc.style.animation = 'spinDisc 2s linear infinite';
-            if(status) status.textContent = 'Đang phát';
-          }).catch(function() {});
-        }
-      }
-      
       // Phát âm thanh: tạo Audio mới mỗi lần để đảm bảo có thể phát liên tiếp
       (function playOne() {
         try {
@@ -94,6 +79,8 @@
       offsetX = clientX - moMiniWrap.getBoundingClientRect().left;
       offsetY = clientY - moMiniWrap.getBoundingClientRect().top;
       moMini.style.cursor = 'grabbing';
+      
+      // Không hiện thùng rác ngay khi bắt đầu kéo
     }
     function moveDrag(clientX, clientY) {
       if(isDragging) {
@@ -106,6 +93,8 @@
           moMiniWrap.style.bottom = '';
           moMiniWrap.style.left = (clientX - offsetX) + 'px';
           moMiniWrap.style.top = (clientY - offsetY) + 'px';
+          
+
         }
       }
     }

@@ -1,58 +1,24 @@
 [
   {
+    "name": "Chùa Khai Nguyên",
+    "address": "Thôn Tây Ninh Đoài Phương, Sơn Đông, Sơn Tây, Hà Nội",
+    "district": "Sơn Tây",
+    "historical_info": "Chùa Khai Nguyên trước đây là Cổ Liêu Tự và có tên thường gọi là chùa Cheo. Tọa lạc tại vùng quê Sơn Tây bình dị, chùa cách thành phố Hà Nội khoảng 45km. Với quy mô bề thế và bức tượng Phật A Di Đà lớn nhất Đông Nam Á, chùa Khai Nguyên thu hút sự quan tâm của đông đảo du khách gần xa. Chùa trở thành một trong những địa điểm du lịch tâm linh gần Hà Nội hấp dẫn, mang đến cho khách hành hương, vãn cảnh nhiều trải nghiệm khó quên.",
+    "features": "Di tích kiến trúc nghệ thuật quốc gia",
+    "phone": "0986 611 496 - 0967 914 696",
+    "email": "chuakhainguyen @ gmail.com",
+    "website": "https://chuakhainguyen.com/",
+    "image": "assets/images/temples/chua-khai-nguyen.jpg"
+  },
+  {
     "name": "Chùa Trấn Quốc",
     "address": "Thanh Niên, Yên Phụ, Tây Hồ, Hà Nội",
-    "historical_info": "Chùa cổ nhất Hà Nội, xây dựng từ thế kỷ VI, nổi tiếng với kiến trúc cổ kính bên hồ Tây.",
-    "features": "Tháp Bảo, vườn tháp, lễ hội lớn",
-    "image": "assets/images/chua-tran-quoc.jpg"
-  },
-  {
-    "name": "Chùa Quán Sứ",
-    "address": "73 Quán Sứ, Hoàn Kiếm, Hà Nội",
-    "historical_info": "Trung tâm Phật giáo Việt Nam, nơi tổ chức nhiều sự kiện Phật giáo lớn.",
-    "features": "Kiến trúc truyền thống, lễ hội Phật Đản",
-    "image": "assets/images/chua-quan-su.jpg"
-  },
-  {
-    "name": "Chùa Một Cột",
-    "address": "Chùa Một Cột, Đội Cấn, Ba Đình, Hà Nội",
-    "historical_info": "Biểu tượng kiến trúc độc đáo, xây dựng từ thời Lý, nổi tiếng với cột đá giữa hồ sen.",
-    "features": "Kiến trúc một cột, hồ sen",
-    "image": "assets/images/chua-mot-cot.jpg"
-  },
-  {
-    "name": "Chùa Láng",
-    "address": "Láng Thượng, Đống Đa, Hà Nội",
-    "historical_info": "Chùa lớn, thờ Phật và Đức Thánh Láng, nổi tiếng với lễ hội truyền thống.",
-    "features": "Vườn cây, lễ hội Láng",
-    "image": "assets/images/chua-lang.jpg"
-  },
-  {
-    "name": "Chùa Bằng",
-    "address": "Bằng Liệt, Hoàng Mai, Hà Nội",
-    "historical_info": "Chùa lớn phía Nam Hà Nội, nổi tiếng với kiến trúc hiện đại và các hoạt động thiện nguyện.",
-    "features": "Kiến trúc mới, hoạt động xã hội",
-    "image": "assets/images/chua-bang.jpg"
-  },
-  {
-    "name": "Chùa Kim Liên",
-    "address": "Kim Liên, Đống Đa, Hà Nội",
-    "historical_info": "Chùa cổ, kiến trúc độc đáo, nằm bên hồ Kim Liên.",
-    "features": "Kiến trúc cổ, vườn hoa",
-    "image": "assets/images/chua-kim-lien.jpg"
-  },
-  {
-    "name": "Chùa Phúc Khánh",
-    "address": "Số 382 Tây Sơn, Đống Đa, Hà Nội",
-    "historical_info": "Chùa nổi tiếng với lễ cầu an đầu năm, thu hút đông đảo Phật tử.",
-    "features": "Lễ cầu an, không gian rộng",
-    "image": "assets/images/chua-phuc-khanh.jpg"
-  },
-  {
-    "name": "Chùa Hà",
-    "address": "Số 86 Nguyễn Văn Tuyết, Cầu Giấy, Hà Nội",
-    "historical_info": "Chùa nổi tiếng với lễ cầu duyên, thu hút giới trẻ Hà Nội.",
-    "features": "Lễ cầu duyên, kiến trúc đẹp",
-    "image": "assets/images/chua-ha.jpg"
+    "district": "Tây Hồ",
+    "historical_info": "Chùa Trấn Quốc nằm trên một hòn đảo phía Đông Hồ Tây. Chùa có lịch sử gần 1500 năm và được coi là lâu đời nhất ở Thăng Long - Hà Nội. Dưới thời nhà Lý và nhà Trần, chùa Trấn Quốc là trung tâm Phật giáo của kinh thành Thăng Long. ",
+    "features": "Tháp Bảo, vườn tháp",
+    "phone": "Đang cập nhật",
+    "email": "Đang cập nhật",
+    "website": "https://vinpearl.com/vi/chua-tran-quoc-ha-noi",
+    "image": "assets/images/temples/chua-tran-quoc.jpg"
   }
 ]

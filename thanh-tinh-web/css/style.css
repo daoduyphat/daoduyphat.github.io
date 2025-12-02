@@ -30,26 +30,40 @@ img {
 /* Tiêu đề nổi bật cho featured section */
 #featured-restaurants-heading, #featured-recipes-heading {
   font-family: 'Playfair Display', serif;
-  font-size: 2.1rem;
-  font-weight: 800;
-  color: #222;
-  letter-spacing: 0.01em;
+  font-size: 2.6rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #3BAF4A 0%, #C8A27D 50%, #FF91C9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.02em;
   text-align: center;
-  margin: 0 0 1.2rem 0;
-  line-height: 1.1;
-  text-shadow: 0 2px 8px #3BAF4A22;
+  margin: 0 0 1.8rem 0;
+  line-height: 1.2;
+  text-shadow: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
+  gap: 0.8rem;
+  filter: drop-shadow(0 4px 12px rgba(59,175,74,0.25));
+  animation: fadeInScale 0.6s ease-out;
+}
+@keyframes fadeInScale {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
 }
 #featured-restaurants-heading::before, #featured-recipes-heading::before {
   content: '';
   display: inline-block;
-  width: 32px;
-  height: 32px;
-  background: url('../assets/icons/leaf.svg') no-repeat center/contain;
-  filter: drop-shadow(0 2px 6px #3BAF4A33);
+  width: 52px;
+  height: 52px;
+  background: url('../assets/images/logo.png') no-repeat center/contain;
+  filter: drop-shadow(0 4px 12px rgba(255,105,180,0.5));
+  animation: floatIcon 3s ease-in-out infinite;
+}
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
 /* Form-group mềm mại, hiện đại */
 .form-group {
@@ -126,36 +140,38 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1.2rem;
+  padding: 0 1rem;
   min-height: 56px;
   border-radius: 0 0 18px 18px;
   background: rgba(255,255,255,0.98);
   box-shadow: 0 2px 12px #3BAF4A11;
   position: relative;
+  gap: 1rem;
 }
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.3rem;
   font-family: 'Playfair Display', serif;
-  font-size: 1.18rem;
+  font-size: 1.05rem;
   font-weight: 900;
   color: #3BAF4A;
   text-decoration: none;
   letter-spacing: 0.01em;
   padding: 0.1em 0.5em 0.1em 0;
   text-shadow: 0 2px 8px #3BAF4A22;
+  flex-shrink: 0;
 }
 .logo-img {
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   filter: drop-shadow(0 2px 8px #3BAF4A33);
-  margin-right: 7px;
+  margin-right: 5px;
 }
 .site-purpose {
-  font-size: 0.98rem;
+  font-size: 0.9rem;
   color: #a67c00;
   font-family: 'Inter',sans-serif;
   font-weight: 500;
@@ -164,30 +180,32 @@ img {
   white-space: nowrap;
   position: static;
   margin-left: auto;
-  margin-right: 1rem;
-  max-width: 480px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 6px 12px;
+  margin-right: 0.8rem;
+  max-width: none;
+  overflow: visible;
+  text-overflow: clip;
+  padding: 5px 10px;
   background: #f4f4f4cc;
-  border-radius: 12px;
+  border-radius: 10px;
   box-shadow: 0 1px 4px #C8A27D22;
+  flex-shrink: 0;
 }
 /* Nav đẹp, bo góc, bóng nhẹ */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 0.5rem;
   list-style: none;
   margin: 0;
   padding: 0;
   font-family: 'Inter',sans-serif;
-  font-size: 1.07rem;
+  font-size: 0.95rem;
   font-weight: 700;
   background: #fff;
-  border-radius: 18px;
+  border-radius: 16px;
   box-shadow: 0 2px 12px #3BAF4A11;
   border: 1.5px solid #e0e0e0;
+  flex-shrink: 0;
 }
 .nav-links a {
   color: #3BAF4A;
@@ -195,13 +213,14 @@ img {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.38em 1.25em;
-  border-radius: 18px;
+  padding: 0.35em 0.9em;
+  border-radius: 16px;
   font-weight: 700;
   box-shadow: none;
   transition: background 0.18s, color 0.18s, box-shadow 0.18s, transform 0.18s;
   position: relative;
   outline: none;
+  white-space: nowrap;
 }
 .nav-links a:hover {
   background: #f7e7c6;
@@ -222,6 +241,7 @@ img {
   cursor: pointer;
   margin-left: 1.1rem;
   z-index: 1100;
+  display: none; /* Ẩn hamburger vì chỉ hỗ trợ PC/Laptop */
 }
 .hamburger span {
   display: block;
@@ -230,7 +250,16 @@ img {
   margin: 3px 0;
   background: #c8a27d;
   border-radius: 2px;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
 }
 @media (max-width: 900px) {
   .navbar {
@@ -286,6 +315,40 @@ img {
   .nav-links {
     width: 98vw;
     padding-top: 56px;
+  }
+  
+  /* Tối ưu tiêu đề nổi bật cho mobile */
+  #featured-restaurants-heading, #featured-recipes-heading {
+    font-size: 1.8rem !important;
+    flex-direction: column;
+    gap: 0.5rem !important;
+  }
+  
+  #featured-restaurants-heading::before, #featured-recipes-heading::before {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  
+  /* Tối ưu banner cho mobile dọc */
+  .banner {
+    margin: 1rem auto !important;
+  }
+  
+  .banner-content h1 {
+    font-size: 1.6rem !important;
+  }
+  
+  .banner-content p {
+    font-size: 1rem !important;
+  }
+  
+  /* Scroll to top button nhỏ hơn */
+  #scrollToTopBtn {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1.6rem !important;
+    right: 1rem !important;
+    bottom: 5rem !important;
   }
 }
 /* Header chỉnh gọn đẹp, menu thẳng hàng */
@@ -905,11 +968,14 @@ body {
   width: 100%;
 }
 .recipe-card .time {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   color: var(--wood-brown);
   margin-bottom: 0;
   padding-top: 0.5rem;
   line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 /* Nâng cấp card quán chay */
 .restaurants-grid {
@@ -982,6 +1048,7 @@ body {
   min-height: 2.6rem;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1004,16 +1071,9 @@ body {
   margin-bottom: 0.4rem;
 }
 .restaurant-card .hours {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   color: #888;
   margin-bottom: 0.4rem;
-}
-  background: rgba(255,255,255,0.9);
-  color: var(--wood-brown);
-  padding: 6px 10px;
-  border-radius: 12px;
-  font-weight: 600;
-  box-shadow: 0 2px 8px #0001;
 }
 @media (max-width: 900px) {
   .recipes-list, .restaurants-grid {
@@ -1038,10 +1098,11 @@ body {
 }
 .temples-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(584px, 584px));
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto 2rem auto;
+  justify-content: center;
 }
 .temple-card {
   background: var(--white);
@@ -1052,7 +1113,9 @@ body {
   flex-direction: column;
   align-items: flex-start;
   transition: box-shadow 0.2s, transform 0.2s;
-  min-height: 320px;
+  width: 584px;
+  height: 596px;
+  overflow: hidden;
 }
 .temple-card:hover {
   box-shadow: 0 4px 16px #3BAF4A33;
@@ -1060,10 +1123,30 @@ body {
 }
 .temple-card img {
   width: 100%;
-  height: 140px;
+  height: 200px;
   object-fit: cover;
   border-radius: var(--radius);
   margin-bottom: 1rem;
+  flex-shrink: 0;
+}
+.temple-card .temple-info {
+  flex: 1;
+  overflow-y: auto;
+  width: 100%;
+}
+.temple-card .temple-info::-webkit-scrollbar {
+  width: 6px;
+}
+.temple-card .temple-info::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+.temple-card .temple-info::-webkit-scrollbar-thumb {
+  background: #C8A27D;
+  border-radius: 3px;
+}
+.temple-card .temple-info::-webkit-scrollbar-thumb:hover {
+  background: #3BAF4A;
 }
 .temple-card h3 {
   font-family: var(--font-heading);
@@ -1079,6 +1162,27 @@ body {
   font-size: 0.95rem;
   color: var(--wood-brown);
   margin-bottom: 0.5rem;
+}
+.temple-card .historical {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+.temple-card .contact {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  color: #444;
+}
+.temple-card .contact a {
+  color: var(--primary-green);
+  text-decoration: none;
+  transition: color 0.2s;
+  font-weight: 500;
+}
+.temple-card .contact a:hover {
+  color: var(--wood-brown);
+  text-decoration: underline;
 }
 
 .recipe-detail-section {
@@ -1141,11 +1245,12 @@ body {
   text-align: center;
 }
 .recipe-detail-section .time {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: var(--wood-brown);
   margin-bottom: 1rem;
   font-weight: 500;
   text-align: center;
+  white-space: nowrap;
 }
 .recipe-detail-section p {
   font-size: 1.15rem;
@@ -1374,98 +1479,29 @@ body {
   box-shadow: var(--shadow);
   padding: 2rem;
 }
-@media (max-width: 900px) {
-  .navbar {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
+
+/* Xóa tất cả CSS responsive cho mobile/tablet vì chỉ hỗ trợ PC/Laptop */
+/* Giữ lại style cơ bản, không có @media queries */
+
+/* Animations cho thùng rác */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
   }
-  .banner {
-    flex-direction: column;
-    padding: 1rem;
-  }
-  .banner-content {
-    padding: 1rem;
-  }
-  .categories, .featured-recipes, .page-title, .search-filter, .recipes-grid, .restaurants-grid, .temples-grid {
-    max-width: 98vw;
-    padding: 0 1vw;
-  }
-  .contact-section, .map-section, .recipe-detail-section {
-    max-width: 98vw;
-    padding: 1rem;
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }
-@media (max-width: 600px) {
-  .navbar {
-    flex-direction: column;
-    gap: 0.5rem;
-    padding: 0.5rem;
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
-  .banner-content h1 {
-    font-size: 1.5rem;
-  }
-  .categories h2, .featured-recipes h2, .page-title h1 {
-    font-size: 1.2rem;
-  }
-  .category-list {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .recipes-grid, .restaurants-grid, .temples-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-  .footer-content {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-  }
-  
-  /* Music player và mõ responsive cho mobile */
-  #musicPlayerWrap {
-    left: 1rem !important;
-    bottom: 1rem !important;
-  }
-  
-  #musicDiscBtn {
-    padding: 0.3rem !important;
-  }
-  
-  #musicDiscIcon {
-    width: 48px !important;
-    height: 48px !important;
-  }
-  
-  #musicDiscStatus {
-    font-size: 0.85rem !important;
-    padding: 2px 8px !important;
-    top: -16px !important;
-    white-space: nowrap;
-  }
-  
-  #moMiniWrap {
-    right: 1rem !important;
-    bottom: 1rem !important;
-    gap: 0.3rem !important;
-  }
-  
-  #moLabel {
-    display: none !important;
-  }
-  
-  #moMini {
-    width: 52px !important;
-    height: 52px !important;
-  }
-  
-  #moMini img {
-    width: 32px !important;
-    height: 32px !important;
-  }
-  
-  #moPlus {
-    top: -24px !important;
-    font-size: 1.1rem !important;
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
   }
 }

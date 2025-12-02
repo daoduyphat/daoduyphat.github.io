@@ -17,7 +17,10 @@ window.toggleMusic = function() {
   } else {
     audio.setAttribute('data-user-paused', 'true');
     audio.pause();
-    if (disc) disc.classList.remove('spinning');
+    if (disc) {
+      disc.classList.remove('spinning');
+      disc.style.animation = 'none';
+    }
     if (status) {
       status.textContent = 'Mở nhạc';
       status.classList.add('show');
@@ -43,7 +46,10 @@ document.addEventListener('DOMContentLoaded', function() {
         // Nếu autoplay bị chặn, reset UI
         var disc = document.getElementById('musicDiscIcon');
         var status = document.getElementById('musicDiscStatus');
-        if (disc) disc.classList.remove('spinning');
+        if (disc) {
+          disc.classList.remove('spinning');
+          disc.style.animation = 'none';
+        }
         if (status) {
           status.textContent = 'Mở nhạc';
           status.classList.add('show');
@@ -174,6 +180,7 @@ function renderRestaurantCard(restaurant) {
   
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(restaurant.address)}`;
   const phone = restaurant.phone || 'Đang cập nhật';
+  const hours = restaurant.opening_hours.replace(/ & /g, '<br>&');
   
   return `<div class="restaurant-card" data-id="${restaurant.id}">
     <div class="restaurant-card-content">
@@ -183,7 +190,7 @@ function renderRestaurantCard(restaurant) {
       <div class="address" style="font-size:0.95rem;color:#666;margin:0.3rem 0;display:flex;align-items:center;gap:0.3rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg> ${restaurant.address}</div>
       <div class="phone" style="font-size:0.95rem;color:#666;margin:0.3rem 0;display:flex;align-items:center;gap:0.3rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> ${phone}</div>
       <div class="price" style="font-weight:600;color:var(--primary-green);margin:0.3rem 0;display:flex;align-items:center;gap:0.3rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"></path><path d="M12 18V6"></path></svg> ${restaurant.price_range}</div>
-      <div class="hours" style="font-size:0.9rem;color:#888;margin:0.3rem 0;display:flex;align-items:center;gap:0.3rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> ${restaurant.opening_hours}</div>
+      <div class="hours" style="font-size:0.9rem;color:#888;margin:0.3rem 0;display:flex;align-items:center;gap:0.3rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> ${hours}</div>
     </div>
     <div class="restaurant-buttons">
       <a href="${restaurant.page_url}" target="_blank" rel="noopener" class="btn btn-primary" style="display:flex;align-items:center;gap:0.3rem;text-decoration:none;justify-content:center;flex:1;padding:0.5rem 0.5rem;font-size:0.85rem;white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg> Trang</a>
@@ -291,11 +298,20 @@ function loadRecipesPage() {
   const searchInput = document.getElementById('searchInput');
   const typeFilter = document.getElementById('typeFilter');
 
+  grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;font-size:1.1rem;color:#666;padding:2rem;">Đang tải...</p>';
+
   fetch('data/recipes.json')
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error('Không thể tải dữ liệu');
+      return res.json();
+    })
     .then(data => {
       recipesData = data;
       renderRecipes(recipesData);
+    })
+    .catch(err => {
+      console.error('Failed to load recipes:', err);
+      grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;font-size:1.1rem;color:#e74c3c;padding:2rem;">⚠️ Không thể tải dữ liệu món chay. Vui lòng thử lại sau.</p>';
     });
 
   function renderRecipes(data) {
@@ -337,7 +353,11 @@ function loadRecipesPage() {
     renderRecipes(filtered);
   }
 
-  searchInput.addEventListener('input', filterRecipes);
+  let debounceTimer;
+  searchInput.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(filterRecipes, 300);
+  });
   typeFilter.addEventListener('change', filterRecipes);
 }
 
@@ -485,15 +505,20 @@ function loadRestaurantsPage() {
 
   if (!grid) return;
 
+  grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;font-size:1.1rem;color:#666;padding:2rem;">Đang tải...</p>';
+
   fetch('data/restaurants.json')
-    .then(res => res.json())
+    .then(res => {
+      if (!res.ok) throw new Error('Không thể tải dữ liệu');
+      return res.json();
+    })
     .then(data => {
       restaurantsData = data;
       renderRestaurants(restaurantsData);
     })
     .catch(err => {
-      console.warn('Could not fetch restaurants.json', err);
-      grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;font-size:1.1rem;color:#666;padding:2rem;">Không thể tải danh sách quán chay. Vui lòng thử lại sau.</p>';
+      console.error('Failed to load restaurants:', err);
+      grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;font-size:1.1rem;color:#e74c3c;padding:2rem;">⚠️ Không thể tải dữ liệu quán chay. Vui lòng thử lại sau.</p>';
     });
 
   function renderRestaurants(data) {
@@ -525,6 +550,118 @@ function loadRestaurantsPage() {
     renderRestaurants(filtered);
   }
 
-  if (searchInput) searchInput.addEventListener('input', filterRestaurants);
+  if (searchInput) {
+    let debounceTimer;
+    searchInput.addEventListener('input', function() {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(filterRestaurants, 300);
+    });
+  }
   if (districtFilter) districtFilter.addEventListener('change', filterRestaurants);
 }
+
+// Load temples page with search & filter
+function loadTemplesPage() {
+  let templesData = [];
+  const grid = document.getElementById('templesGrid');
+  const searchInput = document.getElementById('searchInput');
+  const districtFilter = document.getElementById('districtFilter');
+
+  if (!grid) return;
+
+  grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;font-size:1.1rem;color:#666;padding:2rem;">Đang tải...</p>';
+
+  fetch('data/temples.json')
+    .then(res => {
+      if (!res.ok) throw new Error('Không thể tải dữ liệu');
+      return res.json();
+    })
+    .then(data => {
+      templesData = data;
+      renderTemples(templesData);
+    })
+    .catch(err => {
+      console.error('Failed to load temples:', err);
+      grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;font-size:1.1rem;color:#e74c3c;padding:2rem;">⚠️ Không thể tải dữ liệu chùa. Vui lòng thử lại sau.</p>';
+    });
+
+  function renderTemples(data) {
+    grid.innerHTML = '';
+    if (data.length === 0) {
+      const selectedDistrict = districtFilter ? districtFilter.value : '';
+      if (selectedDistrict) {
+        grid.innerHTML = `<p style="grid-column:1/-1;text-align:center;font-size:1.1rem;color:#666;padding:2rem;">Chưa cập nhật thông tin chùa ở khu vực <strong>${selectedDistrict}</strong>.<br>Vui lòng chọn quận khác hoặc xem tất cả.</p>`;
+      } else {
+        grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;font-size:1.1rem;color:#666;padding:2rem;">Không tìm thấy chùa phù hợp.</p>';
+      }
+      return;
+    }
+    data.forEach(temple => {
+      grid.innerHTML += renderTempleCard(temple);
+    });
+    lazyLoadImages();
+  }
+
+  function renderTempleCard(temple) {
+    return `
+      <div class="temple-card">
+        <img src="${temple.image}" alt="${temple.name}" loading="lazy">
+        <div class="temple-info">
+          <h3>${temple.name}</h3>
+          <p class="address"><strong>Địa chỉ:</strong> ${temple.address}</p>
+          <p class="historical"><strong>Lịch sử:</strong> ${temple.historical_info}</p>
+          <p class="features"><strong>Đặc điểm:</strong> ${temple.features}</p>
+          ${temple.phone ? `<p class="contact"><strong>Điện thoại:</strong> <a href="tel:${temple.phone}">${temple.phone}</a></p>` : ''}
+          ${temple.email ? `<p class="contact"><strong>Email:</strong> <a href="mailto:${temple.email}">${temple.email}</a></p>` : ''}
+          ${temple.website ? `<p class="contact"><strong>Website:</strong> <a href="${temple.website}" target="_blank" rel="noopener">Xem trang</a></p>` : ''}
+        </div>
+      </div>
+    `;
+  }
+
+  function filterTemples() {
+    let keyword = searchInput.value.trim().toLowerCase();
+    let district = districtFilter.value;
+    let filtered = templesData.filter(temple => {
+      let matchName = temple.name.toLowerCase().includes(keyword);
+      let matchAddress = temple.address.toLowerCase().includes(keyword);
+      let matchDistrict = district ? temple.district === district : true;
+      return (matchName || matchAddress) && matchDistrict;
+    });
+    renderTemples(filtered);
+  }
+
+  if (searchInput) {
+    let debounceTimer;
+    searchInput.addEventListener('input', function() {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(filterTemples, 300);
+    });
+  }
+  if (districtFilter) districtFilter.addEventListener('change', filterTemples);
+}
+
+// Xóa hamburger menu vì chỉ hỗ trợ PC/Laptop
+document.addEventListener('DOMContentLoaded', function() {
+  // Lotus Intro Animation
+  var lotusIntro = document.getElementById('lotusIntro');
+  if (lotusIntro) {
+    // Kiểm tra xem đã xem intro chưa (trong session này)
+    var hasSeenIntro = sessionStorage.getItem('hasSeenIntro');
+    
+    if (hasSeenIntro) {
+      // Đã xem rồi, ẩn ngay
+      lotusIntro.style.display = 'none';
+    } else {
+      // Chưa xem, hiển thị intro
+      setTimeout(function() {
+        lotusIntro.style.opacity = '0';
+        setTimeout(function() {
+          lotusIntro.style.display = 'none';
+          lotusIntro.remove(); // Xóa hoàn toàn khỏi DOM
+          sessionStorage.setItem('hasSeenIntro', 'true');
+        }, 600);
+      }, 1500); // Hiển thị 1.5s rồi mờ dần (0.6s) = tổng 2.1s
+    }
+  }
+});
