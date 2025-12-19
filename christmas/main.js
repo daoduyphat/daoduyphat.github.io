@@ -150,7 +150,7 @@ function showGiftBox(code){
           <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:10px;height:40px;background:#FFD700;border-radius:5px;"></div>
         </div>
       </div>
-      <p style="margin-top:2.5rem;font-size:1.3rem;font-weight:600;text-shadow:0 2px 10px rgba(0,0,0,0.5);text-align:center;word-break:keep-all;max-width:320px;margin-left:auto;margin-right:auto;">✨ Click the box to open your Christmas secret! ✨</p>
+      <p style="margin-top:2.5rem;font-size:1.3rem;font-weight:600;text-shadow:0 2px 10px rgba(0,0,0,0.5);text-align:center;white-space:nowrap;">✨ Click the box to open your Christmas secret! ✨</p>
     </div>
   `;
   const giftBox = document.getElementById('giftBox');
