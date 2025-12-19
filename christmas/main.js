@@ -150,14 +150,13 @@ function showGiftBox(code){
           <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:10px;height:40px;background:#FFD700;border-radius:5px;"></div>
         </div>
       </div>
-      <p style="margin-top:2.5rem;font-size:1.3rem;font-weight:600;text-shadow:0 2px 10px rgba(0,0,0,0.5);">✨ Click the box to open your Christmas secret! ✨</p>
+      <p style="margin-top:2.5rem;font-size:1.3rem;font-weight:600;text-shadow:0 2px 10px rgba(0,0,0,0.5);text-align:center;word-break:keep-all;max-width:320px;margin-left:auto;margin-right:auto;">✨ Click the box to open your Christmas secret! ✨</p>
     </div>
   `;
   const giftBox = document.getElementById('giftBox');
   if(giftBox) {
     giftBox.onclick = function(){
-      const audio = new Audio('public/audio/open-gift.mp3');
-      audio.play().catch(()=>{});
+      // Audio removed
       giftBox.classList.remove('gift-box');
       giftBox.innerHTML = '<div style="width:160px;height:160px;opacity:0.7;background:linear-gradient(135deg,#C81D25,#FFD700);border-radius:1.5rem;position:relative;animation:pulse 0.6s ease;"></div><div style="position:absolute;top:0;left:0;width:160px;height:160px;display:flex;align-items:center;justify-content:center;font-size:5rem;animation:fadeInUp 0.8s ease;">🎫</div>';
       setTimeout(()=>{
