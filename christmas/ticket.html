@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your QR Ticket</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay"></div>
+  <canvas class="snow"></canvas>
+  <div id="ticket-app"></div>
+  <script src="main.js"></script>
+  <script>
+    // Always clear code data on page load
+    localStorage.removeItem('claimedTicketId');
+    localStorage.removeItem('claimedCode');
+    localStorage.removeItem('nickname');
+    localStorage.removeItem('claimedCodes');
+    function showTicketPage() {
+      const id = localStorage.getItem('claimedTicketId');
+      const code = localStorage.getItem('claimedCode');
+      if(!id||!code||!window.ticketCodes||!window.ticketCodes[code]){
+        document.getElementById('ticket-app').innerHTML = '<div class="center"><div class="glass" style="text-align:center;max-width:500px;"><div style="font-size:4rem;margin-bottom:1rem;">❌</div><h2 style="font-size:2.2rem;font-weight:800;color:#FFD700;margin-bottom:1.5rem;">Ticket not found!</h2><p style="margin:1.5rem 0;font-size:1.2rem;line-height:1.8;">Please enter a valid code first.</p><a href="claim.html" class="btn" style="width:100%;margin-top:1rem;">Back to code entry</a></div></div>';
+        return;
+      }
+      const ticket = window.ticketCodes[code];
+      document.getElementById('ticket-app').innerHTML = `
+        <div class="center">
+          <div class="ticket-card">
+            <h2 style="margin-bottom:1.5rem;font-size:2rem;">🎉 Congratulations!</h2>
+            <img src="${ticket.qr}" alt="QR Code" />
+            <h3 style="font-size:1.5rem;font-weight:700;margin-bottom:0.75rem;">${ticket.concert}</h3>
+            <div style="font-size:1.2rem;margin-bottom:0.5rem;">📅 ${ticket.date}</div>
+            <div style="font-size:1.1rem;margin-bottom:1.5rem;">📍 ${ticket.location}</div>
+            <div style="padding:1.5rem;background:rgba(255,255,255,0.2);border-radius:1rem;margin-bottom:1.5rem;">
+              <div style="font-size:1.2rem;margin-bottom:0.5rem;">This ticket belongs to:</div>
+              <div style="font-size:1.5rem;font-weight:700;color:#FFD700;">${code}</div>
+            </div>
+            <button class="btn" id="saveQR" style="width:100%;">💾 Save QR Code</button>
+          </div>
+        </div>
+      `;
+      const saveBtn = document.getElementById('saveQR');
+      if(saveBtn) {
+        saveBtn.onclick = function(){
+          const link = document.createElement('a');
+          link.href = ticket.qr;
+          link.download = `ticket-${code}.jpg`;
+          link.click();
+        };
+      }
+    }
+    window.addEventListener('DOMContentLoaded', showTicketPage);
+  </script>
+</body>
+</html>

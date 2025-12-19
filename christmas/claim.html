@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enter Secret Code</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay"></div>
+  <canvas class="snow"></canvas>
+  <div id="claim-app" style="min-height:100vh;display:flex;align-items:center;justify-content:center;">
+    <form class="glass" id="claimForm">
+      <h2 style="text-align:center;margin-bottom:2rem;">🎄 Enter Your Secret Code</h2>
+      <input class="input" placeholder="Enter your code" id="nickname" required autocomplete="off" />
+      <input class="input" placeholder="Re-enter code to confirm" id="code" required autocomplete="off" />
+      <button class="btn" type="submit" style="width:100%;margin-top:0.5rem;">Confirm</button>
+      <div id="claimError" style="color:#FFD700;text-align:center;margin-top:1rem;display:none;font-weight:600;">❌ Invalid code!</div>
+    </form>
+  </div>
+  <script src="main.js"></script>
+  <script>
+    // Always clear code data on page load
+    localStorage.removeItem('claimedTicketId');
+    localStorage.removeItem('claimedCode');
+    localStorage.removeItem('nickname');
+    localStorage.removeItem('claimedCodes');
+    document.getElementById('claimForm').onsubmit = function(e) {
+      e.preventDefault();
+      const nickname = document.getElementById('nickname').value.trim().toUpperCase();
+      const code = document.getElementById('code').value.trim().toUpperCase();
+      if(!window.validCodes || !window.validCodes.includes(code) || nickname !== code){
+        const errorMsg = document.getElementById('claimError');
+        this.classList.add('shake');
+        errorMsg.textContent = '❌ Invalid code! Please check again.';
+        errorMsg.style.display='block';
+        setTimeout(()=>{this.classList.remove('shake');errorMsg.style.display='none';},600);
+        return;
+      }
+      const result = window.assignTicket ? window.assignTicket(code) : 'invalid';
+      if(result==='claimed'){
+        alert('This code has already been used!');
+      } else if(result==='invalid'){
+        alert('Invalid code!');
+      } else {
+        window.location.href = 'ticket.html';
+      }
+    };
+  </script>
+</body>
+</html>
