@@ -35,19 +35,22 @@ setInterval(drawSnow,33);
 window.addEventListener('resize',()=>{W=window.innerWidth;H=window.innerHeight;snow.width=W;snow.height=H;});
 
 // --- App State ---
-window.ticketCodes = {
-  'PHAT': {id:1,qr:'public/qr/1.jpg',concert:'Đông Concert',date:'24 Dec 2025',location:'Ha Noi City'},
-  'HAN': {id:2,qr:'public/qr/2.jpg',concert:'Đông Concert',date:'24 Dec 2025',location:'Ha Noi City'},
-  'HANG': {id:3,qr:'public/qr/3.jpg',concert:'Đông Concert',date:'24 Dec 2025',location:'Ha Noi City'},
-  'SU': {id:4,qr:'public/qr/4.jpg',concert:'Đông Concert',date:'24 Dec 2025',location:'Ha Noi City'},
-  'BONG': {id:5,qr:'public/qr/5.jpg',concert:'Đông Concert',date:'24 Dec 2025',location:'Ha Noi City'},
-  'TU': {id:6,qr:'public/qr/6.jpg',concert:'Đông Concert',date:'24 Dec 2025',location:'Ha Noi City'},
-  'SON': {id:7,qr:'public/qr/7.jpg',concert:'Đông Concert',date:'24 Dec 2025',location:'Ha Noi City'},
-  'THANH': {id:8,qr:'public/qr/8.jpg',concert:'Đông Concert',date:'24 Dec 2025',location:'Ha Noi City'},
-  'DEP': {id:9,qr:'public/qr/9.jpg',concert:'Đông Concert',date:'24 Dec 2025',location:'Ha Noi City'},
-  'NA': {id:10,qr:'public/qr/10.jpg',concert:'Đông Concert',date:'24 Dec 2025',location:'Ha Noi City'}
-};
-window.validCodes = Object.keys(window.ticketCodes);
+window.ticketCodes = {};
+window.validCodes = [];
+async function loadTicketCodes() {
+  try {
+    const res = await fetch('data.json');
+    const data = await res.json();
+    window.ticketCodes = data;
+    window.validCodes = Object.keys(data);
+  } catch (e) {
+    console.error('Failed to load ticket codes:', e);
+    window.ticketCodes = {};
+    window.validCodes = [];
+  }
+}
+// Load ticket codes on startup
+loadTicketCodes();
 function getFingerprint(){
   return navigator.userAgent+screen.width+screen.height;
 }
@@ -75,34 +78,56 @@ function clearApp(){
 function showLanding(){
   clearApp();
   const app = document.getElementById('app');
-  app.innerHTML = `
-    <div class="center">
-      <h1 style="font-weight:800;margin-bottom:0.5rem;text-align:center;">Merry Christmas 🎄</h1>
-      <p style="font-style:italic;margin-bottom:3rem;text-shadow:0 2px 10px rgba(0,0,0,0.5);text-align:center;padding:0 1rem;">A special secret is waiting for you</p>
-      <button class="btn" onclick="window.location.href='claim.html'">🎁 Open My Gift</button>
-    </div>
-  `;
+    app.innerHTML = `
+      <div class="center">
+        <h1 style="font-weight:800;margin-bottom:0.5rem;text-align:center;display:flex;align-items:center;justify-content:center;gap:0.75rem;">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;font-size:2.2rem;">🎄</span>
+          Merry Christmas
+        </h1>
+        <p style="font-style:italic;margin-bottom:3rem;text-shadow:0 2px 10px rgba(0,0,0,0.5);text-align:center;padding:0 1rem;">A special secret is waiting for you</p>
+        <button class="btn" onclick="window.location.href='claim.html'">
+          <span style="display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;vertical-align:middle;">
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='28' height='28'><rect x='6' y='12' width='20' height='14' rx='4' fill='#FFD700'/><rect x='10' y='6' width='12' height='8' rx='2' fill='#C81D25'/><rect x='15' y='2' width='2' height='8' rx='1' fill='#FFD700'/></svg>
+          </span>
+          Open My Gift
+        </button>
+      </div>
+    `;
 }
 function showClaim(){
   clearApp();
   document.getElementById('app').innerHTML = `
     <div class="center">
       <form class="glass" id="claimForm">
-        <h2 style="text-align:center;margin-bottom:2rem;">🎄 Claim Your Gift</h2>
+          <h2 style="text-align:center;margin-bottom:2rem;display:flex;align-items:center;justify-content:center;gap:0.75rem;white-space:nowrap;font-size:2rem;font-weight:800;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;font-size:2.2rem;">🎄</span>
+            Claim Your Gift
+          </h2>
         <input class="input" placeholder="Enter your code" id="nickname" required autocomplete="off" />
         <input class="input" placeholder="Re-enter code to confirm" id="code" required autocomplete="off" />
-        <button class="btn" type="submit" style="width:100%;margin-top:0.5rem;">Verify & Continue</button>
-        <div id="claimError" style="color:#FFD700;text-align:center;margin-top:1rem;display:none;font-weight:600;">❌ Invalid code or nickname!</div>
+          <button class="btn" type="submit" style="width:100%;margin-top:0.5rem;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem;vertical-align:middle;">
+              <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='24' height='24'><rect x='6' y='12' width='20' height='14' rx='4' fill='#FFD700'/><rect x='10' y='6' width='12' height='8' rx='2' fill='#C81D25'/><rect x='15' y='2' width='2' height='8' rx='1' fill='#FFD700'/></svg>
+            </span>
+            Verify & Continue
+          </button>
+          <div id="claimError" style="color:#FFD700;text-align:center;margin-top:1rem;display:none;font-weight:600;">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:1.2rem;height:1.2rem;vertical-align:middle;">
+              <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='18' height='18'><circle cx='16' cy='16' r='16' fill='#FFD700'/><path d='M10 10l12 12M22 10l-12 12' stroke='#C81D25' stroke-width='3' stroke-linecap='round'/></svg>
+            </span>
+            Invalid code or nickname!
+          </div>
       </form>
     </div>
   `;
   const form = document.getElementById('claimForm');
   if(form) {
-    form.onsubmit = function(e){
+    form.onsubmit = async function(e){
       e.preventDefault();
+      await loadTicketCodes();
       const nickname = document.getElementById('nickname').value.trim().toUpperCase();
       const code = document.getElementById('code').value.trim().toUpperCase();
-      if(!validCodes.includes(code) || nickname !== code){
+      if(!window.validCodes.includes(code) || nickname !== code){
         const errorMsg = document.getElementById('claimError');
         form.classList.add('shake');
         errorMsg.textContent = '❌ Invalid code! Please check again.';

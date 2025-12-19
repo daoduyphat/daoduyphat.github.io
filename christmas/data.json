@@ -1,0 +1,12 @@
+{
+  "PHAT": {"id":1,"qr":"qr/1.jpg","concert":"Đông Concert","date":"24 Dec 2025","location":"Ha Noi City"},
+  "HAN": {"id":2,"qr":"qr/2.jpg","concert":"Đông Concert","date":"24 Dec 2025","location":"Ha Noi City"},
+  "HANG": {"id":3,"qr":"qr/3.jpg","concert":"Đông Concert","date":"24 Dec 2025","location":"Ha Noi City"},
+  "SU": {"id":4,"qr":"qr/4.jpg","concert":"Đông Concert","date":"24 Dec 2025","location":"Ha Noi City"},
+  "BONG": {"id":5,"qr":"qr/5.jpg","concert":"Đông Concert","date":"24 Dec 2025","location":"Ha Noi City"},
+  "TU": {"id":6,"qr":"qr/6.jpg","concert":"Đông Concert","date":"24 Dec 2025","location":"Ha Noi City"},
+  "SON": {"id":7,"qr":"/qr/7.jpg","concert":"Đông Concert","date":"24 Dec 2025","location":"Ha Noi City"},
+  "THANH": {"id":8,"qr":"qr/8.jpg","concert":"Đông Concert","date":"24 Dec 2025","location":"Ha Noi City"},
+  "DEP": {"id":9,"qr":"qr/9.jpg","concert":"Đông Concert","date":"24 Dec 2025","location":"Ha Noi City"},
+  "NA": {"id":10,"qr":"qr/10.jpg","concert":"Đông Concert","date":"24 Dec 2025","location":"Ha Noi City"}
+}
