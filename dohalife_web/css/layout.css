@@ -1,0 +1,120 @@
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 900;
+  transition:
+    background-color var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-24);
+}
+
+.header-logo-link {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.hero-section {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--header-height) + var(--space-64)) var(--container-padding) var(--space-64);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-inner {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-32);
+}
+
+.hero-logo-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.about-section {
+  padding: var(--space-100) 0;
+  background-color: var(--color-white);
+}
+
+.events-section {
+  padding: var(--space-100) 0;
+  background-color: var(--color-warm-sand);
+}
+
+.section-intro {
+  max-width: 640px;
+  margin-bottom: var(--space-64);
+}
+
+.eco-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-24);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-24);
+}
+
+.site-footer {
+  background-color: var(--color-footer-bg);
+  padding: var(--space-96) 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr;
+  gap: var(--space-64);
+  padding-bottom: var(--space-64);
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--color-footer-border);
+  padding: var(--space-24) 0;
+}

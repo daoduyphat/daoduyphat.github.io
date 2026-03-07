@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DOHALIFE — Hệ sinh thái xanh sạch, thiền định, chăm sóc sức khỏe và cà phê hữu cơ.">
+<title>DOHALIFE — Thiên An Nhiên</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="#hero" class="header-logo-link">
+      <img src="images/logo.png" alt="DOHALIFE" class="header-logo" width="1280" height="732" loading="eager">
+    </a>
+    <nav class="header-nav" id="header-nav" role="navigation" aria-label="Điều hướng chính">
+      <ul class="nav-list">
+        <li><a href="#hero" class="nav-link">Trang chủ</a></li>
+        <li><a href="#about" class="nav-link">Về chúng tôi</a></li>
+        <li><a href="#ecosystem" class="nav-link">Hệ sinh thái</a></li>
+        <li><a href="#events" class="nav-link">Sự kiện</a></li>
+        <li><a href="#contact" class="nav-link">Liên hệ</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="toggle-bar"></span>
+      <span class="toggle-bar"></span>
+      <span class="toggle-bar"></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+    <ul class="mobile-nav-list">
+      <li><a href="#hero" class="mobile-nav-link">Trang chủ</a></li>
+      <li><a href="#about" class="mobile-nav-link">Về chúng tôi</a></li>
+      <li><a href="#ecosystem" class="mobile-nav-link">Hệ sinh thái</a></li>
+      <li><a href="#events" class="mobile-nav-link">Sự kiện</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Liên hệ</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero-section" id="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-logo-wrap">
+          <img src="images/logo.png" alt="DOHALIFE" class="hero-logo" width="1280" height="732" loading="eager">
+        </div>
+        <h1 class="hero-title">Thiên An Nhiên</h1>
+        <p class="hero-sub">Bạn đã sẵn sàng kết nối lại với thiên nhiên và tìm về sự bình yên trong tâm hồn?</p>
+        <a href="#about" class="btn-cta">Khám phá ngay</a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator" aria-hidden="true">
+      <span class="scroll-line"></span>
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="section-tag">Về chúng tôi</span>
+        <h2 class="section-heading">Hệ sinh thái DOHALIFE</h2>
+        <p class="section-lead">DOHALIFE trân trọng mang đến một không gian xanh mát, thanh lọc tâm trí.</p>
+      </div>
+      <div class="eco-grid" id="ecosystem">
+        <div class="eco-card reveal">
+          <div class="eco-card-body">
+            <span class="eco-label">Cà phê hữu cơ</span>
+            <h3 class="eco-title">Dohalife Organic Coffee</h3>
+            <p class="eco-desc">Không gian thưởng thức cà phê hữu cơ.</p>
+          </div>
+        </div>
+        <div class="eco-card reveal" style="--delay: 150ms">
+          <div class="eco-card-body">
+            <span class="eco-label">Sức khỏe</span>
+            <h3 class="eco-title">Trung tâm CSSK Dohalife</h3>
+            <p class="eco-desc">Chăm sóc và phục hồi sức khỏe thuận tự nhiên.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-section" id="events">
+    <div class="container">
+      <div class="section-intro reveal">
+        <span class="section-tag">Sự kiện</span>
+        <h2 class="section-heading">Sự kiện sắp diễn ra</h2>
+      </div>
+      <div class="events-grid">
+        <article class="event-card reveal">
+          <div class="event-card-body">
+            <h3 class="event-title">Thiền An Nhiên</h3>
+            <p class="event-desc">Một buổi sáng thư giãn, thanh lọc tâm trí giữa không gian xanh mát. Hãy dành tặng bản thân một khoảnh khắc tĩnh lặng, nạp lại năng lượng tích cực cho tuần mới!</p>
+            <div class="event-meta">
+              <div class="event-row">
+                <span class="meta-label">Thời gian</span>
+                <span class="meta-value">7h30 – 9h, Chủ Nhật, ngày 12/10/2025</span>
+              </div>
+              <div class="event-row">
+                <span class="meta-label">Địa điểm</span>
+                <span class="meta-value">Dohalife Organic Coffee, Đường N15, Khu Công Nghệ Cao Hòa Lạc</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="event-card reveal" style="--delay: 150ms">
+          <div class="event-card-body">
+            <h3 class="event-title">Chạm Vào Sự Tĩnh Lặng</h3>
+            <p class="event-desc">Giao lưu & Thực hành THIỀN.</p>
+            <div class="event-meta">
+              <div class="event-row">
+                <span class="meta-label">Thời gian</span>
+                <span class="meta-value">08 – 10H, Chủ Nhật, ngày 07/12/2025</span>
+              </div>
+              <div class="event-row">
+                <span class="meta-label">Địa điểm</span>
+                <span class="meta-value">DOHALIFE</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="contact">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="DOHALIFE" class="footer-logo" width="1280" height="732" loading="lazy">
+        <p class="footer-tagline">Hệ sinh thái xanh sạch, không gian thiền định, chăm sóc sức khỏe và cà phê hữu cơ.</p>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Liên hệ</h4>
+        <a href="tel:0985883857" class="footer-phone">0985 883 857</a>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-col-title">Mạng xã hội</h4>
+        <a href="https://www.facebook.com/TrungtamCSSKDohalife/" class="footer-link" target="_blank" rel="noopener noreferrer">Trung tâm CSSK Dohalife</a>
+        <a href="https://www.facebook.com/Dohalifeorganiccoffee" class="footer-link" target="_blank" rel="noopener noreferrer">Dohalife Organic Coffee</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">Designed & developed by TAP © 2025</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/header.js"></script>
+<script src="js/scrollReveal.js"></script>
+<script src="js/mobileMenu.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
