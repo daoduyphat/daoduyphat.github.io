@@ -30,7 +30,10 @@
     <div class="intro-content">
       <div class="intro-flower-icon">🌻</div>
       <h2 class="intro-subtitle">Món Quà Đặc Biệt Ngày 20/10</h2>
-      <h1 class="intro-title">Điều Kỳ Diệu Dành Cho Bạn</h1>
+      <h1 class="intro-title">
+        <span class="text-chunk">Điều Kỳ Diệu</span>
+        <span class="text-chunk">Dành Cho Bạn</span>
+      </h1>
       <p class="intro-hint">Chạm nhẹ vào màn hình để đóa hoa đầu tiên bừng nở ✨</p>
       <button id="btnStart" class="btn-start" aria-label="Bắt đầu">
         <span>Khám phá ngay</span>
@@ -44,32 +47,28 @@
     <div class="caption-card">
       <div class="flower-badge">
         <span class="badge-sparkle">✨</span>
-        <span class="badge-text">Happy Vietnamese Women's Day</span>
+        <span class="badge-text">Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10</span>
         <span class="badge-sparkle">✨</span>
       </div>
 
       <h1 id="mainCaption" class="main-title">
-        <span class="title-date">20/10</span>
-        <span class="title-greet">vui vẻ nhé</span>
-        <span id="recipientName" class="recipient-name" title="Nhấp để đổi tên">[tên người]</span><span class="title-exclamation">!</span>
+        <span class="title-chunk chunk-greet">
+          <span class="title-date">20/10</span>
+          <span class="title-greet">vui vẻ nhé</span>
+        </span>
+        <span class="title-chunk chunk-name">
+          <span id="recipientName" class="recipient-name">Hà An</span><span class="title-exclamation">!</span>
+        </span>
       </h1>
 
       <p id="subCaption" class="sub-caption">
-        Chúc bạn luôn rực rỡ như hoa hướng dương, luôn ngập tràn nụ cười và hạnh phúc mỗi ngày! 💛
+        Chúc han có thật nhiều khoảnh khắc, kỷ niệm đẹp bên gia đình và những người han luôn trân quý. Có sức khỏe thật trộm vía, và đạt được những gì mà mình đặt ra, thêm nhiều trải nghiệm đáng quý trên hành trình phía trước nhé!
       </p>
 
       <div class="caption-actions">
-        <button id="btnOpenLetter" class="action-btn btn-letter" title="Đọc thư chúc mừng">
-          <span class="btn-icon">💌</span>
-          <span class="btn-text">Thư gửi bạn</span>
-        </button>
-        <button id="btnCustomize" class="action-btn btn-customize" title="Đổi tên & tạo thiệp riêng">
-          <span class="btn-icon">✨</span>
-          <span class="btn-text">Đổi tên người nhận</span>
-        </button>
-        <button id="btnShareLink" class="action-btn btn-share" title="Sao chép liên kết gửi bạn bè">
-          <span class="btn-icon">🔗</span>
-          <span class="btn-text">Gửi tặng thiệp này</span>
+        <button id="btnViewPhoto" class="action-btn btn-photo" title="Bấm để xem ảnh">
+          <span class="btn-icon">📸</span>
+          <span class="btn-text">Xem ảnh</span>
         </button>
       </div>
     </div>
@@ -100,83 +99,18 @@
 
   <!-- Interactive Hint at Bottom -->
   <div id="interactiveHint" class="interactive-hint hidden">
-    <span>💡 Chạm hoặc nhấp chuột vào bất cứ đâu để gieo thêm những bông hoa mới!</span>
+    <span>💡 Chạm hoặc nhấp chuột vào thảo nguyên để gieo thêm những đóa hoa mới!</span>
   </div>
 
-  <!-- Modal: Letter & Heartfelt Message -->
-  <div id="letterModal" class="modal-overlay hidden">
-    <div class="modal-card">
-      <button id="btnCloseModal" class="modal-close" aria-label="Đóng thư">&times;</button>
-      
-      <div class="letter-envelope-decor">
-        <div class="envelope-stamp">🌻</div>
+  <!-- Modal: View Photo Lightbox -->
+  <div id="photoModal" class="photo-modal-overlay hidden">
+    <div class="photo-modal-card">
+      <button id="btnClosePhoto" class="photo-modal-close" aria-label="Đóng ảnh">&times;</button>
+      <div class="photo-frame">
+        <img src="figs/1792474746745_2153480400819274298_4715389279646846120_dcb4b7d9e9cc9d3d15e2ff33c6c81e68.jpg" alt="Ảnh kỷ niệm Hà An" class="photo-img">
       </div>
-
-      <div class="letter-body">
-        <h3 class="letter-subtitle">Gửi người phụ nữ tuyệt vời nhất,</h3>
-        <h2 id="letterRecipient" class="letter-recipient">Gửi [tên người]!</h2>
-
-        <div class="letter-text">
-          <p>
-            Nhân ngày <strong>Phụ nữ Việt Nam 20/10</strong>, xin gửi tới bạn những lời chúc chân thành, ấm áp và ngọt ngào nhất.
-          </p>
-          <p>
-            Như những đóa hoa hướng dương luôn kiên định vươn mình về phía ánh dương rực rỡ, chúc bạn luôn giữ trọn niềm tin, nguồn năng lượng tươi trẻ và sự tự tin trên con đường mình đi.
-          </p>
-          <p>
-            Và như một vườn hoa rực rỡ muôn sắc thắm, chúc cuộc sống của bạn luôn ngập tràn tiếng cười, tình yêu thương đong đầy và những điều ngọt ngào nhất.
-          </p>
-          <p class="letter-highlight">
-            ✨ Bạn luôn là một phiên bản đặc biệt, duy nhất và đáng trân quý nhất trên thế giới này!
-          </p>
-        </div>
-
-        <div class="letter-sign">
-          <span class="sign-tag">Mến thương,</span>
-          <span class="sign-heart">20.10 with Love ❤️</span>
-        </div>
-      </div>
+      <p class="photo-caption">Hà An ✨</p>
     </div>
-  </div>
-
-  <!-- Modal: Name Customization & Copy Link -->
-  <div id="nameModal" class="modal-overlay hidden">
-    <div class="modal-card modal-small">
-      <button id="btnCloseNameModal" class="modal-close" aria-label="Đóng">&times;</button>
-      
-      <h3 class="modal-title">Tạo Thiệp Tặng Riêng 🌻</h3>
-      <p class="modal-desc">Nhập tên người bạn muốn gửi tặng để tạo đường dẫn chúc mừng riêng biệt:</p>
-      
-      <form id="nameForm" class="name-form" onsubmit="return false;">
-        <div class="input-group">
-          <input type="text" id="inputName" placeholder="Ví dụ: Mẹ yêu, Em bé, Lan Anh, My Sunshine..." maxlength="30" autocomplete="off" required>
-        </div>
-        
-        <div class="name-chips">
-          <span class="chip" data-name="Mẹ yêu">Mẹ yêu ❤️</span>
-          <span class="chip" data-name="Em yêu">Em yêu 💖</span>
-          <span class="chip" data-name="Công chúa">Công chúa 👑</span>
-          <span class="chip" data-name="Cô giáo">Cô giáo 💐</span>
-          <span class="chip" data-name="Lan Anh">Lan Anh 🌻</span>
-          <span class="chip" data-name="Bé iu">Bé iu 🌸</span>
-        </div>
-        
-        <div class="modal-actions">
-          <button type="submit" id="btnSaveName" class="btn-primary">
-            <span>Áp dụng ngay</span>
-          </button>
-          <button type="button" id="btnCopyCustomLink" class="btn-secondary">
-            <span>Sao chép link gửi</span>
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <!-- Toast Notification -->
-  <div id="toast" class="toast hidden">
-    <span id="toastIcon">✨</span>
-    <span id="toastMsg">Đã sao chép liên kết thành công!</span>
   </div>
 
   <script src="script.js"></script>

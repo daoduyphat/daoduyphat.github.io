@@ -9,6 +9,13 @@
   'use strict';
 
   // ---------------------------------------------------------
+  // 🌻 CẤU HÌNH TÊN NGƯỜI NHẬN (HARD-CODE)
+  // Bạn có thể điền tên vào giữa 2 dấu ngoặc kép bên dưới:
+  // Ví dụ: const HARDCODED_NAME = "Hà An";
+  // ---------------------------------------------------------
+  const HARDCODED_NAME = "Hà An";
+
+  // ---------------------------------------------------------
   // 1. CONFIGURATION & CONSTANTS
   // ---------------------------------------------------------
   const GOLDEN_ANGLE = 137.507764 * (Math.PI / 180);
@@ -58,7 +65,7 @@
     height: 0,
     dpr: 1,
     currentTheme: 'night',
-    recipient: 'Lan Anh',
+    recipient: HARDCODED_NAME,
     musicPlaying: false,
     mouse: { x: -1000, y: -1000, isDown: false, vx: 0, vy: 0 },
     wind: 0,
@@ -75,7 +82,6 @@
   const btnStart = document.getElementById('btnStart');
   const captionContainer = document.getElementById('captionContainer');
   const recipientNameEl = document.getElementById('recipientName');
-  const letterRecipientEl = document.getElementById('letterRecipient');
   const interactiveHint = document.getElementById('interactiveHint');
 
   const btnMusic = document.getElementById('btnMusic');
@@ -83,21 +89,9 @@
   const themeIcon = document.getElementById('themeIcon');
   const btnReplay = document.getElementById('btnReplay');
 
-  const btnOpenLetter = document.getElementById('btnOpenLetter');
-  const btnCustomize = document.getElementById('btnCustomize');
-  const btnShareLink = document.getElementById('btnShareLink');
-
-  const letterModal = document.getElementById('letterModal');
-  const btnCloseModal = document.getElementById('btnCloseModal');
-
-  const nameModal = document.getElementById('nameModal');
-  const btnCloseNameModal = document.getElementById('btnCloseNameModal');
-  const nameForm = document.getElementById('nameForm');
-  const inputName = document.getElementById('inputName');
-  const btnCopyCustomLink = document.getElementById('btnCopyCustomLink');
-
-  const toast = document.getElementById('toast');
-  const toastMsg = document.getElementById('toastMsg');
+  const btnViewPhoto = document.getElementById('btnViewPhoto');
+  const photoModal = document.getElementById('photoModal');
+  const btnClosePhoto = document.getElementById('btnClosePhoto');
 
   // ---------------------------------------------------------
   // 4. ENTITY ARRAYS
@@ -572,15 +566,16 @@
   }
 
   /**
-   * Garden Flower Class: Multi-colored flowers that sprout across the meadow!
+   * Garden Flower Class: Multi-colored flowers that sprout from MULTIPLE ANGLES & CORNERS!
    * Variety: Sunflower, Rose, Tulip, Cosmos/Daisy, Hydrangea/Forget-me-not, Lotus
+   * Origins: 'bottom', 'bottom-left', 'bottom-right', 'side-left', 'side-right', 'top-left', 'top-right'
    */
   class GardenFlower {
-    constructor(x, y, type = 'random', options = {}) {
-      this.x = x;
-      this.baseY = state.height + 40;
-      this.targetY = y;
-      this.currentY = this.baseY;
+    constructor(targetX, targetY, type = 'random', options = {}) {
+      this.targetX = targetX;
+      this.targetY = targetY;
+      this.targetXRatio = targetX / (state.width || 1);
+      this.targetYRatio = targetY / (state.height || 1);
 
       // Species Selection
       const types = ['sunflower', 'rose', 'tulip', 'cosmos', 'forgetmenot', 'lotus'];
@@ -590,22 +585,98 @@
       this.color = options.color || this.pickColorForType(this.type);
 
       // Sizing
-      const sizeScale = options.scale || (0.4 + Math.random() * 0.55);
-      this.maxRadius = (35 + Math.random() * 30) * sizeScale;
+      const sizeScale = options.scale || (0.45 + Math.random() * 0.5);
+      this.maxRadius = (35 + Math.random() * 28) * sizeScale;
       this.currentRadius = 0;
 
-      // Stem dynamics
-      this.stemHeight = 0;
-      this.targetHeight = this.baseY - this.targetY;
-      this.stemCurve = (Math.random() - 0.5) * 45;
+      // Origin point setup (growing from multiple corners and sides!)
+      this.origin = options.origin || this.detectOrigin(targetX, targetY);
+      this.initOrigin();
+
       this.swayOffset = Math.random() * Math.PI * 2;
       this.swaySpeed = 1.2 + Math.random() * 1.5;
 
       // Growth progress
       this.progress = 0;
-      this.growthSpeed = 0.5 + Math.random() * 0.6;
+      this.growthSpeed = 0.55 + Math.random() * 0.5;
       this.delay = options.delay || 0;
       this.bloomed = false;
+    }
+
+    detectOrigin(x, y) {
+      const w = state.width || 800;
+      const h = state.height || 600;
+
+      if (x < w * 0.25 && y > h * 0.65) return 'bottom-left';
+      if (x > w * 0.75 && y > h * 0.65) return 'bottom-right';
+      if (x < w * 0.18 && y < h * 0.3) return 'top-left';
+      if (x > w * 0.82 && y < h * 0.3) return 'top-right';
+      if (x < w * 0.22) return 'side-left';
+      if (x > w * 0.78) return 'side-right';
+      return 'bottom';
+    }
+
+    initOrigin() {
+      const w = state.width;
+      const h = state.height;
+
+      switch (this.origin) {
+        case 'bottom-left':
+          this.startX = -15 + Math.random() * 40;
+          this.startY = h + 25;
+          this.curveX = 40 + Math.random() * 40;
+          this.curveY = -25 - Math.random() * 30;
+          break;
+        case 'bottom-right':
+          this.startX = w + 15 - Math.random() * 40;
+          this.startY = h + 25;
+          this.curveX = -40 - Math.random() * 40;
+          this.curveY = -25 - Math.random() * 30;
+          break;
+        case 'side-left':
+          this.startX = -25;
+          this.startY = Math.min(h - 20, this.targetY + 40 + Math.random() * 60);
+          this.curveX = 45 + Math.random() * 35;
+          this.curveY = -15;
+          break;
+        case 'side-right':
+          this.startX = w + 25;
+          this.startY = Math.min(h - 20, this.targetY + 40 + Math.random() * 60);
+          this.curveX = -45 - Math.random() * 35;
+          this.curveY = -15;
+          break;
+        case 'top-left':
+          this.startX = -20;
+          this.startY = -20;
+          this.curveX = 30 + Math.random() * 30;
+          this.curveY = 30 + Math.random() * 20;
+          break;
+        case 'top-right':
+          this.startX = w + 20;
+          this.startY = -20;
+          this.curveX = -30 - Math.random() * 30;
+          this.curveY = 30 + Math.random() * 20;
+          break;
+        case 'bottom':
+        default:
+          this.startX = this.targetX + (Math.random() - 0.5) * 35;
+          this.startY = h + 35;
+          this.curveX = (Math.random() - 0.5) * 40;
+          this.curveY = -10;
+          break;
+      }
+      this.currentX = this.startX;
+      this.currentY = this.startY;
+    }
+
+    onResize() {
+      this.targetX = this.targetXRatio * state.width;
+      this.targetY = this.targetYRatio * state.height;
+      this.initOrigin();
+      if (this.progress >= 1) {
+        this.currentX = this.targetX;
+        this.currentY = this.targetY;
+      }
     }
 
     pickColorForType(t) {
@@ -649,7 +720,9 @@
 
       if (this.progress < 1) {
         this.progress = Math.min(1, this.progress + dt * this.growthSpeed);
-        this.currentY = this.baseY - this.targetHeight * easeOutCubic(this.progress);
+        const p = easeOutCubic(this.progress);
+        this.currentX = this.startX + (this.targetX - this.startX) * p;
+        this.currentY = this.startY + (this.targetY - this.startY) * p;
         this.currentRadius = this.maxRadius * easeOutBack(Math.max(0, (this.progress - 0.4) / 0.6));
       }
     }
@@ -661,13 +734,13 @@
 
       ctx.save();
       // Draw Stem
-      const startX = this.x;
-      const startY = this.baseY;
-      const headX = this.x + Math.sin(sway) * (this.baseY - this.currentY);
-      const headY = this.currentY;
+      const startX = this.startX;
+      const startY = this.startY;
+      const headX = this.currentX + Math.sin(sway) * 12;
+      const headY = this.currentY + Math.cos(sway) * 4;
 
-      const cpX = (startX + headX) / 2 + this.stemCurve + state.wind * 25;
-      const cpY = (startY + headY) / 2;
+      const cpX = (startX + headX) / 2 + this.curveX + state.wind * 20;
+      const cpY = (startY + headY) / 2 + this.curveY;
 
       ctx.beginPath();
       ctx.moveTo(startX, startY);
@@ -681,7 +754,10 @@
       if (this.progress > 0.35 && this.currentRadius > 1) {
         ctx.save();
         ctx.translate(headX, headY);
-        ctx.rotate(sway * 0.7);
+
+        // Align flower direction with curved stem growth tangent
+        const stemAngle = Math.atan2(headY - cpY, headX - cpX);
+        ctx.rotate(stemAngle - Math.PI / 2 + sway * 0.5);
 
         switch (this.type) {
           case 'rose':
@@ -1386,7 +1462,8 @@
 
   function initHeroSunflower() {
     const isMobile = state.width < 640;
-    const targetY = isMobile ? state.height * 0.56 : state.height * 0.58;
+    const isLandscape = state.height < 520;
+    const targetY = isLandscape ? state.height * 0.75 : (isMobile ? state.height * 0.72 : state.height * 0.68);
     heroSunflower = new HeroSunflower(state.width / 2, targetY);
   }
 
@@ -1411,7 +1488,7 @@
       burstingSeeds.push(new BurstingSeed(originX, originY));
     }
 
-    // Create garden flowers with staggered organic timing
+    // Create garden flowers blooming from multiple corners and edges!
     setTimeout(() => {
       createInitialGarden();
       state.stage = 'garden';
@@ -1431,28 +1508,84 @@
 
   function createInitialGarden() {
     gardenFlowers = [];
-    const count = state.width < 640 ? 32 : 55;
-    const padding = state.width * 0.05;
-    const availableWidth = state.width - padding * 2;
-
+    const isMobile = state.width < 640;
+    const isLandscape = state.height < 520;
     const types = ['rose', 'tulip', 'cosmos', 'forgetmenot', 'lotus', 'sunflower'];
 
-    for (let i = 0; i < count; i++) {
-      // Avoid cluttering directly in the dead center where hero sunflower stands
-      let posX = padding + (i / count) * availableWidth + (Math.random() - 0.5) * 35;
-      const centerDist = Math.abs(posX - state.width / 2);
-
-      // Depth layering
-      const depthRatio = Math.random();
-      const posY = state.height - (depthRatio * (state.height * 0.32) + 40);
-      const scale = 0.5 + depthRatio * 0.5;
-
-      const flowerType = types[Math.floor(Math.random() * types.length)];
-      const delay = Math.random() * 1.8;
-
-      gardenFlowers.push(new GardenFlower(posX, posY, flowerType, {
+    // 1. GÓC DƯỚI TRÁI (Bottom-Left Corner Cluster)
+    const blCount = isMobile ? 8 : 14;
+    for (let i = 0; i < blCount; i++) {
+      const posX = state.width * (0.02 + Math.random() * 0.22);
+      const posY = state.height * (0.62 + Math.random() * 0.28);
+      const scale = 0.5 + Math.random() * 0.45;
+      const type = types[Math.floor(Math.random() * types.length)];
+      gardenFlowers.push(new GardenFlower(posX, posY, type, {
+        origin: 'bottom-left',
         scale: scale,
-        delay: delay
+        delay: Math.random() * 1.5
+      }));
+    }
+
+    // 2. GÓC DƯỚI PHẢI (Bottom-Right Corner Cluster)
+    const brCount = isMobile ? 8 : 14;
+    for (let i = 0; i < brCount; i++) {
+      const posX = state.width * (0.76 + Math.random() * 0.22);
+      const posY = state.height * (0.62 + Math.random() * 0.28);
+      const scale = 0.5 + Math.random() * 0.45;
+      const type = types[Math.floor(Math.random() * types.length)];
+      gardenFlowers.push(new GardenFlower(posX, posY, type, {
+        origin: 'bottom-right',
+        scale: scale,
+        delay: Math.random() * 1.5
+      }));
+    }
+
+    // 3. VÒM HOA LEO HAI BÊN (Side Climbers Left & Right)
+    const sideCount = isMobile ? 4 : 8;
+    for (let i = 0; i < sideCount; i++) {
+      const isLeft = i % 2 === 0;
+      const posX = isLeft ? state.width * (0.03 + Math.random() * 0.16) : state.width * (0.81 + Math.random() * 0.16);
+      const posY = state.height * (0.42 + Math.random() * 0.25);
+      const scale = 0.45 + Math.random() * 0.4;
+      const type = types[Math.floor(Math.random() * types.length)];
+      gardenFlowers.push(new GardenFlower(posX, posY, type, {
+        origin: isLeft ? 'side-left' : 'side-right',
+        scale: scale,
+        delay: 0.3 + Math.random() * 1.6
+      }));
+    }
+
+    // 4. GÓC TRÊN TRÁI & PHẢI (Top-Corner Floral Garlands)
+    if (!isLandscape) {
+      const topCount = isMobile ? 3 : 6;
+      for (let i = 0; i < topCount; i++) {
+        const isLeft = i % 2 === 0;
+        const posX = isLeft ? state.width * (0.02 + Math.random() * 0.13) : state.width * (0.85 + Math.random() * 0.13);
+        const posY = state.height * (0.05 + Math.random() * 0.18);
+        const scale = 0.35 + Math.random() * 0.35;
+        const type = Math.random() > 0.5 ? 'cosmos' : 'forgetmenot';
+        gardenFlowers.push(new GardenFlower(posX, posY, type, {
+          origin: isLeft ? 'top-left' : 'top-right',
+          scale: scale,
+          delay: 0.6 + Math.random() * 1.8
+        }));
+      }
+    }
+
+    // 5. THẢO NGUYÊN HOA DƯỚI ĐÁY (Bottom Meadow Carpet)
+    const bottomCount = isMobile ? 18 : 30;
+    const padding = state.width * 0.08;
+    const availableWidth = state.width - padding * 2;
+    for (let i = 0; i < bottomCount; i++) {
+      const posX = padding + (i / bottomCount) * availableWidth + (Math.random() - 0.5) * 30;
+      const depthRatio = Math.random();
+      const posY = state.height - (depthRatio * (state.height * 0.28) + 35);
+      const scale = 0.45 + depthRatio * 0.55;
+      const type = types[Math.floor(Math.random() * types.length)];
+      gardenFlowers.push(new GardenFlower(posX, posY, type, {
+        origin: 'bottom',
+        scale: scale,
+        delay: Math.random() * 1.8
       }));
     }
 
@@ -1461,8 +1594,20 @@
   }
 
   function plantFlower(x, y) {
-    const scale = 0.6 + Math.random() * 0.4;
-    const newFlower = new GardenFlower(x, y, 'random', { scale: scale, delay: 0 });
+    // Avoid planting inside caption card zone to avoid "hình đè chữ"
+    const cardBottom = state.height < 520 ? 110 : (state.width < 640 ? 260 : 280);
+    const cardLeft = state.width * 0.5 - (state.width < 640 ? 190 : 330);
+    const cardRight = state.width * 0.5 + (state.width < 640 ? 190 : 330);
+
+    let spawnX = x;
+    let spawnY = y;
+
+    if (x >= cardLeft && x <= cardRight && y <= cardBottom) {
+      spawnY = cardBottom + 35 + Math.random() * 45;
+    }
+
+    const scale = 0.55 + Math.random() * 0.45;
+    const newFlower = new GardenFlower(spawnX, spawnY, 'random', { scale: scale, delay: 0 });
     gardenFlowers.push(newFlower);
 
     // Re-sort depth
@@ -1601,11 +1746,20 @@
 
     if (heroSunflower) {
       const isMobile = state.width < 640;
+      const isLandscape = state.height < 520;
       heroSunflower.baseX = state.width / 2;
       heroSunflower.currentX = state.width / 2;
-      heroSunflower.targetY = isMobile ? state.height * 0.56 : state.height * 0.58;
-      heroSunflower.maxHeadRadius = isMobile ? Math.min(state.width * 0.22, 90) : Math.min(state.width * 0.16, 130);
+      heroSunflower.targetY = isLandscape ? state.height * 0.75 : (isMobile ? state.height * 0.72 : state.height * 0.68);
+      heroSunflower.maxHeadRadius = isMobile ? Math.min(state.width * 0.20, 85) : Math.min(state.width * 0.15, 120);
+      if (heroSunflower.burstEmitted) {
+        heroSunflower.currentY = heroSunflower.targetY;
+      }
     }
+
+    // Dynamically adjust existing flowers across any device orientation
+    gardenFlowers.forEach(f => {
+      if (f.onResize) f.onResize();
+    });
   }
 
   function handleInteraction(x, y) {
@@ -1616,8 +1770,7 @@
 
     // Plant new flower on click if garden is active
     if (state.stage === 'garden') {
-      const spawnY = Math.max(state.height * 0.55, y);
-      plantFlower(x, spawnY);
+      plantFlower(x, y);
       soundEngine.playChime();
     }
   }
@@ -1676,137 +1829,73 @@
     replayExperience();
   });
 
-  // Letter Modal
-  btnOpenLetter.addEventListener('click', () => {
-    letterModal.classList.remove('hidden');
-    soundEngine.playChime();
-  });
+  // Photo Lightbox Modal (Ultra-Smooth Spring Reveal & Particle Shimmer)
+  if (btnViewPhoto && photoModal) {
+    function openPhotoModal() {
+      photoModal.classList.remove('hidden');
+      requestAnimationFrame(() => {
+        photoModal.classList.add('active');
+      });
 
-  btnCloseModal.addEventListener('click', () => {
-    letterModal.classList.add('hidden');
-  });
-
-  letterModal.addEventListener('click', (e) => {
-    if (e.target === letterModal) letterModal.classList.add('hidden');
-  });
-
-  // Name Customization Modal
-  recipientNameEl.addEventListener('click', openNameModal);
-  btnCustomize.addEventListener('click', openNameModal);
-
-  function openNameModal() {
-    inputName.value = state.recipient === '[tên người]' ? '' : state.recipient;
-    nameModal.classList.remove('hidden');
-    inputName.focus();
-    soundEngine.playChime();
-  }
-
-  // Quick name chips click
-  document.querySelectorAll('.chip').forEach(chip => {
-    chip.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const n = chip.getAttribute('data-name');
-      inputName.value = n;
-      inputName.focus();
       soundEngine.playChime();
+
+      // Burst celebratory golden & rose sparkles around the screen center
+      const centerX = state.width / 2;
+      const centerY = state.height / 2;
+      for (let i = 0; i < 28; i++) {
+        const col = Math.random() > 0.4 ? '#fde047' : '#f472b6';
+        sparkles.push(new Sparkle(centerX + (Math.random() - 0.5) * 180, centerY + (Math.random() - 0.5) * 180, col));
+      }
+    }
+
+    function closePhotoModal() {
+      photoModal.classList.remove('active');
+      setTimeout(() => {
+        if (!photoModal.classList.contains('active')) {
+          photoModal.classList.add('hidden');
+        }
+      }, 400);
+    }
+
+    btnViewPhoto.addEventListener('click', openPhotoModal);
+
+    if (btnClosePhoto) {
+      btnClosePhoto.addEventListener('click', closePhotoModal);
+    }
+
+    photoModal.addEventListener('click', (e) => {
+      if (e.target === photoModal) {
+        closePhotoModal();
+      }
     });
-  });
 
-  btnCloseNameModal.addEventListener('click', () => {
-    nameModal.classList.add('hidden');
-  });
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && photoModal.classList.contains('active')) {
+        closePhotoModal();
+      }
+    });
+  }
 
-  nameModal.addEventListener('click', (e) => {
-    if (e.target === nameModal) nameModal.classList.add('hidden');
-  });
-
-  // Save Name
-  nameForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const val = inputName.value.trim();
-    if (val) {
-      setRecipientName(val);
-      nameModal.classList.add('hidden');
-      showToast(`✨ Đã đổi tên thành: ${val}!`);
-      soundEngine.playChime();
-    }
-  });
-
-  function setRecipientName(name) {
-    state.recipient = name || '[tên người]';
-    recipientNameEl.textContent = state.recipient;
-    letterRecipientEl.textContent = (state.recipient === '[tên người]') ? 'Gửi bạn!' : `Gửi ${state.recipient}!`;
-
-    // Update URL query parameter without reloading
-    const url = new URL(window.location);
-    if (name && name !== '[tên người]') {
-      url.searchParams.set('name', name);
+  // ---------------------------------------------------------
+  // 12. ÁP DỤNG TÊN NGƯỜI NHẬN (HARD-CODE)
+  // ---------------------------------------------------------
+  function applyRecipientName() {
+    const trimmed = (typeof HARDCODED_NAME === 'string') ? HARDCODED_NAME.trim() : '';
+    if (trimmed !== '') {
+      recipientNameEl.textContent = trimmed;
     } else {
-      url.searchParams.delete('name');
-    }
-    window.history.replaceState({}, '', url);
-  }
-
-  // Copy Custom Share Link
-  btnShareLink.addEventListener('click', copyShareLink);
-  btnCopyCustomLink.addEventListener('click', () => {
-    const val = inputName.value.trim();
-    if (val) setRecipientName(val);
-    copyShareLink();
-  });
-
-  function copyShareLink() {
-    const url = new URL(window.location);
-    if (state.recipient && state.recipient !== '[tên người]') {
-      url.searchParams.set('name', state.recipient);
-    }
-    const link = url.toString();
-
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(link).then(() => {
-        showToast('💌 Đã sao chép liên kết thiệp mừng!');
-      }).catch(() => fallbackCopy(link));
-    } else {
-      fallbackCopy(link);
-    }
-  }
-
-  function fallbackCopy(text) {
-    const tempInput = document.createElement('input');
-    tempInput.value = text;
-    document.body.appendChild(tempInput);
-    tempInput.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempInput);
-    showToast('💌 Đã sao chép liên kết thiệp mừng!');
-  }
-
-  function showToast(msg) {
-    toastMsg.textContent = msg;
-    toast.classList.remove('hidden');
-    setTimeout(() => {
-      toast.classList.add('hidden');
-    }, 3200);
-  }
-
-  // Parse Initial URL Query Params
-  function parseUrlParams() {
-    const params = new URLSearchParams(window.location.search);
-    const nameParam = params.get('name');
-    if (nameParam) {
-      setRecipientName(nameParam);
-    } else {
-      setRecipientName('[tên người]');
+      recipientNameEl.textContent = '';
     }
   }
 
   // ---------------------------------------------------------
-  // 12. INITIALIZATION
+  // 13. INITIALIZATION
   // ---------------------------------------------------------
   function init() {
-    parseUrlParams();
+    applyRecipientName();
     resize();
     window.addEventListener('resize', resize);
+    window.addEventListener('orientationchange', () => setTimeout(resize, 120));
 
     // Populate initial background particles
     fallingPetals = [];
