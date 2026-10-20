@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Chúc Mừng Ngày Phụ Nữ Việt Nam 20/10 🌻</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Chúc mừng ngày Phụ nữ Việt Nam 20/10 - Một đóa hướng dương nở rộ thành một vườn hoa ngát hương rực rỡ dành riêng cho bạn.">
+  <meta property="og:title" content="20/10 Vui Vẻ Nhé! 🌻✨">
+  <meta property="og:description" content="Món quà vườn hoa hướng dương kỳ diệu nở rộ tặng bạn ngày 20/10!">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Dancing Script, Playfair Display, Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-night">
+  <!-- Main Canvas for Flowers, Particles, Butterflies, and Wind -->
+  <canvas id="gardenCanvas"></canvas>
+
+  <!-- Ambient Light Overlay for Theme Gradients -->
+  <div class="ambient-glow"></div>
+
+  <!-- Intro Screen (tap to begin & unlock audio) -->
+  <div id="introScreen" class="intro-screen">
+    <div class="intro-content">
+      <div class="intro-flower-icon">🌻</div>
+      <h2 class="intro-subtitle">Món Quà Đặc Biệt Ngày 20/10</h2>
+      <h1 class="intro-title">Điều Kỳ Diệu Dành Cho Bạn</h1>
+      <p class="intro-hint">Chạm nhẹ vào màn hình để đóa hoa đầu tiên bừng nở ✨</p>
+      <button id="btnStart" class="btn-start" aria-label="Bắt đầu">
+        <span>Khám phá ngay</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Center Greeting Caption Container -->
+  <div id="captionContainer" class="caption-container hidden">
+    <div class="caption-card">
+      <div class="flower-badge">
+        <span class="badge-sparkle">✨</span>
+        <span class="badge-text">Happy Vietnamese Women's Day</span>
+        <span class="badge-sparkle">✨</span>
+      </div>
+
+      <h1 id="mainCaption" class="main-title">
+        <span class="title-date">20/10</span>
+        <span class="title-greet">vui vẻ nhé</span>
+        <span id="recipientName" class="recipient-name" title="Nhấp để đổi tên">[tên người]</span><span class="title-exclamation">!</span>
+      </h1>
+
+      <p id="subCaption" class="sub-caption">
+        Chúc bạn luôn rực rỡ như hoa hướng dương, luôn ngập tràn nụ cười và hạnh phúc mỗi ngày! 💛
+      </p>
+
+      <div class="caption-actions">
+        <button id="btnOpenLetter" class="action-btn btn-letter" title="Đọc thư chúc mừng">
+          <span class="btn-icon">💌</span>
+          <span class="btn-text">Thư gửi bạn</span>
+        </button>
+        <button id="btnCustomize" class="action-btn btn-customize" title="Đổi tên & tạo thiệp riêng">
+          <span class="btn-icon">✨</span>
+          <span class="btn-text">Đổi tên người nhận</span>
+        </button>
+        <button id="btnShareLink" class="action-btn btn-share" title="Sao chép liên kết gửi bạn bè">
+          <span class="btn-icon">🔗</span>
+          <span class="btn-text">Gửi tặng thiệp này</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Controls (Top Right / Bottom Controls) -->
+  <div class="floating-controls">
+    <!-- Music Player Toggle -->
+    <button id="btnMusic" class="circle-btn" aria-label="Bật/Tắt nhạc" title="Bật / Tắt âm nhạc">
+      <span class="music-bars">
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+      </span>
+      <span id="musicIcon" class="icon-music">🎵</span>
+    </button>
+
+    <!-- Theme Switcher (Night / Sunset / Dawn) -->
+    <button id="btnTheme" class="circle-btn" aria-label="Đổi không gian bầu trời" title="Đổi bầu trời: Đêm sao / Hoàng hôn / Bình minh">
+      <span id="themeIcon">🌙</span>
+    </button>
+
+    <!-- Re-bloom Animation -->
+    <button id="btnReplay" class="circle-btn" aria-label="Nở lại từ đầu" title="Xem lại quá trình hoa nở">
+      <span>🔄</span>
+    </button>
+  </div>
+
+  <!-- Interactive Hint at Bottom -->
+  <div id="interactiveHint" class="interactive-hint hidden">
+    <span>💡 Chạm hoặc nhấp chuột vào bất cứ đâu để gieo thêm những bông hoa mới!</span>
+  </div>
+
+  <!-- Modal: Letter & Heartfelt Message -->
+  <div id="letterModal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <button id="btnCloseModal" class="modal-close" aria-label="Đóng thư">&times;</button>
+      
+      <div class="letter-envelope-decor">
+        <div class="envelope-stamp">🌻</div>
+      </div>
+
+      <div class="letter-body">
+        <h3 class="letter-subtitle">Gửi người phụ nữ tuyệt vời nhất,</h3>
+        <h2 id="letterRecipient" class="letter-recipient">Gửi [tên người]!</h2>
+
+        <div class="letter-text">
+          <p>
+            Nhân ngày <strong>Phụ nữ Việt Nam 20/10</strong>, xin gửi tới bạn những lời chúc chân thành, ấm áp và ngọt ngào nhất.
+          </p>
+          <p>
+            Như những đóa hoa hướng dương luôn kiên định vươn mình về phía ánh dương rực rỡ, chúc bạn luôn giữ trọn niềm tin, nguồn năng lượng tươi trẻ và sự tự tin trên con đường mình đi.
+          </p>
+          <p>
+            Và như một vườn hoa rực rỡ muôn sắc thắm, chúc cuộc sống của bạn luôn ngập tràn tiếng cười, tình yêu thương đong đầy và những điều ngọt ngào nhất.
+          </p>
+          <p class="letter-highlight">
+            ✨ Bạn luôn là một phiên bản đặc biệt, duy nhất và đáng trân quý nhất trên thế giới này!
+          </p>
+        </div>
+
+        <div class="letter-sign">
+          <span class="sign-tag">Mến thương,</span>
+          <span class="sign-heart">20.10 with Love ❤️</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Name Customization & Copy Link -->
+  <div id="nameModal" class="modal-overlay hidden">
+    <div class="modal-card modal-small">
+      <button id="btnCloseNameModal" class="modal-close" aria-label="Đóng">&times;</button>
+      
+      <h3 class="modal-title">Tạo Thiệp Tặng Riêng 🌻</h3>
+      <p class="modal-desc">Nhập tên người bạn muốn gửi tặng để tạo đường dẫn chúc mừng riêng biệt:</p>
+      
+      <form id="nameForm" class="name-form" onsubmit="return false;">
+        <div class="input-group">
+          <input type="text" id="inputName" placeholder="Ví dụ: Mẹ yêu, Em bé, Lan Anh, My Sunshine..." maxlength="30" autocomplete="off" required>
+        </div>
+        
+        <div class="name-chips">
+          <span class="chip" data-name="Mẹ yêu">Mẹ yêu ❤️</span>
+          <span class="chip" data-name="Em yêu">Em yêu 💖</span>
+          <span class="chip" data-name="Công chúa">Công chúa 👑</span>
+          <span class="chip" data-name="Cô giáo">Cô giáo 💐</span>
+          <span class="chip" data-name="Lan Anh">Lan Anh 🌻</span>
+          <span class="chip" data-name="Bé iu">Bé iu 🌸</span>
+        </div>
+        
+        <div class="modal-actions">
+          <button type="submit" id="btnSaveName" class="btn-primary">
+            <span>Áp dụng ngay</span>
+          </button>
+          <button type="button" id="btnCopyCustomLink" class="btn-secondary">
+            <span>Sao chép link gửi</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast hidden">
+    <span id="toastIcon">✨</span>
+    <span id="toastMsg">Đã sao chép liên kết thành công!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
