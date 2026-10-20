@@ -8,8 +8,10 @@ Trang web nghệ thuật tương tác với đồ họa procedural canvas và hi
 
 - **Tên người nhận**: **Hà An**
 - **Tiêu đề chính**: **`20/10 vui vẻ nhé Hà An!`**
-- **Thông điệp chúc mừng**:
+- **Thông điệp chúc mừng**: Căn lề trái thanh lịch, dễ đọc:
   > *"Chúc han có thật nhiều khoảnh khắc, kỷ niệm đẹp bên gia đình và những người han luôn trân quý. Có sức khỏe thật trộm vía, và đạt được những gì mà mình đặt ra, thêm nhiều trải nghiệm đáng quý trên hành trình phía trước nhé!"*
+- **Nhạc nền YouTube**: Giai điệu *"M-TP - Đừng Làm Trái Tim Anh Đau (Cinematic Version)"* lãng mạn, du dương phát tự động khi bắt đầu và lặp vô tận.
+- **Lời nhắc âm lượng**: Dòng ghi chú nhỏ nhắn xinh xắn *"🎧 Hãy mở âm lượng để nghe giai điệu đang rung lên nhé"* xuất hiện tại màn hình khởi đầu và trên thiệp chúc mừng.
 - **Tính năng xem ảnh kỷ niệm (📸)**: Nút bấm *"Xem ảnh"* tỏa sáng với hiệu ứng mở ảnh Spring Animation, quét tia sáng phân cực (shimmer sweep) và bùng nổ bụi tiên lấp lánh.
 
 ---
@@ -39,7 +41,7 @@ Trang web nghệ thuật tương tác với đồ họa procedural canvas và hi
    - **Đốm đom đóm & bụi tiên**: Lơ lửng, nhấp nháy êm dịu trong đêm.
    - **Cánh hoa rơi**: Cánh hoa hướng dương và hoa hồng chao liệng trong gió.
    - **Gieo hoa đa góc tương tác**: Chạm hoặc nhấp chuột vào bất cứ đâu để gieo thêm hoa mới, hoa tự động uốn theo góc gần nhất với lời chúc bay lên (`+1 Đóa hoa 🌻`, `💖 Xinh đẹp`, `✨ Rực rỡ`).
-   - **Hộp Nhạc / Piano Lãng Mạn**: Tích hợp bộ tổng hợp âm thanh Web Audio API (giai điệu Canon in D / River Flows in You) êm dịu, không lo bị lỗi mạng hay bản quyền.
+   - **Nhạc Nền YouTube & Chuông Gió Lung Linh**: Tích hợp trực tiếp ca khúc *"Đừng Làm Trái Tim Anh Đau (Cinematic Version)"* (Sơn Tùng M-TP) từ YouTube, kèm cơ chế dự phòng âm thanh tổng hợp Web Audio API và hiệu ứng chuông gió ngân nga (chime SFX) khi gieo hoa.
    - **Đổi Bầu Trời / Theme**: 🌙 Đêm sao kỳ diệu, 🌅 Hoàng hôn ấm áp, ☀️ Bình minh tươi sáng.
 5. **Tương Thích Mọi Thiết Bị (Responsive 100%)**:
    - Hoạt động mượt mà trên mọi kích cỡ màn hình: Máy tính bàn, Laptop, iPad/Tablet, Điện thoại (dọc & ngang).

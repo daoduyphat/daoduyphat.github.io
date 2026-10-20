@@ -207,6 +207,49 @@ html, body {
   transform: translateY(1px) scale(0.98);
 }
 
+/* Audio volume reminder note on intro screen */
+.intro-audio-note {
+  margin-top: 1.3rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.15rem;
+  font-size: clamp(0.8rem, 2.3vw, 0.92rem);
+  color: #fef08a;
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: audioNotePulse 3s infinite ease-in-out;
+  text-shadow: 0 0 10px rgba(251, 191, 36, 0.4);
+}
+
+.intro-audio-note .note-icon {
+  font-size: 1.1rem;
+  display: inline-block;
+  animation: headphoneBounce 2s infinite ease-in-out;
+}
+
+@keyframes headphoneBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-3px) scale(1.1); }
+}
+
+@keyframes audioNotePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 12px rgba(251, 191, 36, 0.15);
+    border-color: rgba(251, 191, 36, 0.35);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 24px rgba(251, 191, 36, 0.4);
+    border-color: rgba(251, 191, 36, 0.7);
+  }
+}
+
 /* =========================================================
    CENTERPIECE CAPTION (Positioned in Clear Sky Zone)
    ========================================================= */
@@ -411,6 +454,32 @@ html, body {
 
 .action-btn:active {
   transform: translateY(1px) scale(0.98);
+}
+
+/* Center Card Audio Reminder Note */
+.caption-audio-note {
+  margin-top: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-size: clamp(0.78rem, 1.9vw, 0.88rem);
+  color: rgba(254, 240, 138, 0.92);
+  font-style: italic;
+  letter-spacing: 0.2px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  padding: 0.2rem 0.6rem;
+}
+
+.caption-audio-note .note-icon {
+  font-style: normal;
+  display: inline-block;
+  animation: musicNoteSway 2.2s infinite ease-in-out;
+}
+
+@keyframes musicNoteSway {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(14deg) scale(1.18); }
 }
 
 /* =========================================================
@@ -666,6 +735,29 @@ html, body {
 }
 
 /* =========================================================
+   HIDDEN YOUTUBE BACKGROUND AUDIO CONTAINER
+   ========================================================= */
+
+.yt-player-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  opacity: 0.001;
+  pointer-events: none;
+  z-index: -9999;
+  overflow: hidden;
+}
+
+.yt-player-container iframe {
+  width: 100% !important;
+  height: 100% !important;
+  pointer-events: none !important;
+  border: none !important;
+}
+
+/* =========================================================
    RESPONSIVE DESIGN (TABLETS, PHONES & LANDSCAPE)
    ========================================================= */
 
@@ -753,6 +845,17 @@ html, body {
     font-size: 1.35rem;
     margin-top: 0.5rem;
   }
+
+  .intro-audio-note {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.85rem;
+  }
+
+  .caption-audio-note {
+    margin-top: 0.65rem;
+    font-size: 0.76rem;
+  }
 }
 
 /* Landscape Mode on Mobile Devices (Short Viewports) */
@@ -828,5 +931,16 @@ html, body {
   .photo-caption {
     font-size: 1.2rem;
     margin-top: 0.3rem;
+  }
+
+  .intro-audio-note {
+    margin-top: 0.4rem;
+    font-size: 0.72rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .caption-audio-note {
+    margin-top: 0.25rem;
+    font-size: 0.7rem;
   }
 }

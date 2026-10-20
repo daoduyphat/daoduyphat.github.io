@@ -39,6 +39,10 @@
         <span>Khám phá ngay</span>
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
+      <div class="intro-audio-note">
+        <span class="note-icon">🎧</span>
+        <span class="note-text">Hãy mở âm lượng để nghe giai điệu đang rung lên nhé</span>
+      </div>
     </div>
   </div>
 
@@ -71,13 +75,18 @@
           <span class="btn-text">Xem ảnh</span>
         </button>
       </div>
+
+      <div class="caption-audio-note">
+        <span class="note-icon">🎵</span>
+        <span class="note-text">Hãy mở âm lượng để nghe giai điệu đang rung lên nhé</span>
+      </div>
     </div>
   </div>
 
   <!-- Floating Controls (Top Right / Bottom Controls) -->
   <div class="floating-controls">
     <!-- Music Player Toggle -->
-    <button id="btnMusic" class="circle-btn" aria-label="Bật/Tắt nhạc" title="Bật / Tắt âm nhạc">
+    <button id="btnMusic" class="circle-btn" aria-label="Bật/Tắt nhạc" title="Bật / Tắt nhạc: Đừng Làm Trái Tim Anh Đau (Cinematic Version)">
       <span class="music-bars">
         <span class="bar bar-1"></span>
         <span class="bar bar-2"></span>
@@ -113,6 +122,12 @@
     </div>
   </div>
 
+  <!-- Hidden YouTube Audio Player for "Đừng Làm Trái Tim Anh Đau (Cinematic Version)" -->
+  <div id="ytPlayerContainer" class="yt-player-container">
+    <div id="ytPlayer"></div>
+  </div>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
   <script src="script.js"></script>
 </body>
 </html>

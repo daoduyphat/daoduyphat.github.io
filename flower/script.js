@@ -225,6 +225,153 @@
   const soundEngine = new SoundEngine();
 
   // ---------------------------------------------------------
+  // 5b. YOUTUBE BACKGROUND MUSIC CONTROLLER
+  // Track: "M-TP - Đừng Làm Trái Tim Anh Đau (Cinematic Version)"
+  // URL: https://www.youtube.com/watch?v=PZ3Rvpzrva8
+  // ---------------------------------------------------------
+  const YOUTUBE_CONFIG = {
+    videoId: 'PZ3Rvpzrva8',
+    title: 'Đừng Làm Trái Tim Anh Đau (Cinematic Version)'
+  };
+
+  let ytPlayer = null;
+  let ytReady = false;
+  let userWantedPlay = false;
+
+  function initYouTubePlayer() {
+    if (window.YT && window.YT.Player) {
+      createYTPlayer();
+    } else {
+      const oldReady = window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady = function () {
+        if (typeof oldReady === 'function') oldReady();
+        createYTPlayer();
+      };
+    }
+  }
+
+  function createYTPlayer() {
+    if (ytPlayer) return;
+    const container = document.getElementById('ytPlayer');
+    if (!container || !window.YT || !window.YT.Player) return;
+
+    const playerVars = {
+      autoplay: 0,
+      controls: 0,
+      disablekb: 1,
+      fs: 0,
+      iv_load_policy: 3,
+      modestbranding: 1,
+      rel: 0,
+      loop: 1,
+      playlist: YOUTUBE_CONFIG.videoId,
+      playsinline: 1,
+      enablejsapi: 1
+    };
+
+    if (window.location && window.location.origin && window.location.protocol.startsWith('http')) {
+      playerVars.origin = window.location.origin;
+    }
+
+    try {
+      ytPlayer = new YT.Player('ytPlayer', {
+        height: '150',
+        width: '150',
+        videoId: YOUTUBE_CONFIG.videoId,
+        playerVars: playerVars,
+        events: {
+          onReady: function (event) {
+            ytReady = true;
+            try {
+              event.target.setVolume(85);
+              event.target.unMute();
+            } catch (e) {}
+
+            if (userWantedPlay) {
+              try {
+                event.target.playVideo();
+                state.musicPlaying = true;
+                btnMusic.classList.add('playing');
+              } catch (e) {}
+            }
+          },
+          onStateChange: function (event) {
+            // YT.PlayerState.PLAYING = 1, PAUSED = 2, ENDED = 0
+            if (event.data === 1) {
+              state.musicPlaying = true;
+              btnMusic.classList.add('playing');
+            } else if (event.data === 2) {
+              state.musicPlaying = false;
+              btnMusic.classList.remove('playing');
+            } else if (event.data === 0) {
+              try {
+                event.target.seekTo(0);
+                event.target.playVideo();
+              } catch (e) {}
+            }
+          },
+          onError: function (e) {
+            console.warn('YouTube Player error, falling back to Web Audio:', e);
+            if (userWantedPlay && !state.musicPlaying) {
+              soundEngine.startMusic();
+              state.musicPlaying = true;
+              btnMusic.classList.add('playing');
+            }
+          }
+        }
+      });
+    } catch (err) {
+      console.warn('Could not initialize YT.Player:', err);
+    }
+  }
+
+  function playMusic() {
+    userWantedPlay = true;
+    state.musicPlaying = true;
+    btnMusic.classList.add('playing');
+
+    if (ytPlayer && ytReady && typeof ytPlayer.playVideo === 'function') {
+      try {
+        ytPlayer.unMute();
+        ytPlayer.setVolume(85);
+        ytPlayer.playVideo();
+      } catch (e) {
+        console.warn('ytPlayer.playVideo failed:', e);
+      }
+    } else {
+      // Fallback: If YouTube API is blocked or takes too long, start Web Audio synth
+      setTimeout(() => {
+        if (userWantedPlay && !state.musicPlaying && (!ytPlayer || !ytReady)) {
+          soundEngine.startMusic();
+          state.musicPlaying = true;
+          btnMusic.classList.add('playing');
+        }
+      }, 2500);
+    }
+  }
+
+  function stopMusic() {
+    userWantedPlay = false;
+    state.musicPlaying = false;
+    btnMusic.classList.remove('playing');
+
+    if (ytPlayer && ytReady && typeof ytPlayer.pauseVideo === 'function') {
+      try {
+        ytPlayer.pauseVideo();
+      } catch (e) {}
+    }
+    soundEngine.stopMusic();
+  }
+
+  function toggleMusic() {
+    if (state.musicPlaying) {
+      stopMusic();
+    } else {
+      playMusic();
+    }
+  }
+
+  // ---------------------------------------------------------
   // 6. PROCEDURAL FLOWER CLASSES
   // ---------------------------------------------------------
 
@@ -1448,11 +1595,9 @@
     // Fade out intro screen
     introScreen.classList.add('fade-out');
 
-    // Start audio
+    // Start audio (YouTube background song)
     if (!state.musicPlaying) {
-      soundEngine.startMusic();
-      state.musicPlaying = true;
-      btnMusic.classList.add('playing');
+      playMusic();
     }
 
     // Spawn Hero Sunflower in center
@@ -1639,6 +1784,16 @@
     initHeroSunflower();
     state.stage = 'sprouting';
     soundEngine.playChime();
+
+    // Rewind background track to sync with rebirth
+    if (ytPlayer && ytReady && typeof ytPlayer.seekTo === 'function') {
+      try {
+        ytPlayer.seekTo(0);
+        ytPlayer.playVideo();
+        state.musicPlaying = true;
+        btnMusic.classList.add('playing');
+      } catch (e) {}
+    }
   }
 
   // ---------------------------------------------------------
@@ -1797,17 +1952,10 @@
     startExperience();
   });
 
-  // Music Toggle
+  // Music Toggle (YouTube track + synth fallback)
   btnMusic.addEventListener('click', () => {
-    if (state.musicPlaying) {
-      soundEngine.stopMusic();
-      state.musicPlaying = false;
-      btnMusic.classList.remove('playing');
-    } else {
-      soundEngine.startMusic();
-      state.musicPlaying = true;
-      btnMusic.classList.add('playing');
-    }
+    toggleMusic();
+    soundEngine.playChime();
   });
 
   // Theme Switcher (Night -> Sunset -> Dawn -> Night)
@@ -1893,6 +2041,7 @@
   // ---------------------------------------------------------
   function init() {
     applyRecipientName();
+    initYouTubePlayer();
     resize();
     window.addEventListener('resize', resize);
     window.addEventListener('orientationchange', () => setTimeout(resize, 120));
