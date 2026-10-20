@@ -227,7 +227,7 @@
 
   // ---------------------------------------------------------
   // 5b. HTML5 BACKGROUND AUDIO CONTROLLER
-  // Track: "M-TP - Đừng Làm Trái Tim Anh Đau (Cinematic Version)"
+  // Track: "Đừng Làm Trái Tim Anh Đau - Nhạc Không Lời Cinematic"
   // File: audio/dung-lam-trai-tim-anh-dau.mp3
   // ---------------------------------------------------------
   function playMusic() {
