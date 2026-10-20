@@ -735,29 +735,6 @@ html, body {
 }
 
 /* =========================================================
-   HIDDEN YOUTUBE BACKGROUND AUDIO CONTAINER
-   ========================================================= */
-
-.yt-player-container {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 150px;
-  height: 150px;
-  opacity: 0.001;
-  pointer-events: none;
-  z-index: -9999;
-  overflow: hidden;
-}
-
-.yt-player-container iframe {
-  width: 100% !important;
-  height: 100% !important;
-  pointer-events: none !important;
-  border: none !important;
-}
-
-/* =========================================================
    RESPONSIVE DESIGN (TABLETS, PHONES & LANDSCAPE)
    ========================================================= */
 
